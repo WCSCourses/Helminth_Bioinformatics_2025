@@ -334,6 +334,7 @@ day2somules_metadata %>%
 ```
 
 ![](figures/SC_Figure_4.png)
+
 **Figure 4.** Density plot comparing the distibution of UMIs per cell between the samples. 
 
 
