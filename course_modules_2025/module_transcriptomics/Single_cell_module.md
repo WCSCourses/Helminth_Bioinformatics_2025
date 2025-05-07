@@ -44,7 +44,7 @@ The scRNA-seq data used in the module was obtained from 2 day schistosomula of _
 
 After sequencing, reads are mapped to the reference genome with Cell Ranger, a set of analysis pipelines that process Chromium Next GEM single cell data to align reads and generate feature-barcode matrices. To do this, transcripts from different cells are identified through a 10X barcode, while different transcripts of each cell are identified through a unique molecular identifier or UMI.
 
-![](figures/SC_Figure_1.png)  
+![](figures/SC_Figure_1.png)
 **Figure 1.** A set of barcodes are used to identify different transcripts and cells.
 
 Navigate to the output folder of Cell Ranger, within each sample folder you will find a web_summary of the run and a feature-barcode folder containing the feature-barcode_matrix. Inspect each web_summary. 
