@@ -1,0 +1,6 @@
+Transcriptome module
+
+- update to include STAR mapping and and some more modern counting algorithm (avp)
+
+
+
