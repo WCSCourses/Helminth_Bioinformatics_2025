@@ -654,7 +654,7 @@ If you have kept the previous window open,  or have now reloaded Artemis, do the
 You should now be able to see all of the SNPs called for all of your samples. Just quickly, looking at the sample names, can you see 
 any patterns in the SNPs based on similar names? Scrolling up and down in the SNP window will help. This is what we are trying to find. 
 
-Artemis provides a very broad-scale view of genetic variaiton - it is possible to see some differences between samples, and perhaps, some patterns in the presence or absence of variants that may suggest some "structure" to the way variants are distributed. However, it doesnt "scale" well - we can only observe a vary small part of the genome at one time, and it would be difficult to handle many more variants or samples. 
+Artemis provides a very broad-scale view of genetic variation - it is possible to see some differences between samples, and perhaps, some patterns in the presence or absence of variants that may suggest some "structure" to the way variants are distributed. However, it doesnt "scale" well - we can only observe a vary small part of the genome at one time, and it would be difficult to handle many more variants or samples. 
 
 To undertake a more meaningful and quantitative analysis, we need to move back to the command line to find patterns 
 and genetic relationships among our samples. 
@@ -674,8 +674,8 @@ Well done getting this far! By now, you should have been able to map reads from 
 
 Now we want to explore these data. The broad aim is to identify any patterns in the genetic variation that might tell us something about the biology of 
 the parasite. To do so, we are going to use the language R. This is because there are a number of good population genetic tools, as well 
-as tools to visualise your data in ifferent ways, written specifically in R that we will make use of. R is a little different from using the unix command line, but overall 
-the similar ideas apply. We will point out some of these differences as we go to try not to confuse you too much. R can be run on directly on the command line, or alternatively, using Rstudio, which 
+as tools to visualise your data in different ways, written specifically in R that we will make use of. R is a little different from using the Unix command line, but overall 
+the similar ideas apply. We will point out some of these differences as we go to try not to confuse you too much. R can be run directly on the command line, or alternatively, using Rstudio, which 
 provides a convenient user interface that combines a scripting window, a command line window, a plotting window, and a directory window. 
 
 ### 10.1. Setting up R and loading R libraries
@@ -760,11 +760,11 @@ vcf.gl@pop
 
 Principal components analysis, PCA, is a statistical method used to reduce the complexity of multi-dimensional datasets to aid with visualisation and interpretation. It works by transforming the data into a new, simpler coordinate system which explains variance in the dataset. These transformations results in an ordering in your data, called a principle component (PC), and these PC are subsequently ranked by the amount of variance that can be explained, ie. the first PC will explain the most variance in your data. We can compare PCs in a scatter plot, ie, PC1 vs PC2, to help explore, analyse, and identify patterns in these otherwise complex data. 
 
-PCA is commonly used in population genetics to identify structure in the distribution of genetic variation. Most commonly, it is used to identify patterns in genetic variation between samples, and compare this to features of samples such as population of origin. PCA is not specifically used for genetics - it can be used to explore patterns in any multivariate datasets. If you have metadata associated with a sample set, you can use PCA to ientify which parameters of your metadata influence the variance of the data. In the case of population genetics, it might be country or origin, but it could be other biological parameters (eg, host, temperature, altitude, etc) or technical factors (eg. sequnecing run, collection date, levels of contamination) that might be biasing your sample. 
+PCA is commonly used in population genetics to identify structure in the distribution of genetic variation. Most commonly, it is used to identify patterns in genetic variation between samples, and compare this to features of samples such as population of origin. PCA is not specifically used for genetics - it can be used to explore patterns in any multivariate datasets. If you have metadata associated with a sample set, you can use PCA to identify which parameters of your metadata influence the variance of the data. In the case of population genetics, it might be country or origin, but it could be other biological parameters (eg, host, temperature, altitude, etc) or technical factors (eg. sequnecing run, collection date, levels of contamination) that might be biasing your sample. 
 
 As a general note to remember, visualising your data can be a powerful way to identify patterns in data. PCA is a good way to do this.
 
-Here, we will perfrom a PCA of your genetic variants, and try to see if there is any clustering of samples by the country of origin.
+Here, we will perform a PCA of your genetic variants, and try to see if there is any clustering of samples by the country of origin.
 
 
 ```R
