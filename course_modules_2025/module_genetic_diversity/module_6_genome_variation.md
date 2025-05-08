@@ -1,6 +1,6 @@
 # Genetic Variation
 
-Steve Doyle, 2023
+Steve Doyle, 2025
 
 ## Table of Contents
 1. [Overview and Aims](#intro)
@@ -975,10 +975,10 @@ Here, we will make a map of the sampling locations, and plot the allele frequenc
 may be connected to each other. We will explore this by plotting SNPs that seem to have the most effect 
 in driving the variance in the PCA plot.
 
-Note that we will only be looking at one variant at a time, and the genetic signal that differentiate 
+Note that we will only be looking at one variant at a time, and the genetic signal that differentiates 
 these populations is made up of many variants. However, it should give you an idea of what could be done integrating these data types.
 
-First, lets calculate allele frequencies per country, and integrate this with the latitude and longitude coordinates to prepare to plot.
+First, lets calculate allele frequencies per country, and integrate these with the latitude and longitude coordinates to prepare to plot.
 
 ### 13.1 Calculating allele frequencies per country
 ```R
@@ -1037,7 +1037,7 @@ data set that was generated when we ran the PCA.
 
 ```R
 # we can find the loadings in the PCA of our SNP data
-vcf.pca 
+vcf.pca
 
 ```
 
@@ -1100,7 +1100,7 @@ If you have time, try explore plotting the allele frequency of other SNPs in PC1
 
 
 
-We now have an overview of genetic variation within globally distributed isolates of Haemonchus contortus. What has led to these patterns of genetic variation? A deeper dive into these data, and importantly, analysis of the nuclear genome which was performed with a significantly larger number of variants, can be found in the [paper](https://doi.org/10.1038/s41467-019-12695-4) that most of these samples were first described. However, we beleive the patterns of diversity reflect a combination of old diversity in the species, originating in Africa and then subsequenctly spreading, and modern movement of parasites around the world. How would a parasite like Haemonchus spread rapidly? As a parasite of sheep, the would have been transported far and wide as humans moved livestock around the world. 
+We now have an overview of genetic variation within globally distributed isolates of *Haemonchus contortus*. What has led to these patterns of genetic variation? A deeper dive into these data, and importantly, analysis of the nuclear genome which was performed with a significantly larger number of variants, can be found in the [paper](https://doi.org/10.1038/s41467-019-12695-4) that most of these samples were first described. However, we believe the patterns of diversity reflect a combination of old diversity in the species, originating in Africa and then subsequenctly spreading, and modern movement of parasites around the world. How would a parasite like *Haemonchus* spread rapidly? As a parasite of sheep, the would have been transported far and wide as humans moved livestock around the world. 
 
 Have a look at the following animation, showing shipping routes in the 1700s. Compare these routes to the sampling locations and genetic similarity between countries. Are there overlapping patterns?
 
@@ -1118,7 +1118,7 @@ Have a look at the following animation, showing shipping routes in the 1700s. Co
 ## 14. Summary
 In this module, we have shown you how to:
 - map and call variants from Illumina sequencing data in a single sample and a cohort of samples
-- visualize this data in the genome browser Artemis
+- visualize these data in the genome browser Artemis
 - Perform some basic data exploration and population genetics using R to understand the genetic relatedness within and between samples
 
 
