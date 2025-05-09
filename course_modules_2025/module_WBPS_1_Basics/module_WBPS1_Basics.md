@@ -23,7 +23,7 @@ Updated by Jose Tort (2025)
     * [Tracks](#tracks)
     * [Motifs Search](#Motif_Search)
     * [Visualising your own data](#Data_Upload)
-    * [_EXERCISE 3 - JBrowse data comparison_](#jbrowse_exercise)
+
   
 
 ## Overview and Aims <a name="intro"></a>
@@ -597,7 +597,7 @@ You should now see a file called SRR3223448.bam.bai in your working directory. W
     - Click “Open”.
 
 ![](figures/jbrowse_12.png)
-<br>
+
 
 Now we can see the reads aligned to the genome. 
 
@@ -605,12 +605,7 @@ Notice that this RNA-Seq data is stranded- this means that the library preparati
 - reads aligning to the forward strand are $\textcolor{pink}{\textsf{pink}}$
 - and reads aligning to the reverse strand are $\textcolor{purple}{\textsf{purple}}$
 
-### _EXERCISE 3 - JBrowse data comparison_ <a name="jbrowse_exercise"></a>
-
-We have provided in the module's folder an additional file  named somules_isoseq_sorted.bam, generated from another experiment.
-Use samtools to view the reads within the file.   
-Load the file and compare to the one you just recently uploaded.   
-What are the differences?     
+ 
 
 
 
