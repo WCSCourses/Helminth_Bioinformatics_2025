@@ -580,7 +580,6 @@ We will use a samtools command to convert the BAM file to a SAM file so we can h
 <br>
 <br>
 
-
 Before we can visualise the file in JBrowse, we need to create an index. An index is another file that often accompanies a BAM file, and acts like a table of contents. 
 Software such as JBrowse can look inside the index file and find where exactly in the corresponding BAM file it needs to look, without having to go through all of the reads (which would be computationally very expensive). BAM index files should have exactly the same name as their corresponding BAM file, with the addition of a .bai suffix. 
 
