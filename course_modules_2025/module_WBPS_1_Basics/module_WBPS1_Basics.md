@@ -23,7 +23,7 @@ Updated by Jose Tort (2025)
     * [Tracks](#tracks)
     * [Motifs Search](#Motif_Search)
     * [Visualising your own data](#Data_Upload)
-
+    * [_EXERCISE 3 - JBrowse data comparison_](#jbrowse_exercise)
   
 
 ## Overview and Aims <a name="intro"></a>
@@ -542,7 +542,7 @@ Going back to the main JBrowse window, a new track has appeared with all instanc
 ---
 ### Visualising your own data <a name="Data_Upload"></a>
 
-As well as looking at publicly available data, you can use WormBase ParaSite JBrowse to visualise your own data.
+As well as looking at publicly available data, you can use WormBase ParaSite JBrowse to visualise your own data. Imagine you have generated transcriptomic data on a certain stage or condition on your favorite parasite. You might want to map these data to the genome, and compare them to the already available data. For this you need to map the data to the genome (we will be viewing how to do this in other module) and generate a mapping file, placing reads at the correspoding positions over the genome.
 
 We’ll demonstrate how to do this using a BAM file that we have provided for you. A BAM file is a type of file format used in genomics to store DNA sequencing data in a compressed and indexed manner.
 As a BAM file, this file is binary, so trying to read it as it is won’t be very informative. To read it we should first convert it into the SAM file format (non-binary, human-readable). We can do that with samtools:  [Samtools](http://www.htslib.org/doc/samtools.html) is a useful software package for manipulating SAM and BAM files.
@@ -569,7 +569,6 @@ If you’ve looked at RNA sequencing data before, you may notice something unusu
 
 
 
-
 In the module 3 data directory you should find a file named SRR3223448.bam. 
 
 We will use a samtools command to convert the BAM file to a SAM file so we can have a look at how it’s structured. Move to the module 3 data directory and type the following into your terminal:
@@ -581,18 +580,15 @@ We will use a samtools command to convert the BAM file to a SAM file so we can h
 <br>
 
 Before we can visualise the file in JBrowse, we need to create an index. An index is another file that often accompanies a BAM file, and acts like a table of contents. 
-Software such as JBrowse can look inside the index file and find where exactly in the corresponding BAM file it needs to look, without having to go through all of the reads (which would be computationally very expensive). BAM index files should have exactly the same name as their corresponding BAM file, with the addition of a .bai suffix. 
+Software such as JBrowse can look inside the index file and find where exactly in the corresponding BAM file it needs to look, without having to go through all of the reads (which would be computationally very expensive). BAM index files should have exactly the same name as their corresponding BAM file, with the addition of a .bai suffix. The BAM file in the directory is already indexed (You should see a file called SRR3223448.bam.bai in your working directory.)
 
-We can index our BAM file using samtools. Type:
+If you would prefer to index the bam file yourself, you can do it using samtools. Type:
 
     ```bash
     samtools index SRR3223448.bam
     ```
 
 You should now see a file called SRR3223448.bam.bai in your working directory. We can now load the file into WormBase ParaSite JBrowse.
-
-
-We can only add an indexed BAM file to Jbrowse (BAM file accompanied by a file with the same name with the addition of a .bai suffix). The BAM file in the directory is already indexed (You should see a file called SRR3223448.bam.bai in your working directory.)
 
 11. To add the BAM track to our Jbrowse instance:
     - select the “Track” menu option in the top left of the screen.
@@ -603,9 +599,19 @@ We can only add an indexed BAM file to Jbrowse (BAM file accompanied by a file w
 ![](figures/jbrowse_12.png)
 <br>
 
-Now we can see the reads aligned to the genome. Notice that this RNA-Seq data is stranded- this means that the library preparation protocol preserved information on which end of the RNA molecule was 5-prime and which end was 3-prime, so we can infer which strand of DNA it was transcribed from. This information is encoded in the BAM file, and JBrowse colours the reads accordingly:
+Now we can see the reads aligned to the genome. 
+
+Notice that this RNA-Seq data is stranded- this means that the library preparation protocol preserved information on which end of the RNA molecule was 5-prime and which end was 3-prime, so we can infer which strand of DNA it was transcribed from. This information is encoded in the BAM file, and JBrowse colours the reads accordingly:
 - reads aligning to the forward strand are $\textcolor{pink}{\textsf{pink}}$
 - and reads aligning to the reverse strand are $\textcolor{purple}{\textsf{purple}}$
+
+### _EXERCISE 3 - JBrowse data comparison_ <a name="jbrowse_exercise"></a>
+
+We have provided in the module's folder an additional file  named somules_isoseq_sorted.bam, generated from another experiment.
+Use samtools to view the reads within the file.   
+Load the file and compare to the one you just recently uploaded.   
+What are the differences?     
+
 
 
 [↥ **Back to top**](#top)
