@@ -5,7 +5,7 @@
 ### 18–24 May 2025, Universidad de la Republica, Uruguay
 
 [Wellcome Connecting Science Course Run Website](https://coursesandconferences.wellcomeconnectingscience.org/event/helminth-bioinformatics-latin-america-the-caribbean-20250518/) <br /> 
-[Course Time Table 2025](coming soon) <br /> 
+[Course Time Table 2025](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/Helminth%20Bioinformatics%20Timetable%20and%20Planning%20Mastersheet.xlsx%20-%20Helminth%20Bio%202025%20Timetable.pdf) <br /> 
 [Course Informatics Guide](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/HelminthBioinformatics_InformaticsGuide.md)
 
 ### Summary
