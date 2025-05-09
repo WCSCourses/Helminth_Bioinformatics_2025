@@ -84,7 +84,29 @@ The programme will cover several aspects of analysis of next generation sequenci
 | Afternoon |  Welcome session & Public Engagement     | Unix Refresher      | WormBase ParaSite | Comparative Genomics | Transcriptomics | Genetic Diversity | Public Engagement Event |
 
 - [Detailed timetable](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/Helminth%20Bioinformatics%20Timetable%20and%20Planning%20Mastersheet.xlsx%20-%20Helminth%20Bio%202025%20Timetable.pdf)
+
+  <br>
+
+
+### Course manual
+
+**Oxford NanoPore Library Prep**
+**Unix Refresher**
+**Assembly**
+**Mitochondrial Annotation**
+**WormBase ParaSite Basics**
+**WormBase Parasite 2: Tools and Biomart**
+**Apollo Setup**
+**Comparative Genomics and Apollo**
+**R Refresher**
+**Transcriptomics**
+**Genetic Diversity**
+**Mitogenomics:Phylogenomics**
+
+- https://wcscourses.github.io/HelminthBioinformatics_2025/
+
   
+
 ******
 
 ### Citing and Re-using Course Material
