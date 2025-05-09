@@ -92,26 +92,37 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 **Oxford NanoPore Library Prep**
 - Presentation<br>
+
 **Unix Refresher**
 - Presentation<br>
+
 **Assembly**
 - Presentation<br>
+
 **Mitochondrial Annotation**
 - Presentation<br>
+
 **WormBase ParaSite Basics**
 - Presentation<br>
+
 **WormBase Parasite 2: Tools and Biomart**
 - Presentation<br>
+
 **Apollo Setup**
 - Presentation<br>
+
 **Comparative Genomics and Apollo**
 - Presentation<br>
+
 **R Refresher**
 - Presentation<br>
+
 **Transcriptomics**
 - Presentation<br>
+
 **Genetic Diversity**
 - Presentation<br>
+
 **Mitogenomics:Phylogenomics**
 - Presentation<br>
 
