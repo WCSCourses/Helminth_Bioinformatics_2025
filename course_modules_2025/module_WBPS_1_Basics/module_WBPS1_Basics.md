@@ -29,7 +29,9 @@ Updated by Jose Tort (2025)
 ## Overview and Aims <a name="intro"></a>
 In this first module we'll start by reviewing the basics on genes and genomes: what they are, how we represent and talk about them, and how we go from a DNA sequence- a string of letters- to making predictions about gene function. We'll look at this in the context of WormBase ParaSite (which you might also see referred to as WBPS) and other online database resources. 
 
-In short, WormBase ParaSite gathers together nematode and flatworm genomes that have been assembled and annotated by the research community, adds additional analyses and makes these data available to the scientific community. We'll look at the kind of data you can retrieve, initially by exploring the website. In the last part of the module we'll introduce BioMart. This is a data-mining tool that allows you to retrieve WormBase ParaSite data in bulk.
+In short, WormBase ParaSite gathers together nematode and flatworm genomes that have been assembled and annotated by the research community, adds additional analyses and makes these data available to the scientific community. We'll look at the kind of data you can retrieve, initially by exploring the website. In the last part of the module we'll introduce JBrowse, a second genome browser available in WBPS. 
+This tool allows you to visualise a genome assembly and its features, together with experimental data aligned to the genome in an easy zoomable way, and you will learn how to upload your own data to visualize along the reference. Furthermore, the Apollo project is a well known extension of JBrowse, which, like Artemis, can be used to edit gene models, that we will be using in other module. 
+
 
 ---
 ## Genes and Genomes  <a name="genes_and_genomes"></a>
@@ -436,16 +438,16 @@ Go to the gene page for the _Trichuris muris_ gene TMUE_2000008757 and retrieve 
 ---
 ## JBROWSE - The genome browser <a name="genome_browser"></a>
 
-A genome browser is a tool that allows you to visualise a genome assembly and its features, together with experimental data aligned to the genome.
+A genome browser is a tool that allows you to visualise a genome assembly and its features, together with experimental data aligned to the genome. There are several commonly used genome browsers in bioinformatics, each with different features. In WormBase ParaSite we have integrated two: ENSEMBL AND JBROWSE. 
 
-There are several commonly used genome browsers in bioinformatics, each with different features. In WormBase ParaSite we have two:
-
-* Ensembl - this can be used to browse a large catalog of genomes across the tree of life. WormBase ParaSite has an instance of the Ensembl browser built in, and [we explored it in Module 1](https://github.com/WCSCourses/HelminthBioinformatics_2023/blob/main/manuals/module_1_WBP1/module_1_WBP1.md#genome_browser). 
+* [Ensembl](https://www.ebi.ac.uk/training/online/courses/ensembl-browsing-genomes/what-is-ensembl/) is a genome browser originally developed to visualize mammalian genomes and now used to browse a large catalog of genomes across the tree of life. WormBase ParaSite has an instance of the Ensembl browser built in, and is the one we have used so far for visualizing genes and their genomic context.  
 
 * [JBrowse 1](https://jbrowse.org/jbrowse1.html) - this is the genome browser that we’ll be using today. WormBase ParaSite has an instance of JBrowse for every genome that it hosts. The Apollo project is a well known extension of JBrowse, which, like Artemis, can be used to edit gene models.
 
 There are many other genome browsers for different needs out there. Feel free to explore them at your own time: [Integrative Genomics Viewer (IGV)](https://igv.org/),[UCSC Genome Browser](https://genome.ucsc.edu/),[Artemis/Artemis Comparison Tool (ACT)](https://www.sanger.ac.uk/tool/artemis-comparison-tool-act/) and the new version of Jbrowse: [Jbrowse 2](https://jbrowse.org/jb2/) 
 
+
+---
 ### Using JBrowse: basic functionality <a name="Jbrowse_basics"></a>
 
 In this example we’ll introduce the basic functionality of WormBase ParaSite's JBrowse 1, and demonstrate how to use the various tracks.
@@ -481,6 +483,9 @@ file.
 
 ![](figures/jbrowse_4.png)
 
+[↥ **Back to top**](#top)
+
+---
 ### Visualizing data on Tracks  <a name="tracks"></a>
 
 We can also use JBrowse to view other types of data aligned to the genome. 
@@ -518,7 +523,9 @@ As well as seeing that Smp_312440 is expressed in these conditions, we can use t
 
 In this case we can see that each of the exons in the gene model have got good RNASeq coverage, with no additional exons suggested by the RNASeq data.
 
+[↥ **Back to top**](#top)
 
+---
 ### Motif searching  <a name="Motif_Search"></a>
 
 It might be useful to have a quick, visual way of showing where certain motifs (short, defined DNA sequences) are found in the reference sequence. JBrowse offers a quick and flexible way to do this. We’ll demonstrate this by generating a track for the TATA box sequence (a sequence found in the promoter region of many eukaryotic genes). The consensus TATA sequence is TATA[A/T]A[A/T] (where [A/T] indicates that either A or T could be present at that position).
@@ -530,7 +537,9 @@ It might be useful to have a quick, visual way of showing where certain motifs (
 
 Going back to the main JBrowse window, a new track has appeared with all instances of the motif marked. Zooming in to the 5-prime end of Smp_312440, we can see that one of these is well positioned to be our TATA box.
 
+[↥ **Back to top**](#top)
 
+---
 ### Visualising your own data <a name="Data_Upload"></a>
 
 As well as looking at publicly available data, you can use WormBase ParaSite JBrowse to visualise your own data.
