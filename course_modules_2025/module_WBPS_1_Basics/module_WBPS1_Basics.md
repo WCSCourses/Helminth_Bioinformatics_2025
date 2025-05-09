@@ -194,7 +194,7 @@ You can learn more about the Genome Browser [here](https://parasite.wormbase.org
 
 <details closed>
 <summary>Sneak peek</summary>
-There is an alternative interactive Genome Browser in WormBase ParaSite that can be accessed by the "View region in Jbrowse" button at the top-right of the gene page but we're going to talk about it in our next module!
+There is an alternative interactive Genome Browser in WormBase ParaSite that can be accessed by the "View region in Jbrowse" button at the top-right of the gene page but we're going to talk about it later in this  module
 </details>
 
 5. Navigate back to the gene page by clicking the "Gene:inx" tab at the top of the page. 
