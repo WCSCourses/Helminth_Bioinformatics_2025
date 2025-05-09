@@ -83,6 +83,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 | Morning   |                                          | ONT Library Prep | Assembly and Annotation | WormBase Parasite/Apollo | Transcriptomics | Genetic Diversity | Public Engagement Event |
 | Afternoon |  Welcome session & Public Engagement     | Unix Refresher      | WormBase ParaSite | Comparative Genomics | Transcriptomics | Genetic Diversity | Public Engagement Event |
 
+- [Detailed timetable](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/Helminth%20Bioinformatics%20Timetable%20and%20Planning%20Mastersheet.xlsx%20-%20Helminth%20Bio%202025%20Timetable.pdf)
 ******
 
 ### Citing and Re-using Course Material
