@@ -1,5 +1,5 @@
 # WormBase ParaSite
-
+Updated by Jose Tort (2025)
 
 ## Table of contents
 1. [Overview and Aims](#intro)
@@ -18,8 +18,13 @@
     * [AlphaFold 3D protein structures](#af)
     * [Orthologues and paralogues](#comparative_genomics)
     * [_EXERCISE 2 - Gene page information retrival_](#gene_page_exercise)
-5. [BioMart](#biomart)
-    * [_EXERCISE 3 - BioMart data retrival_](#biomart_exercise)
+5. [JBrowse](#genome_browser)
+    * [Using JBrowse](#Jbrowse_basics)
+    * [Tracks](#tracks)
+    * [Motifs Search](#Motif_Search)
+    * [Visualising your own data](#Data_Upload)
+
+  
 
 ## Overview and Aims <a name="intro"></a>
 In this first module we'll start by reviewing the basics on genes and genomes: what they are, how we represent and talk about them, and how we go from a DNA sequence- a string of letters- to making predictions about gene function. We'll look at this in the context of WormBase ParaSite (which you might also see referred to as WBPS) and other online database resources. 
@@ -429,150 +434,173 @@ Go to the gene page for the _Trichuris muris_ gene TMUE_2000008757 and retrieve 
 [↥ **Back to top**](#top)
 
 ---
-## BioMart <a name="biomart"></a>
+## JBROWSE - The genome browser <a name="genome_browser"></a>
 
-So far we have seen how you can manually browse WormBase ParaSite by searching for genes and then navigating to their gene/transcript/protein pages. However, in many cases you might have to automatically extract information from WormBase ParaSite for multiple entries. Or simply you might need to extract information about your favourite genome's features that fullfil some criteria.
+A genome browser is a tool that allows you to visualise a genome assembly and its features, together with experimental data aligned to the genome.
 
-BioMart is an extremely powerful tool that allows you to query WormBase ParaSite data in bulk, with no programming knowledge. Consider the information that we gathered on our _O. viverrini_ gene of interest, by clicking around the gene page. Now imagine that rather than having one gene of interest, we actually have a list of 100 genes. That would be a lot of clicking around on gene pages! BioMart allows you to output all of this data for multiple genes in a few clicks.
+There are several commonly used genome browsers in bioinformatics, each with different features. In WormBase ParaSite we have two:
 
-Retrieving data for a list of known genes isn’t the only thing that BioMart can do. In this section, we’ll go through a series of examples and exercises that aim to illustrate the power of this tool. 
+* Ensembl - this can be used to browse a large catalog of genomes across the tree of life. WormBase ParaSite has an instance of the Ensembl browser built in, and [we explored it in Module 1](https://github.com/WCSCourses/HelminthBioinformatics_2023/blob/main/manuals/module_1_WBP1/module_1_WBP1.md#genome_browser). 
 
-There are two main steps involved in building a BioMart query.
-- **Filters**: Firstly, a set of criteria are defined which the genes, transcripts, or proteins must conform to in order to be included in the results. These are referred to as *Query Filters*. 
-- **Output Attributes**: Secondly, the data-types to include in the output list are defined. These are Output Attributes.
+* [JBrowse 1](https://jbrowse.org/jbrowse1.html) - this is the genome browser that we’ll be using today. WormBase ParaSite has an instance of JBrowse for every genome that it hosts. The Apollo project is a well known extension of JBrowse, which, like Artemis, can be used to edit gene models.
 
-Some of the *filters* allow you to enter data to filter on, e.g. a list of gene names.
+There are many other genome browsers for different needs out there. Feel free to explore them at your own time: [Integrative Genomics Viewer (IGV)](https://igv.org/),[UCSC Genome Browser](https://genome.ucsc.edu/),[Artemis/Artemis Comparison Tool (ACT)](https://www.sanger.ac.uk/tool/artemis-comparison-tool-act/) and the new version of Jbrowse: [Jbrowse 2](https://jbrowse.org/jb2/) 
 
-- Example: if you wanted to obtain the genomic locations of a list of genes that were of interest to you, you would provide the list of gene names in the *Query Filters*, and denote that you want to see genomic locations in the *Output Attributes*.
+### Using JBrowse: basic functionality <a name="Jbrowse_basics"></a>
 
-The table below lists some examples of filters and attributes for BioMart queries:
+In this example we’ll introduce the basic functionality of WormBase ParaSite's JBrowse 1, and demonstrate how to use the various tracks.
 
-| Examples  of Filters       | Examples of Attributes           | 
-| ------------- |-------------| 
-| A genome      | Gene, transcript or protein IDs | 
-| A genomic region | Sequences      |
-| A list of gene IDs| Identifiers from external databases (eg, Uniprot IDs)      |
-| All genes that have GO term x, or protein domain Y| Protein domains or GO terms associated with a gene ID    |
-| All genes that have GO term x, or protein domain Y| IDs of orthologous genes, % identity   | 
+1. Navigate to the _S. mansoni_ genome page and select the “Genome Browser (JBrowse)” icon.
 
-Query Filters and Output attributes can be combined to produce more complex queries and customised output.
+![](figures/jbrowse_1.png)
 
-Let's try to do this: Let's say we want to retrieve the IDs and predicted protein domains of all of the genes from _Schistosoma mansoni_ chromosome 1 that have a predicted AlphaFold 3D protein structure. We’ll walk through this example to get started.
+- Each scaffold is represented from its 5-prime end to its 3-prime end (relative to the forward strand).
+- You can navigate to different scaffolds using the drop down menu in the middle of the screen, or by typing coordinates into the text box.
+- Different types of data aligned to the genome are represented as tracks. When you first open JBrowse, one track will be on by default: the reference gene set.
 
-1. From the WormBase ParaSite homepage, select BioMart from the tool bar, or the BioMart icon.
+For this example, we’ll consider that you’re interested in the gene Smp_312440.
 
-![](figures/figure_5.1.png)
+2. Start by typing the identifier into the search box and clicking “Go” to navigate to the gene. 
+3. Zoom in by clicking the large magnifying glass with a “+” symbol until the reference sequence resolves.
 
-We have to set three Query Filters: the genome (the _S. mansoni_ genome), genomic location (chromosome 1), and a protein domain (genes whose protein have a predicted 3D AlphaFold model).
+![](figures/jbrowse_2.png)
 
-2. Select “Species”, tick the “genome” checkbox and scroll down to select “Schistosoma mansoni (PRJEA36577)”.
+Here, you can see the forward and reverse DNA strands, together with the six possible translational reading frames (3 forward and 3 reverse).
 
-![](figures/figure_5.2.png)
+4. Zoom out again so that you have the whole gene model in your field of view.
+5. To extract sequence information about the gene, click the gene model such that a dialogue box pops up.
 
-3. Select “Region”, tick the “Chromosome/scaffold” check box and type “Sm_V10_1” into the text field (you must know the exact name of the chromosome).
+![](figures/jbrowse_3.png)
 
-![](figures/figure_5.3.png)
+Scrolling down the content of the box, you can extract genomic or cDNA sequence, or the sequence of specific subfeatures (specific exons or UTRs, for example).
 
-4. Select “Protein domains”, tick the “Limit to genes...” checkbox and select “with AlphaFold protein structures”
+Alternatively, you may wish to extract the genomic sequence of a whole region:
 
-![](figures/figure_5.4.png)
+6. Click the arrow next to the “Reference sequence” track label in the top left of the screen, select “Save track data”, then download the sequence as a FASTA
+file.
 
-Note that as we have built up the query, the filters have appeared on the left hand side of the page.
+![](figures/jbrowse_4.png)
 
-5. Click “count” to count the number of genes in the database that fulfil these filter criteria.
+### Visualizing data on Tracks  <a name="tracks"></a>
 
-Next we will select the output attributes. “Genome project” and “Gene stable ID” are already pre-selected as attributes:
+We can also use JBrowse to view other types of data aligned to the genome. 
 
-6. Select “Output attributes”
+7. Click the “select tracks” button in the top left of the screen.
 
-![](figures/figure_5.6.png)
+![](figures/jbrowse_5.png)
 
-BioMart lets us generate two types of output: data tables, and sequence (FASTA) files. In this example we’ll be generating a data table. We want to retrieve the gene IDs and associated protein domains of the 215 genes that fulfil our filter criteria.
+For most species, in addition to the gene model (“Genome Annotation”) track, there are two additional main types of track:
 
-7. Select “Interpro protein domains” and check the tick boxes for “InterPro ID”, “InterPro short description”, “Start position” and “End position”.
+- Repeat regions tracks - repetitive regions of the genome are annotated as part of WormBase ParaSite’s production process. 
+- RNASeq tracks - WormBase ParaSite has a process of finding and aligning RNASeq data in the sequencing archives for our species of interest. These can be useful, for example, for checking that a gene model is well supported by expression data, or seeing in which life stages, or under which conditions, a gene of interest is transcribed. 
+  - For species with a lot of publicly available RNA-Seq data, such as _S. mansoni_, the easiest way to explore the samples that are available is by using the facets on the left hand side. The samples are organised by their metadata.
 
-![](figures/figure_5.7.png)
+Let’s say you want to see in which life stages Smp_312440 is expressed:
 
-* Click “Results” to see a preview of your results table. The full results table can be downloaded by selecting the file type you’d like to download and clicking “Go”.
+8. Click the “developmental stage” facet 
+9. Select a few of the available libraries (in the example below we've selected 3h schistosomules and miracidia) and click “back to browser”.
 
-![](figures/figure_5.8.png)
+![](figures/jbrowse_6.png)
+
+- Each track represents a different sequencing library, and shows the number of reads that have been aligned at each position. 
+- By mousing over the histogram, you can see the exact number of aligned reads at each base. 
+- We can see that a lot of the tracks show biological replicates of the same condition.- We can use combination tracks to combine replicate tracks “on the fly”, so we use up less space on the screen.
+
+* In the main menu at the top of the page, select “Track” and “Add combination track”.
+
+A new empty track should appear. You can then drag and drop existing tracks in to combine them. When you add additional tracks, a dialogue box should appear for you to select the type of operation to use to combine them. For this example, we’ll choose “addition”: you’ll now see the total number of reads across both selected libraries that aligned at each region. Note that different set operations can be performed, including subtraction, multiplication and division; these might make sense depending on the tracks that are being combined and the information that you’re interested in.
+
+![](figures/jbrowse_7.png)
+
+As well as seeing that Smp_312440 is expressed in these conditions, we can use the coverage histograms to assess the quality of the gene model. Most parasitic worm genomes are annotated with automated pipelines. Whilst annotation algorithms can often be very accurate, they are not infallible. Most of the gene models that you look at in WormBase ParaSite will not have been checked by a human curator, so it is wise not to take them as “truth" unless you verify that they agree with any evidence that is available.
+
+![](figures/jbrowse_8.png)
+
+In this case we can see that each of the exons in the gene model have got good RNASeq coverage, with no additional exons suggested by the RNASeq data.
+
+
+### Motif searching  <a name="Motif_Search"></a>
+
+It might be useful to have a quick, visual way of showing where certain motifs (short, defined DNA sequences) are found in the reference sequence. JBrowse offers a quick and flexible way to do this. We’ll demonstrate this by generating a track for the TATA box sequence (a sequence found in the promoter region of many eukaryotic genes). The consensus TATA sequence is TATA[A/T]A[A/T] (where [A/T] indicates that either A or T could be present at that position).
+
+* In JBrowse, select “Track” from the main menu bar, followed by “Add sequence search track”.
+* Type the motif that we’re searching for in the dialogue box, in this format: TATA[AT]A[AT], and tick “Treat as regular expression”. This means that the [AT] section of the motif will be interpreted as a regular expression (ie, the base in this position can be either A or T). Click “Search”.
+
+![](figures/jbrowse_9.png)
+
+Going back to the main JBrowse window, a new track has appeared with all instances of the motif marked. Zooming in to the 5-prime end of Smp_312440, we can see that one of these is well positioned to be our TATA box.
+
+
+### Visualising your own data <a name="Data_Upload"></a>
+
+As well as looking at publicly available data, you can use WormBase ParaSite JBrowse to visualise your own data.
+
+We’ll demonstrate how to do this using a BAM file that we have provided for you. A BAM file is a type of file format used in genomics to store DNA sequencing data in a compressed and indexed manner.
+As a BAM file, this file is binary, so trying to read it as it is won’t be very informative. To read it we should first convert it into the SAM file format (non-binary, human-readable). We can do that with samtools:  [Samtools](http://www.htslib.org/doc/samtools.html) is a useful software package for manipulating SAM and BAM files.
+
+
+
+<details closed>
+<summary> <- Click here to read more about the BAM and SAM file formats at your own time.</summary>   
+
+The SAM file starts with a header section. All header lines begin with a ‘@’ character.
+
+![](figures/jbrowse_10.png)
+
+Move down through the file (by pressing the space bar) until you come to the alignment section. Here, each line represents a sequencing read (though be aware that the lines are long, so a single line will probably wrap around your terminal window a few times). Some of the key fields are labelled below:
+
+![](figures/jbrowse_11.png)
+
+The full SAM specification is available here: http://samtools.github.io/hts-specs/
+
+If you’ve looked at RNA sequencing data before, you may notice something unusual about the reads in this file: they’re very long! Until recently, next generation sequencing reads were typically ~100bp in length, so transcripts had to be sequenced in short sections at high coverage and reconstructed computationally. This BAM file contains “IsoSeq” data, from the Pacific Biosciences platform, whereby full length transcripts have been sequences in their entirety.
+
+
+</details>
+
+
+
+
+In the module 3 data directory you should find a file named SRR3223448.bam. 
+
+We will use a samtools command to convert the BAM file to a SAM file so we can have a look at how it’s structured. Move to the module 3 data directory and type the following into your terminal:
+
+    ```bash
+    samtools view -h SRR3223448.bam | less
+    ```
+<br>
+<br>
+
+
+Before we can visualise the file in JBrowse, we need to create an index. An index is another file that often accompanies a BAM file, and acts like a table of contents. 
+Software such as JBrowse can look inside the index file and find where exactly in the corresponding BAM file it needs to look, without having to go through all of the reads (which would be computationally very expensive). BAM index files should have exactly the same name as their corresponding BAM file, with the addition of a .bai suffix. 
+
+We can index our BAM file using samtools. Type:
+
+    ```bash
+    samtools index SRR3223448.bam
+    ```
+
+You should now see a file called SRR3223448.bam.bai in your working directory. We can now load the file into WormBase ParaSite JBrowse.
+
+
+We can only add an indexed BAM file to Jbrowse (BAM file accompanied by a file with the same name with the addition of a .bai suffix). The BAM file in the directory is already indexed (You should see a file called SRR3223448.bam.bai in your working directory.)
+
+11. To add the BAM track to our Jbrowse instance:
+    - select the “Track” menu option in the top left of the screen.
+    - Selecting “Open track file or URL” will open a dialogue box giving you an option to view a file that is either on your file system, or accessible via a URL.
+    - Select both the BAM file and the index file. JBrowse guesses the file type from the name, but we have an option to correct it if it gets it wrong. We can see that it’s right this time.
+    - Click “Open”.
+
+![](figures/jbrowse_12.png)
+<br>
+
+Now we can see the reads aligned to the genome. Notice that this RNA-Seq data is stranded- this means that the library preparation protocol preserved information on which end of the RNA molecule was 5-prime and which end was 3-prime, so we can infer which strand of DNA it was transcribed from. This information is encoded in the BAM file, and JBrowse colours the reads accordingly:
+- reads aligning to the forward strand are $\textcolor{pink}{\textsf{pink}}$
+- and reads aligning to the reverse strand are $\textcolor{purple}{\textsf{purple}}$
+
 
 [↥ **Back to top**](#top)
 
----
-### _EXERCISE 3 - BioMart data retrival_ <a name="biomart_exercise"></a>
 
-Use the following _S. ratti_  gene **names** (note: names, not stable IDs) and use BioMart to answer questions 1-5.
 
-```
-SRAE_1000001600
-SRAE_1000001700
-SRAE_1000001800
-SRAE_1000001900
-SRAE_1000002000
-SRAE_1000002100
-SRAE_1000002200
-SRAE_1000002300
-SRAE_1000002400
-SRAE_1000002500
-```
-
-Use the list of genes above and generate an output with:
-1. their WormBase gene IDs and UniProtKB/TrEMBL IDs. 
-2. the InterPro domains that they have been annotated with (InterPro short description). [Q: why do some of the output rows appear multiple times?]
-3. the gene stable IDs of their _Strongyloides stercoralis_ orthologues. [Q: which gene has more than one _S. stercoralis_ orthologue?]. 
-4. the names of any GO terms associated with the genes.
-5. FASTA file of their peptide sequences.
-
----
-Use the following _S. mansoni_ gene stable IDs to answer questions 6-9:
-
-```
-Smp_000090 
-Smp_000120 
-Smp_000180 
-Smp_000210 
-Smp_000220 
-Smp_000250 
-Smp_000330 
-Smp_000380 
-Smp_000400 
-Smp_000520 
-Smp_000030 
-Smp_000040
-Smp_000050 
-Smp_000070 
-Smp_000080 
-Smp_000130 
-Smp_000140 
-Smp_000150 
-Smp_000160 
-Smp_000170 
-Smp_000320 
-Smp_001085 
-Smp_002080 
-Smp_002180 
-Smp_002550 
-Smp_000020 
-Smp_000075 
-Smp_000100 
-Smp_000110 
-Smp_000370
-```
-
-6. How many of these genes have orthologues in _S. haematobium_?
-7. Generate a table listing the genes in question 6. The table should also has the gene stable ID for the homologue in both species, the homology type (1-1, 1-many, etc), and the % identity between the two orthologues.
-8. Of these genes, how many also do not have a human orthologue?
-9. Retrieve (a) a FASTA file with the CDS sequence of each transcript encoded by these genes. Make sure that the transcript stable ID is in the header; and (b) a FASTA file containing the CDS sequence plus 100 nt downstream of the stop codon of each of those transcripts. In the header, include the transcript stable ID and the name of the scaffold that the transcript is on.
-
----
-#### Extra BioMart queetions (only if you have time!)
-
-10. Generate a table containing all of the protein coding genes on _Brugia malayi_ scaffold Bm_007. The table should have their gene stable IDs and start and end coordinates.
-11. From this list, export a list of the gene IDs of the genes that have orthologues in _Brugia pahangi_.
-12. Perform a new query and map the Gene IDs of the _Brugia pahangi_ genes identified in question 9 to their UniProt IDs.
-
-___
-13. How many worm pseudogenes are annotated in WBPS? Which worm genomes have annotated pseudogenes?
-
-[↥ **Back to top**](#top)
