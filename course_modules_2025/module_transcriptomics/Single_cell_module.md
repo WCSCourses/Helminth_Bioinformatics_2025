@@ -508,8 +508,8 @@ DimPlot(day2somules, reduction = "umap")
 
 ```
 
-![](figures/SC_Figure_12.png)
-**Figure 12.** UMAP plot, cells are colored by cluster
+![](figures/SC_Figure_11.png)
+**Figure 11.** UMAP plot, cells are colored by cluster
 
 ### Plot metadata
 
