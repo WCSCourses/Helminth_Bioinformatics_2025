@@ -90,6 +90,8 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 ### Course manual
 
+- https://wcscourses.github.io/HelminthBioinformatics_2025/
+
 **Oxford NanoPore Library Prep**
 - Presentation<br>
 
@@ -148,9 +150,6 @@ The programme will cover several aspects of analysis of next generation sequenci
 - Online Manual<br>
 - Answers<br>
 
-- https://wcscourses.github.io/HelminthBioinformatics_2025/
-
-  
 
 ******
 
