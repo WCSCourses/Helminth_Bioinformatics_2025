@@ -24,8 +24,7 @@
 
 ## Overview and Aims <a name="intro"></a>
 
-In this module, you will learn basic concepts about the technology and data structure related to single-cell generated data. We will use data generated from 3 replicates of the 2 days somules of _Schistosoma mansoni_. We will start examining the raw data and the structure of the count matrices generated with Cell Ranger, we will transform these matrices to Seurat objects and we will generate some plots to visualize the data. Then we will remove doublet cells and do quality filter to retain good quality cells with the remianing cells we will low quality cells 
-
+In this module, you will learn basic concepts about the technology and data structure related to single-cell data. The data used in the module was generated from 3 replicates of the 2 days somules of _Schistosoma mansoni_. You will start examining the raw data and the structure of the count matrices, you will learn how to get data from the Seurat objects and how to do the standar normalization and scaling. You will learn how to  generate cell clusters and plot different variables.
 
 
 ---
