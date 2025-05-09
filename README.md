@@ -91,6 +91,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 ### Course manual
 
 **Oxford NanoPore Library Prep**
+- [Introductory presentation]()<br>
 **Unix Refresher**
 **Assembly**
 **Mitochondrial Annotation**
