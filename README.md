@@ -95,36 +95,58 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 **Unix Refresher**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **Assembly**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **Mitochondrial Annotation**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **WormBase ParaSite Basics**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **WormBase Parasite 2: Tools and Biomart**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **Apollo Setup**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **Comparative Genomics and Apollo**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **R Refresher**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **Transcriptomics**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **Genetic Diversity**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 **Mitogenomics:Phylogenomics**
 - Presentation<br>
+- Online Manual<br>
+- Answers<br>
 
 - https://wcscourses.github.io/HelminthBioinformatics_2025/
 
