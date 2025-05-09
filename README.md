@@ -75,6 +75,14 @@ The programme will cover several aspects of analysis of next generation sequenci
 - [Jack Monaghan](https://www.wellcomeconnectingscience.org/person/monaghan-jack/), Science Engagement Manager
 - [Francesca Gale](https://www.wellcomeconnectingscience.org/person/gale-francesca/#), Head of Science Engagement and Enrichment
 
+### Timetable
+- overview 
+
+|           | Sunday                                   | Monday              | Tuesday             | Wednesday        | Thursday        | Friday        | Saturday                |
+|-----------|------------------------------------------|---------------------|---------------------|------------------|-----------------|---------------|-------------------------|
+| Morning   |                                          | ONT Library Prep | Assembly and Annotation | WormBase Parasite/Apollo | Transcriptomics | Genetic Diversity | Public Engagement Event |
+| Afternoon |  Welcome session & Public Engagement     | Unix Refresher      | WormBase ParaSite | Comparative Genomics | Transcriptomics | Genetic Diversity | Public Engagement Event |
+
 ******
 
 ### Citing and Re-using Course Material
