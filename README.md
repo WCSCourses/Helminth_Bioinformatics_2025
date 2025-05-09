@@ -95,7 +95,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 **Unix Refresher**
 - Presentation<br>
-- Online Manual<br>
+- [Online Manual](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/course_manuals_2023/module_2_linux_scripting/module_linux_scripting.md)<br>
 - Answers<br>
 
 **Assembly**
