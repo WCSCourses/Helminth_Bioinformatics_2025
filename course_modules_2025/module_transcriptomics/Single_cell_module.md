@@ -504,7 +504,7 @@ Seurat offers several non-linear dimensional reduction techniques, such as tSNE 
 day2somules <- RunUMAP(day2somules, dims = 1:40) 
 #visualises the UMAP
 DimPlot(day2somules, reduction = "umap") 
-#ggsave(paste0("day2somules_v10clust_40PC_0.4res_SCT",st,".jpg"))
+#ggsave(paste0("day2somules_v10clust_40PC_0.4res_SCT",st,".png"))
 
 ```
 
