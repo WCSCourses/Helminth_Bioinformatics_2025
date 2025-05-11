@@ -418,17 +418,11 @@ Do a basic analysis to start with, using SCTransform. This function normalises a
 ```R
 # run sctransform
 day2somules <- SCTransform(day2somules, verbose = TRUE)
-```
-We can visualize the features (genes) that exhibit high cell-to-cell variation in the dataset (i.e, they are highly expressed in some cells, and lowly expressed in others).
-```R
 top10 <- head(VariableFeatures(day2somules), 10)
-plot<-VariableFeaturePlot(day2somules)
-LabelPoints((plot=plot),points=top10, repel=TRUE)
+top10 #Top 10 genes that exhibit high cell-to-cell variation in the dataset (i.e, they are highly expressed in some cells, and lowly expressed in others)
 ```
-![](figures/SC_Figure_7.png)
-**Figure 7.** Labeled are the top 10 most variable fetures in the data. Red dots represent the 2000 most variable features.
 
-The results of this are saved in a different 'assay' of the R object - so you can still use both, and the data aren't overwritten.
+The results of this is saved a 'SCT assay' of the R object.
 
 ## Perform dimentional reduction <a name='PCA'></a>
 
