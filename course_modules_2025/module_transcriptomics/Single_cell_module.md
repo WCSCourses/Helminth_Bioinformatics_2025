@@ -434,8 +434,8 @@ day2somules <- RunPCA(day2somules, features = VariableFeatures(object = day2somu
 VizDimLoadings(day2somules, dims = 1:2, reduction = "pca") #shows the weightings of top contributing features to PCs 1 and 2
 ```
 
-![](figures/SC_Figure_8.png)
-**Figure 8.** Top variable genes for 1st and 2nd PCs after the initial normalization and scaling.
+![](figures/SC_Figure_7.png)
+**Figure 7.** Top variable genes for 1st and 2nd PCs after the initial normalization and scaling.
 
 We can also plot a heatmap to visualize the top features contributing to heterogenity in each PC. We will plot the expression for each feature in the top 500 cells in the exptremes of the spectrum.
 
