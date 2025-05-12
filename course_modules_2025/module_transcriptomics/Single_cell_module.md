@@ -149,7 +149,7 @@ sample3 <- CreateSeuratObject(counts = sample3.data, project = "sample3", min.ce
 
 🚩 **Note the warning.** For _S.mansoni_, gene IDs are start with Smp and are linked to a six digit number by an underscore, e.g. Smp_349530. Seurat is not set up to accept underscores in gene names, so converts them to underscores, e.g. Smp-349530. This is important when linking our analysis back to the genome.
 
-How do these look now?
+How does these look now?
 
 ```R
 
