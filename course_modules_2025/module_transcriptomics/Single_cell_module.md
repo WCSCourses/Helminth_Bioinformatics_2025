@@ -432,7 +432,7 @@ plot <- LabelPoints(plot = plot, points = top10, repel = TRUE)
 plot
 ```
 ![](figures/SC_Figure_7.png)
-**Figure 7.** Dot plot showing the Gene Variances  Top 10 variable genes.
+**Figure 7.** Labeled are the top 10 most variable fetures in the data. Red dots represent the 2000 most variable features.
 
 ```R
 all.genes <- rownames(day2somules)
