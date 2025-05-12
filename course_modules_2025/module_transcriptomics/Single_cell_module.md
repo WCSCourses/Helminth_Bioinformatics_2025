@@ -437,7 +437,7 @@ plot
 all.genes <- rownames(day2somules)
 day2somules <- ScaleData(day2somules, features = all.genes, assay="RNA")
 ```
-### SCTransform the data <a name="SCTransform"></a>
+### SCTransform the data <a name="SCTrasform"></a>
 
 Do a basic analysis to start with, using SCTransform. This function normalises and scales the data, and finds variable features. It has some improvements from earlier versions of Seurat and replaces NormalizeData(), ScaleData(), and FindVariableFeatures()).
 
