@@ -11,7 +11,9 @@
 4. [Standard preprocessing workflow](#preprocessing)
     * [Doublet cells removal](#doubletremoval)
     * [QC removal](#QCremoval)
-5. [SCTransform the data](#SCTrasform)
+5. [Data normalization and scaling](#normalization)
+    * [Classic normalization](#classic)
+    * [SCTransform](#SCTrasform)
 6. [Perform dimentional reduction](#PCA)
 7. [Determine the 'dimentionality' of the dataset](#dimentionality)
 8. [Cluster the cells](#cluster)
@@ -22,7 +24,7 @@
 
 ---
 
-## Overview and Aims <a name="intro"></a>
+## 1. Overview and Aims <a name="intro"></a>
 
 In this module, you will learn basic concepts about the technology and data structure related to single-cell data. The data used in the module was generated from 3 replicates of the 2 days somules of _Schistosoma mansoni_. You will start examining the raw data and the structure of the count matrices, you will learn how to get data from the Seurat objects and how to do the standar normalization and scaling. You will learn how to  generate cell clusters and plot different variables.
 
@@ -31,7 +33,7 @@ In this module, you will learn basic concepts about the technology and data stru
 
 [↥  **Back to top**](#top)
 
-## Introduction to single cell transcriptomics <a name="basic"></a>
+## 2. Introduction to single cell transcriptomics <a name="basic"></a>
 
 Single-cell RNA sequencing (scRNA-seq) technology has become the state-of-the-art approach for unravelling the heterogeneity and complexity of RNA transcripts within individual cells, as well as revealing the composition of different cell types and functions within highly organized tissues/organs/organims. scRNA-seq allows the analysis of individual cells, revealing subtle differences in gene expression that might be masked in bulk sequencing, potentially identifying rare cell populations. However scRNA-seq can be expensive and complex to set up and performa, limiting its widespread adoption. 
 
@@ -39,7 +41,7 @@ The scRNA-seq data used in the module was obtained from 2 day schistosomula of _
 
 ---
 
-## Setup the Seurat Object <a name="seurat"></a>
+## 3. Setup the Seurat Object <a name="seurat"></a>
 
 After sequencing, reads are mapped to the reference genome with Cell Ranger, a set of analysis pipelines that process Chromium Next GEM single cell data to align reads and generate feature-barcode matrices. To do this, transcripts from different cells are identified through a 10X barcode, while different transcripts of each cell are identified through a unique molecular identifier or UMI.
 
@@ -107,7 +109,7 @@ Here we save an object that contains today's date, so we can save any files with
 st <- format(Sys.time(), "%Y-%m-%d") 
 
 ```
-#### Importing the data to R
+#### Data import to R
 
 Next, we import the data files that contain the mapping outputs from Cell Ranger. There are three folders, from the three samples which were sequenced. Each folder contains the list of genes, the cell barcodes, and the count matrix showing the number of transcripts.
 
@@ -193,7 +195,7 @@ If you're not sure which metadata are available, or you want a summary of metada
 
 [↥  **Back to top**](#top)
 
-## Standard preprocessing workflow <a name="preprocessing"></a>
+## 4. Standard preprocessing workflow <a name="preprocessing"></a>
 
 ### Doublet ID <a name="doubletremoval"></a>
 
@@ -411,18 +413,9 @@ day2somules <- readRDS(file = "day2somules_v10_firstfilt.rds")
 
 [↥ **Back to top**](#top)
 
-## SCTransform of data <a name="SCTrasform"></a>
+## 5. Data normalization and scaling <a name="normalization"></a>
 
-Do a basic analysis to start with, using SCTransform. This function normalises and scales the data, and finds variable features. It has some improvements from earlier versions of Seurat and replaces NormalizeData(), ScaleData(), and FindVariableFeatures()).
-
-```R
-# run sctransform
-day2somules <- SCTransform(day2somules, assay="RNA", new.assay.name="SCT", verbose = TRUE)
-```
-
-The results of this is stored day2somules[["SCT"]]$data.
-
-### Classic Normalization
+### Classic Normalization <a name="classic"></a>
 
 The classic normalization employs a global-scaling normalization method “LogNormalize” that normalizes the feature expression measurements for each cell by the total expression, multiplies this by a scale factor (10,000 by default), and log-transforms the result. Normalized values are stored in day2somules[["RNA"]]$data
 
@@ -444,9 +437,20 @@ plot
 all.genes <- rownames(day2somules)
 day2somules <- ScaleData(day2somules, features = all.genes, assay="RNA")
 ```
+### SCTransform the data <a name="SCTransform"></a>
+
+Do a basic analysis to start with, using SCTransform. This function normalises and scales the data, and finds variable features. It has some improvements from earlier versions of Seurat and replaces NormalizeData(), ScaleData(), and FindVariableFeatures()).
+
+```R
+# run sctransform
+day2somules <- SCTransform(day2somules, assay="RNA", new.assay.name="SCT", verbose = TRUE)
+```
+
+The results of this is stored day2somules[["SCT"]]$data.
 
 
-## Perform dimentional reduction <a name='PCA'></a>
+
+## 6. Perform dimentional reduction <a name='PCA'></a>
 
 Principal component analysis (PCA) is a fundamental dimension reduction technique in analyzing single-cell genomic data. It maps the cells with high-dimensional and noisy genomic information to a low-dimensional and denoised principal component space.
 
@@ -456,8 +460,8 @@ day2somules <- RunPCA(day2somules, features = VariableFeatures(object = day2somu
 VizDimLoadings(day2somules, dims = 1:2, reduction = "pca") #shows the weightings of top contributing features to PCs 1 and 2
 ```
 
-![](figures/SC_Figure_7.png)
-**Figure 7.** Top variable genes for 1st and 2nd PCs after the initial normalization and scaling.
+![](figures/SC_Figure_8.png)
+**Figure 8.** Top variable genes for 1st and 2nd PCs after the initial normalization and scaling.
 
 We can also plot a heatmap to visualize the top features contributing to heterogenity in each PC. We will plot the expression for each feature in the top 500 cells in the exptremes of the spectrum.
 
@@ -476,8 +480,6 @@ The principal components (PCs) are then used to group cells into clusters. The n
 It's possible to use JackStraw to randomly permute data in 1% chunks. Here with 100 replicates and for 100 PCs. However, it's too slow for this tutorial. 
 
 ```R
-DefaultAssay(day2somules) <- "RNA"
-
 #day2somules <- JackStraw(day2somules, num.replicate = 100, dims =100) #do the permutation
 #day2somules <- ScoreJackStraw(day2somules, dims = 1:100) #extract the scores
 #JackStrawPlot(day2somules, dims = 1:100) #plot the p-vals for PCs. Dashed line giives null distribution
