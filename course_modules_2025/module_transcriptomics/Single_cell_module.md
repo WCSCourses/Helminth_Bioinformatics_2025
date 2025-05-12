@@ -417,19 +417,41 @@ Do a basic analysis to start with, using SCTransform. This function normalises a
 
 ```R
 # run sctransform
-day2somules <- SCTransform(day2somules, verbose = TRUE)
-top10 <- head(VariableFeatures(day2somules), 10)
-top10 #Top 10 genes that exhibit high cell-to-cell variation in the dataset (i.e, they are highly expressed in some cells, and lowly expressed in others)
+day2somules <- SCTransform(day2somules, assay="RNA", new.assay.name="SCT", verbose = TRUE)
 ```
 
-The results of this is saved a 'SCT assay' of the R object.
+The results of this is stored day2somules[["SCT"]]$data.
+
+### Classic Normalization
+
+The classic normalization employs a global-scaling normalization method “LogNormalize” that normalizes the feature expression measurements for each cell by the total expression, multiplies this by a scale factor (10,000 by default), and log-transforms the result. Normalized values are stored in day2somules[["RNA"]]$data
+
+
+```R
+day2somules <- NormalizeData(day2somules, normalization.method = "LogNormalize", scale.factor = 10000, assay = "RNA")
+day2somules <- FindVariableFeatures(day2somules, selection.method = "vst", nfeatures = 2000, assay="RNA")
+
+top10 <- head(VariableFeatures(day2somules,assay="RNA"), 10)
+plot <- VariableFeaturePlot(day2somules, assay = "RNA")
+plot <- LabelPoints(plot = plot, points = top10, repel = TRUE)
+
+plot
+```
+![](figures/SC_Figure_7.png)
+**Figure 7.** Top 10 variable genes.
+
+```R
+all.genes <- rownames(day2somules)
+day2somules <- ScaleData(day2somules, features = all.genes, assay="RNA")
+```
+
 
 ## Perform dimentional reduction <a name='PCA'></a>
 
 Principal component analysis (PCA) is a fundamental dimension reduction technique in analyzing single-cell genomic data. It maps the cells with high-dimensional and noisy genomic information to a low-dimensional and denoised principal component space.
 
 ```R
-day2somules <- RunPCA(day2somules, features = VariableFeatures(object = day2somules), npcs=100)
+day2somules <- RunPCA(day2somules, features = VariableFeatures(object = day2somules), npcs=100,assay="RNA")
 #shows the weightings of top contributing features to pcs 1 and 2
 VizDimLoadings(day2somules, dims = 1:2, reduction = "pca") #shows the weightings of top contributing features to PCs 1 and 2
 ```
@@ -443,9 +465,9 @@ We can also plot a heatmap to visualize the top features contributing to heterog
 DimHeatmap(day2somules, dims = 1:3, cells = 500, balanced = TRUE) 
 ```
 
-![](figures/SC_Figure_9.png)
+![](figures/SC_Figure_8.png)
 
-**Figure 9.** Heatmap showing the most contributing features in PCs 1 to 3 and the gene expression in the top 500 most variable cells (positive and negative)
+**Figure 8.** Heatmap showing the most contributing features in PCs 1 to 3 and the gene expression in the top 500 most variable cells (positive and negative)
 
 ## Determine the 'dimentionality' of the dataset <a name='dimentionality'></a>
 
@@ -464,13 +486,15 @@ DefaultAssay(day2somules) <- "RNA"
 An elbow plot is a quick way to assess the contribution of the principal components to the variation. It starts from a scatterplot where the y-axis shows the standard deviations of PCs and the x-axis shows the numbers of PCs. Since the PCs are ordered decreasingly by their standard deviations, the scatterplot usually presents a monotonically decreasing curve that sharply descends for the first several PCs and gradually flattens out for the subsequent PCs.
 
 ```R
+DefaultAssay(day2somules) <- "RNA"
+
 ElbowPlot(day2somules, ndims = 100)  #ranks PCs by percentage of variation. A clear dropoff is sometimes seen, though not really here.
 #ggsave(paste0("day2somules_v10_elbowplot100_",st,".jpg"))
 ```
 
 
-![](figures/SC_Figure_10.jpg)
-**Figure 10.** Elbowplot showing the proportion of variation captured by each PC
+![](figures/SC_Figure_9.jpg)
+**Figure 9.** Elbowplot showing the proportion of variation captured by each PC
 
 ## Cluster the cells <a name='cluster'></a>
 
@@ -501,9 +525,9 @@ DimPlot(day2somules, reduction = "umap")
 
 ```
 
-![](figures/SC_Figure_11.png)
+![](figures/SC_Figure_10.png)
 
-**Figure 11.** UMAP plot, cells are colored by cluster
+**Figure 10.** UMAP plot, cells are colored by cluster
 
 ### Plot metadata
 
@@ -514,8 +538,8 @@ ggsave("day2somules_v10_40PC_0.5res_after_one_filt_shuffled_batch_SCT.jpg")
 
 ```
 
-![](figures/SC_Figure_13.png)
-**Figure 13.** UMAP plot, cells are colored by batch
+![](figures/SC_Figure_11.png)
+**Figure 11.** UMAP plot, cells are colored by batch
 
 What do you notice once the UMAP is coloured by sample? Is there anything you might do about this?
 
@@ -525,8 +549,8 @@ ggsave("day2somules_v10_40PC_0.5res_after_one_filt_mt_SCT.jpg")
 ```
 
 
-![](figures/SC_Figure_14.jpg)
-**Figure 14.** UMAP plot, cells are colored by percentage of mtRNA
+![](figures/SC_Figure_12.jpg)
+**Figure 12.** UMAP plot, cells are colored by percentage of mtRNA
 
 What do you think about this figure? Is there any cluster with a higher proportion of MT RNA?
 
