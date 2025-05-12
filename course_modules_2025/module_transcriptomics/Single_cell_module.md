@@ -276,7 +276,6 @@ table(day2somules@meta.data$batches)
 
 ```
 
-[↥  **Back to top**](#top)
 
 ### QC removal <a name="QCremoval"></a>
 
@@ -459,6 +458,8 @@ The results of this is stored day2somules[["SCT"]]$data.
 head(day2somules[["SCT"]]$data[,1:20],n=20L)
 ```
 
+[↥  **Back to top**](#top)
+
 ## 6. Perform dimentional reduction <a name='PCA'></a>
 
 Principal component analysis (PCA) is a fundamental dimension reduction technique in analyzing single-cell genomic data. It maps the cells with high-dimensional and noisy genomic information to a low-dimensional and denoised principal component space.
@@ -481,6 +482,8 @@ DimHeatmap(day2somules, dims = 1:3, cells = 500, balanced = TRUE)
 ![](figures/SC_Figure_9.png)
 
 **Figure 9.** Heatmap showing the most contributing features in PCs 1 to 3 and the gene expression in the top 500 most variable cells (positive and negative)
+
+[↥  **Back to top**](#top)
 
 ## 7. Determine the 'dimentionality' of the dataset <a name='dimentionality'></a>
 
@@ -507,6 +510,8 @@ ElbowPlot(day2somules, ndims = 100)  #ranks PCs by percentage of variation. A cl
 ![](figures/SC_Figure_10.jpg)
 **Figure 10.** Elbowplot showing the proportion of variation captured by each PC
 
+[↥  **Back to top**](#top)
+
 ## 8. Cluster the cells <a name='cluster'></a>
 
 Seurat applies a graph-based clustering approach. Constructs a K-nearest neighbor graph based on the euclidean distance in PCA space, and refine the edge weights between any two cells based on the shared overlap in their local neighborhoods (Jaccard similarity). This step is performed using the FindNeighbors() function, and takes as input the previously defined dimensionality of the dataset (PCs).
@@ -522,6 +527,9 @@ To cluster the cells, we next apply modularity optimization techniques, to itera
 #this iteratively groups cells using Louvain algorithm (default). Resolution sets the granularity. 0.4-1.2 gives good results for ~3K cells, with larger number suiting larger datasets.
 day2somules <- FindClusters(day2somules, resolution = 0.5) 
 ```
+
+[↥  **Back to top**](#top)
+
 ## 9. Run non-linear dimensional reduction <a name="umap"></a>
 
 Seurat offers several non-linear dimensional reduction techniques, such as tSNE and UMAP, to visualize and explore these datasets. The goal of these algorithms is to learn underlying structure in the dataset, in order to place similar cells together in low-dimensional space. Therefore, cells that are grouped together within graph-based clusters determined above should co-localize on these dimension reduction plots.
@@ -565,6 +573,7 @@ ggsave("day2somules_v10_40PC_0.5res_after_one_filt_mt_SCT.jpg")
 
 What do you think about this figure? Is there any cluster with a higher proportion of MT RNA?
 
+[↥  **Back to top**](#top)
 
 ## 10. Finding differentially expressed features (cluster biomarkers) <a name="biomarkers"></a>
 
@@ -651,6 +660,8 @@ Can you find a pair genes whose products you might expect to interact, and see i
 ```{r}
 #put your code in here!
 ```
+
+[↥  **Back to top**](#top)
 
 ## 11. Assigning cell type identity to clusters <a name="renameUMAP"></a>
 
