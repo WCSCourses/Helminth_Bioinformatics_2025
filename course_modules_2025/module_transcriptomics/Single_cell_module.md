@@ -473,7 +473,7 @@ DimHeatmap(day2somules, dims = 1:3, cells = 500, balanced = TRUE)
 
 **Figure 8.** Heatmap showing the most contributing features in PCs 1 to 3 and the gene expression in the top 500 most variable cells (positive and negative)
 
-## Determine the 'dimentionality' of the dataset <a name='dimentionality'></a>
+## 7. Determine the 'dimentionality' of the dataset <a name='dimentionality'></a>
 
 The principal components (PCs) are then used to group cells into clusters. The number of PCs plays a critical role in downstream analyses. With too many PCs, PCs with the smallest variations may represent the noise in the data and dilute the signal. With too few PCs, the essential information in the data may not be captured. An optimal number of PCs should keep the essential information in the data while filtering out as much noise as possible.
 
@@ -498,7 +498,7 @@ ElbowPlot(day2somules, ndims = 100)  #ranks PCs by percentage of variation. A cl
 ![](figures/SC_Figure_9.jpg)
 **Figure 9.** Elbowplot showing the proportion of variation captured by each PC
 
-## Cluster the cells <a name='cluster'></a>
+## 8. Cluster the cells <a name='cluster'></a>
 
 Seurat applies a graph-based clustering approach. Constructs a K-nearest neighbor graph based on the euclidean distance in PCA space, and refine the edge weights between any two cells based on the shared overlap in their local neighborhoods (Jaccard similarity). This step is performed using the FindNeighbors() function, and takes as input the previously defined dimensionality of the dataset (PCs).
 
@@ -513,7 +513,7 @@ To cluster the cells, we next apply modularity optimization techniques, to itera
 #this iteratively groups cells using Louvain algorithm (default). Resolution sets the granularity. 0.4-1.2 gives good results for ~3K cells, with larger number suiting larger datasets.
 day2somules <- FindClusters(day2somules, resolution = 0.5) 
 ```
-## Run non-linear dimensional reduction <a name="umap"></a>
+## 9. Run non-linear dimensional reduction <a name="umap"></a>
 
 Seurat offers several non-linear dimensional reduction techniques, such as tSNE and UMAP, to visualize and explore these datasets. The goal of these algorithms is to learn underlying structure in the dataset, in order to place similar cells together in low-dimensional space. Therefore, cells that are grouped together within graph-based clusters determined above should co-localize on these dimension reduction plots.
 
@@ -557,7 +557,7 @@ ggsave("day2somules_v10_40PC_0.5res_after_one_filt_mt_SCT.jpg")
 What do you think about this figure? Is there any cluster with a higher proportion of MT RNA?
 
 
-## Finding differentially expressed features (cluster biomarkers) <a name="biomarkers"></a>
+## 10. Finding differentially expressed features (cluster biomarkers) <a name="biomarkers"></a>
 
 We want to understand what the cell clusters might be. One approach to do that is find gene that are cluster markers - find differentially expressed genes that are descriptive of a cluster.
 
@@ -643,7 +643,7 @@ Can you find a pair genes whose products you might expect to interact, and see i
 #put your code in here!
 ```
 
-## Assigning cell type identity to clusters <a name="renameUMAP"></a>
+## 11. Assigning cell type identity to clusters <a name="renameUMAP"></a>
 
 You want all the cluster names to be unique - why might that be?
 ```R
