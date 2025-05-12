@@ -505,11 +505,11 @@ An elbow plot is a quick way to assess the contribution of the principal compone
 DefaultAssay(day2somules) <- "RNA"
 
 ElbowPlot(day2somules, ndims = 100)  #ranks PCs by percentage of variation. A clear dropoff is sometimes seen, though not really here.
-#ggsave(paste0("day2somules_v10_elbowplot100_",st,".jpg"))
+#ggsave(paste0("day2somules_v10_elbowplot100_",st,".png"))
 ```
 
 
-![](figures/SC_Figure_10.jpg)
+![](figures/SC_Figure_10.png)
 **Figure 10.** Elbowplot showing the proportion of variation captured by each PC
 
 [↥  **Back to top**](#top)
