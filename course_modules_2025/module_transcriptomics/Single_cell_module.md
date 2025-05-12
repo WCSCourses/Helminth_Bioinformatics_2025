@@ -227,7 +227,7 @@ sample2<-Dblremove(sample2)
 sample3<-Dblremove(sample3)
 ```
 
-Let's inspect the features and cell counts after doublet removal, how many cells were remove in each sample?
+Let's inspect the features and cell counts after doublet removal, how many cells were remove from each sample?
 
 ```R
 
