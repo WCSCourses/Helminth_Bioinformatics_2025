@@ -478,7 +478,7 @@ VizDimLoadings(day2somules, dims = 1:2, reduction = "pca") #shows the weightings
 We can also plot a heatmap to visualize the top features contributing to heterogenity in each PC. We will plot the expression for each feature in the top 500 cells in the exptremes of the spectrum.
 
 ```R
-DimHeatmap(day2somules, dims = 1:3, cells = 500, balanced = TRUE) 
+DimHeatmap(day2somules, dims = 1:3, cells = 500, assays="RNA", balanced = TRUE) 
 ```
 
 ![](figures/SC_Figure_9.png)
