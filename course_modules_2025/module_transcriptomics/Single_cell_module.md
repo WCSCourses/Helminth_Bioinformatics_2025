@@ -41,6 +41,8 @@ The scRNA-seq data used in the module was obtained from 2 day schistosomula of _
 
 ---
 
+[↥  **Back to top**](#top)
+
 ## 3. Setup the Seurat Object <a name="seurat"></a>
 
 After sequencing, reads are mapped to the reference genome with Cell Ranger, a set of analysis pipelines that process Chromium Next GEM single cell data to align reads and generate feature-barcode matrices. To do this, transcripts from different cells are identified through a 10X barcode, while different transcripts of each cell are identified through a unique molecular identifier or UMI.
