@@ -432,7 +432,7 @@ plot <- LabelPoints(plot = plot, points = top10, repel = TRUE)
 plot
 ```
 ![](figures/SC_Figure_7.png)
-**Figure 7.** Top 10 variable genes.
+**Figure 7.** Dot plot showing the Gene Variances  Top 10 variable genes.
 
 ```R
 all.genes <- rownames(day2somules)
