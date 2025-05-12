@@ -33,13 +33,13 @@ Finally, we will go on to apply some of the command line skills that you were in
 
 So far we have seen how you can manually browse WormBase ParaSite by searching for genes and then navigating to their gene/transcript/protein pages. However, in many cases you might have to automatically extract information from WormBase ParaSite for multiple entries. Or simply you might need to extract information about your favourite genome's features that fullfil some criteria.
 
-BioMart is an extremely powerful tool that allows you to query WormBase ParaSite data in bulk, with no programming knowledge. Consider the information that we gathered on our _O. viverrini_ gene of interest, by clicking around the gene page. Now imagine that rather than having one gene of interest, we actually have a list of 100 genes. That would be a lot of clicking around on gene pages! BioMart allows you to output all of this data for multiple genes in a few clicks.
+BioMart is an extremely powerful tool that allows you to query WormBase ParaSite data in bulk, with no programming knowledge. Consider the information that we gathered on our _O. viverrini_ gene of interest in the previous module, by clicking around the gene page. Now imagine that rather than having one gene of interest, we actually have a list of 100 genes. That would be a lot of clicking around on gene pages! BioMart allows you to output all of this data for multiple genes in a few clicks.
 
 Retrieving data for a list of known genes isn’t the only thing that BioMart can do. In this section, we’ll go through a series of examples and exercises that aim to illustrate the power of this tool. 
 
 There are two main steps involved in building a BioMart query.
 - **Filters**: Firstly, a set of criteria are defined which the genes, transcripts, or proteins must conform to in order to be included in the results. These are referred to as *Query Filters*. 
-- **Output Attributes**: Secondly, the data-types to include in the output list are defined. These are Output Attributes.
+- **Output Attributes**: Secondly, the data-types to include in the output list are defined. These are *Output Attributes*.
 
 Some of the *filters* allow you to enter data to filter on, e.g. a list of gene names.
 
@@ -54,6 +54,7 @@ The table below lists some examples of filters and attributes for BioMart querie
 | A list of gene IDs| Identifiers from external databases (eg, Uniprot IDs)      |
 | All genes that have GO term x, or protein domain Y| Protein domains or GO terms associated with a gene ID    |
 | All genes that have GO term x, or protein domain Y| IDs of orthologous genes, % identity   | 
+
 
 Query Filters and Output attributes can be combined to produce more complex queries and customised output.
 
@@ -80,6 +81,7 @@ We have to set three Query Filters: the genome (the _S. mansoni_ genome), genomi
 Note that as we have built up the query, the filters have appeared on the left hand side of the page.
 
 5. Click “count” to count the number of genes in the database that fulfil these filter criteria.
+   How many entries fullfill these requirements? 
 
 Next we will select the output attributes. “Genome project” and “Gene stable ID” are already pre-selected as attributes:
 
@@ -87,7 +89,9 @@ Next we will select the output attributes. “Genome project” and “Gene stab
 
 ![](figures/figure_5.6.png)
 
-BioMart lets us generate two types of output: data tables, and sequence (FASTA) files. In this example we’ll be generating a data table. We want to retrieve the gene IDs and associated protein domains of the 215 genes that fulfil our filter criteria.
+BioMart lets us generate two types of output: **data tables**, and **sequence files** (FASTA).   
+     
+In this example we’ll be generating a data table. We want to retrieve the gene IDs and associated protein domains of the genes that fulfil our filter criteria.
 
 7. Select “Interpro protein domains” and check the tick boxes for “InterPro ID”, “InterPro short description”, “Start position” and “End position”.
 
@@ -102,7 +106,7 @@ BioMart lets us generate two types of output: data tables, and sequence (FASTA) 
 ---
 ### _EXERCISE 1 - BioMart data retrival_ <a name="biomart_exercise"></a>
 
-Use the following _S. ratti_  gene **names** (note: names, not stable IDs) and use BioMart to answer questions 1-5.
+PART A . Use the following _S. ratti_  gene **names** (note: names, not stable IDs) and use BioMart to answer questions 1-5.
 
 ```
 SRAE_1000001600
@@ -125,7 +129,7 @@ Use the list of genes above and generate an output with:
 5. FASTA file of their peptide sequences.
 
 ---
-Use the following _S. mansoni_ gene stable IDs to answer questions 6-9:
+PART B.     Use the following _S. mansoni_ gene stable IDs to answer questions 6-9:
 
 ```
 Smp_000090 
