@@ -582,8 +582,6 @@ What do you think about this figure? Is there any cluster with a higher proporti
 We want to understand what the cell clusters might be. One approach to do that is find gene that are cluster markers - find differentially expressed genes that are descriptive of a cluster.
 
 ```R
-DefaultAssay(day2somules) <- "RNA"
-
 day2somules<-JoinLayers(day2somules)
 
 #day2somules.all.markers_roc <- FindAllMarkers(day2somules, only.pos = TRUE, min.pct = 0.0, logfc.threshold = 0.0, test.use = "roc") #We could search the markers for all clusters, however that would take too long.
