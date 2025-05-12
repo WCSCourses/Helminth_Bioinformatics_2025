@@ -417,7 +417,7 @@ day2somules <- readRDS(file = "day2somules_v10_firstfilt.rds")
 
 ### Classic Normalization <a name="classic"></a>
 
-The classic normalization employs a global-scaling normalization method “LogNormalize” that normalizes the feature expression measurements for each cell by the total expression, multiplies this by a scale factor (10,000 by default), and log-transforms the result. Normalized values are stored in day2somules[["RNA"]]$data
+The classic normalization employs a global-scaling normalization method “LogNormalize” that normalizes the feature expression measurements for each cell by the total expression, multiplies this by a scale factor (10,000 by default), and log-transforms the result.
 
 
 ```R
@@ -437,9 +437,16 @@ plot
 all.genes <- rownames(day2somules)
 day2somules <- ScaleData(day2somules, features = all.genes, assay="RNA")
 ```
+
+Normalized values are stored in day2somules[["RNA"]]$data
+
+```R
+head(day2somules[["RNA"]]$data[,1:20],n=20L)
+```
+
 ### SCTransform the data <a name="SCTrasform"></a>
 
-Do a basic analysis to start with, using SCTransform. This function normalises and scales the data, and finds variable features. It has some improvements from earlier versions of Seurat and replaces NormalizeData(), ScaleData(), and FindVariableFeatures()).
+SCTransform normalises and scales the data, and finds variable features. It has some improvements from earlier versions of Seurat and replaces NormalizeData(), ScaleData(), and FindVariableFeatures()).
 
 ```R
 # run sctransform
@@ -448,7 +455,9 @@ day2somules <- SCTransform(day2somules, assay="RNA", new.assay.name="SCT", verbo
 
 The results of this is stored day2somules[["SCT"]]$data.
 
-
+```R
+head(day2somules[["SCT"]]$data[,1:20],n=20L)
+```
 
 ## 6. Perform dimentional reduction <a name='PCA'></a>
 
@@ -469,9 +478,9 @@ We can also plot a heatmap to visualize the top features contributing to heterog
 DimHeatmap(day2somules, dims = 1:3, cells = 500, balanced = TRUE) 
 ```
 
-![](figures/SC_Figure_8.png)
+![](figures/SC_Figure_9.png)
 
-**Figure 8.** Heatmap showing the most contributing features in PCs 1 to 3 and the gene expression in the top 500 most variable cells (positive and negative)
+**Figure 9.** Heatmap showing the most contributing features in PCs 1 to 3 and the gene expression in the top 500 most variable cells (positive and negative)
 
 ## 7. Determine the 'dimentionality' of the dataset <a name='dimentionality'></a>
 
@@ -495,8 +504,8 @@ ElbowPlot(day2somules, ndims = 100)  #ranks PCs by percentage of variation. A cl
 ```
 
 
-![](figures/SC_Figure_9.jpg)
-**Figure 9.** Elbowplot showing the proportion of variation captured by each PC
+![](figures/SC_Figure_10.jpg)
+**Figure 10.** Elbowplot showing the proportion of variation captured by each PC
 
 ## 8. Cluster the cells <a name='cluster'></a>
 
