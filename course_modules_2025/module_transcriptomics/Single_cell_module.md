@@ -546,9 +546,9 @@ DimPlot(day2somules, reduction = "umap")
 
 ```
 
-![](figures/SC_Figure_10.png)
+![](figures/SC_Figure_11.png)
 
-**Figure 10.** UMAP plot, cells are colored by cluster
+**Figure 11.** UMAP plot, cells are colored by cluster
 
 ### Plot metadata
 
@@ -559,8 +559,8 @@ ggsave("day2somules_v10_40PC_0.5res_after_one_filt_shuffled_batch_SCT.jpg")
 
 ```
 
-![](figures/SC_Figure_11.png)
-**Figure 11.** UMAP plot, cells are colored by batch
+![](figures/SC_Figure_12.png)
+**Figure 12.** UMAP plot, cells are colored by batch
 
 What do you notice once the UMAP is coloured by sample? Is there anything you might do about this?
 
@@ -570,8 +570,8 @@ ggsave("day2somules_v10_40PC_0.5res_after_one_filt_mt_SCT.jpg")
 ```
 
 
-![](figures/SC_Figure_12.jpg)
-**Figure 12.** UMAP plot, cells are colored by percentage of mtRNA
+![](figures/SC_Figure_13.png)
+**Figure 13.** UMAP plot, cells are colored by percentage of mtRNA
 
 What do you think about this figure? Is there any cluster with a higher proportion of MT RNA?
 
@@ -628,8 +628,8 @@ Now we can look at gene expression in these data by gene, which could be useful 
 FeaturePlot(day2somules, features = "Smp-179320")
 #ggsave(paste0("day2somules-Smp-179320-",st, ".jpg"), width = 25, height = 15)
 ```
-![](figures/SC_Figure_15.png)
-**Figure 15.** UMAP plot showing the expression of Smp_179320 (ago2-1) per cell
+![](figures/SC_Figure_14.png)
+**Figure 14.** UMAP plot showing the expression of Smp_179320 (ago2-1) per cell
 
 We can also look at these genes with a violin plot - this visualisation can be helpful in many ways, including seeing which clusters a gene is most expressed in.
 
@@ -637,14 +637,14 @@ We can also look at these genes with a violin plot - this visualisation can be h
 VlnPlot(day2somules, features = "Smp-179320")
 #ggsave(paste0("day2somules-Smp-179320_",st, ".jpg"), width = 25, height = 15)
 ```
-![](figures/SC_Figure_16.png)
-**Figure 16.** Violin plot showing the expression of Smp_179320 (ago2-1) per cluster
+![](figures/SC_Figure_15.png)
+**Figure 15.** Violin plot showing the expression of Smp_179320 (ago2-1) per cluster
 
 Are there any genes you're particularly interested in? You can adapt the code below to see if, and where, it might be expressed in these data. If you're not sure, you can look up _S.mansoni_ on WBPS and choose a gene from there (https://parasite.wormbase.org/index.html). Remember to delete the # if you want to save the plot to your computer!
 
 ```R
 FeaturePlot(day2somules, features = "your_gene")
-#ggsave(paste0("day2somules-your-gene_",st,".jpg"), width = 25, height = 15)
+#ggsave(paste0("day2somules-your-gene_",st,".png"), width = 25, height = 15)
 ```
 ### Plot co-expressed genes
 
@@ -654,8 +654,8 @@ coexpression.plot <-FeaturePlot(day2somules, features = c("Smp-179320", "Smp-086
 coexpression.plot
 #ggsave(paste0("day2somules-coexpressed-Smp-179320-Smp-086860-",st, ".jpg"), width = 45, height = 25)
 ```
-![](figures/SC_Figure_17.png)
-**Figure 17.** UMAPs showing the co-expression of Smp_179320 (ago2-1) and Smp_086860 (histone H2A) per cell 
+![](figures/SC_Figure_16.png)
+**Figure 16.** UMAPs showing the co-expression of Smp_179320 (ago2-1) and Smp_086860 (histone H2A) per cell 
 
 Can you find a pair genes whose products you might expect to interact, and see if they are co-expressed? Again, you can use WBPS to learn more about genes.
 
@@ -701,5 +701,5 @@ LabelClusters(plot1, id = "ident", color = 'black', size =4, repel = T,  box.pad
 ggsave(paste0("day2somules-labelledlclusters_40PC_0.5res_",st,".jpg"), width = 25, height = 15)
 ```
 
-![](figures/SC_Figure_18.png)
-**Figure 18.** Once you have identified the cell types you can rename the clusters
+![](figures/SC_Figure_17.png)
+**Figure 17.** Once you have identified the cell types you can rename the clusters
