@@ -230,7 +230,10 @@ Metrics used in the results table:
 similarity has a 5 in 100 (1 in 20) chance of occurring by chance alone.
 - **%ID or percent identity**: Percent identity is telling you how many residues in your query are an identical match to the hit. Closely related sequences will have a much higher % identity.
 
-Besides these parameters, you can visualize where the different hits fall within the genome by clicking at the genomic location. Zoom in or out to find out if there are other hits in the region.
+Besides these parameters, you can visualize where the different hits fall within the genome by clicking at the genomic location. Zoom in or out to find out if there are other hits close to the one you selected region. Are they on the same gene? 
+
+![](figures/BLAST_CS1.png)
+
 
 [↥ **Back to top**](#top)
 
