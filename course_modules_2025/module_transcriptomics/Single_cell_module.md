@@ -555,7 +555,7 @@ DimPlot(day2somules, reduction = "umap")
 Now we have a UMAP representation of our cells, we can also use that to visualise the metadata.
 ```R
 DimPlot(day2somules, reduction = "umap", group.by = "batches", shuffle = TRUE) #visualises the UMAP
-ggsave("day2somules_v10_40PC_0.5res_after_one_filt_shuffled_batch_SCT.jpg")
+#ggsave("day2somules_v10_40PC_0.5res_after_one_filt_shuffled_batch_SCT.jpg")
 
 ```
 
@@ -566,7 +566,7 @@ What do you notice once the UMAP is coloured by sample? Is there anything you mi
 
 ```R
 FeaturePlot(day2somules, features="percent.mt", label=TRUE)
-ggsave("day2somules_v10_40PC_0.5res_after_one_filt_mt_SCT.jpg")
+#ggsave("day2somules_v10_40PC_0.5res_after_one_filt_mt_SCT.jpg")
 ```
 
 
