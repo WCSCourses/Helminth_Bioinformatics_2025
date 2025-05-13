@@ -1,5 +1,99 @@
 
-### BLAST exercise <a name="blast_exercise"></a>
+## Table of contents
+1 [BioMart exercise](#biomart_exercise)    
+2 [BLAST exercise](#blast_exercise)   
+3 [VEP exercise](#vep_exercise)    
+4 [Enrichment exercise](#enrichment_exercise)   
+
+---
+
+
+## BioMart exercise <a name="biomart_exercise"></a>
+
+Use the following _S. ratti_  gene **names** (note: names, not stable IDs) and use BioMart to answer questions 1-5:
+
+Use the list of genes above and generate an output with:
+1. their WormBase gene IDs and UniProtKB/TrEMBL IDs. 
+2. the InterPro domains that they have been annotated with (InterPro short description). [Q: why do some of the output rows appear multiple times?]
+3. the gene stable IDs of their _Strongyloides stercoralis_ orthologues. [Q: which gene has more than one _S. stercoralis_ orthologue?]. 
+4. the names of any GO terms associated with the genes.
+5. FASTA file of their peptide sequences.
+
+Solution:
+For all the above questions, participants should set the same "Query Filters":
+- From the WormBase ParaSite homepage, select BioMart from the tool bar, or the BioMart icon. 
+- Set the "Query Filters":
+   * Select “SPECIES”, tick the “genome” checkbox and scroll down to select “Strongyloides ratti (PRJEB125) [WS285]”. 
+   * Select "GENE", tick the "ID list limit" check box, select "Gene Name(s)" on the dialogue box above the text box and copy-paste the given gene list into the text box underneath.
+
+For each question the "Output Attributes" change
+- Set the "Output Attributes" by clicking "Output Attributes" on the left menu.
+- For question 1:
+  - Select "SPECIES AND GENOME INFORMATION": Untick the by-default selected "Genome project". 
+  - Select "GENE": Untick the by-default selected "Gene stable ID". 
+  - Select "EXTERNAL DATABASE REFERENCES AND ID CONVERSION": Tick "WormBase gene ID" and "UniProtKB/TrEMBL ID" boxes.
+  - Click "Results" at top left.
+- For question 2:
+  - Click "Output Attributes" on the left menu to change the previously set output attributes. Untick all the ones you ticked for the previous question.
+  - Select "GENE": Tick the by "Gene stable ID" box.
+  - Select "INTERPRO PROTEIN DOMAINS": Tick the "InterPro short description" tick box.
+  - Click "Results" at top left.
+  - Why do some of the output rows appear multiple times? Some genes will have multiple annotated InterPro domains. These will appear as duplicate rows.
+- For question 3:
+  - Tick "Output Attributes" on the left menu to change the previously set output attributes. Untick all the ones you ticked for the previous question.
+  - Select "GENE": Tick the by "Gene stable ID" box.
+  - Select "ORTHOLOGUES": Scroll until you find the "Strongyloides stercoralis (PRJEB528) Orthologues" tab. Then tick the "Strongyloides stercoralis (PRJEB528) gene stable ID" tick box.
+  - Click "Results" at top left.
+  - which gene has more than one _S. stercoralis_ orthologue? The one with duplicated rows (WBGene00256613 -> SSTP_0001203000 and SSTP_0001203100).
+- For question 4:
+  - Tick "Output Attributes" on the left menu to change the previously set output attributes. Untick all the ones you ticked for the previous question.
+  - Select "GENE ONTOLOGY (GO)": Tick the "GO term name" tick box.
+  - Click "Results" at top left.
+- For question 5:
+  - Tick "Output Attributes" on the left menu to change the previously set output attributes. Untick all the ones you ticked for the previous question.
+  - Select the "Retrive sequences" round button at the top of the page.
+  - Select "SEQUENCES": Tick the "Peptide" round button.
+  - Click "Results" at top left.
+
+---
+Use the following _S. mansoni_ gene stable IDs to answer questions 6-9:
+
+* Set the "Query Filters":
+   * Select “SPECIES”, tick the “genome” checkbox and scroll down to select “Schistosoma mansoni (PRJEA36577) [WS285]”. 
+   * Select "GENE", tick the "ID list limit" check box, select "Gene Name(s)" on the dialogue box above the text box and copy-paste the given gene list into the text box underneath.
+
+6. How many of these genes have orthologues in _S. haematobium_?
+* Expand the "Query Filters" selection:
+   *  HOMOLOGY -> Restict results to genes with orthologues in... (tick box) -> Schistosoma haematobium (PRJNA78265)
+* Click Count at the top left of the page: 16 genes.
+
+7. Generate a table listing the genes in question 6. The table should also has the gene stable ID for the homologue in both species, the homology type (1-1, 1-many, etc), and the % identity between the two orthologues.
+* Keep the same "Query Filters"
+* Set the "Output Attributes"
+   * Untick Genome Project from the SPECIES AND ... tab
+   * Tick "Gene stable ID" from the GENE tab
+   * Go to the "ORTHOLOGUES" tab and scroll until you find "Schistosoma haematobium (PRJNA78265) Orthologues". Tick "gene stable ID", "Homology type", "%identity"
+   * Click Results
+
+8. Of these genes, how many also do not have a human orthologue?
+* Just add to the "Query Filters": HOMOLOGY -> Restrict results to genes without orthologues in... (tick box) -> Human
+* Click Count at the top left of the page: 11 gene.
+
+9. Retrieve (a) a FASTA file with the CDS sequence of each transcript encoded by the genes from question 6. Make sure that the transcript stable ID is in the header; and (b) a FASTA file containing the CDS sequence plus 100 nt downstream of the stop codon of each of those transcripts. In the header, include the transcript stable ID and the name of the scaffold that the transcript is on.
+Use the "Query Filters" from Question 6
+
+* (a)
+   * "Output Attributes" -> "Retrieve sequences" at the top of the menu:
+   * "SEQUENCES" -> Coding Sequence
+   * "HEADER INFORMATION" -> Trascript Attributes -> Transcript stable ID -> Result
+* (b)
+   * "Output Attributes" -> "Retrieve sequences" at the top of the menu:
+   * "SEQUENCES" -> Coding Sequence & "SEQUENCES" -> Downstream flank (tick box): 100
+   * "HEADER INFORMATION" -> Trascript Attributes -> Transcript stable ID & Chromosome/scaffold name -> Result
+
+
+----
+## BLAST exercise <a name="blast_exercise"></a>
 
 Use WormBase ParaSite BLAST to find out the identity of this sequence, and which species it belongs to. Does it have any close hits in other genomes? Try BLASTing against both cDNA and a genomic DNA databases. What kind of sequence is this?
 
@@ -37,7 +131,8 @@ Use WormBase ParaSite BLAST to find out the identity of this sequence, and which
 
 ![](figures/BLAST_CS4.png)     
 
-#### VEP exercise <a name="vep_exercise"></a>
+----
+## VEP exercise <a name="vep_exercise"></a>
 
 Download the VEP results from the example above as a “VEP file”. Use this file and the original VCF file to answer the following questions:
 
@@ -122,57 +217,8 @@ bgzip file.vcf && tabix -p vcf file.vcf.gz
 4. Use the Jbrowse search bar and search for "WBGene00260238".
 5. From the top menu bar select Track -> Open track file or URL -> Select Files (select your files both .gz.vcf and .gz.vcf.tbi) -> Open
 
-
-### API exercises
-
-
-
-1. List the _Meloidogyne sp._ assemblies by size, smallest to largest.
-```
-curl -sL 'https://parasite.wormbase.org/rest/info/genomes/taxonomy/Meloidogyne?' -H'Content-type:application/json' | jq -r '.[] | "\(.name)\t\(.assembly.base_count)"' | sort -k 2,2
-```
-2. Retrieve the protein sequence of the guinea worm transcript DME_0000938001-mRNA-1.
-```
-curl -Ls 'https://parasite.wormbase.org/rest/sequence/id/DME_0000938001-mRNA-1?' -H 'Content-type:text/plain'
-```
-3. Write a small program, `get_sequence_for_transcript.sh`, that takes any transcript ID as an argument and returns its protein sequence. For example, running
-
-```
-./get_sequence_for_transcript.sh DME_0000938001-mRNA-1
-```    
-should print:
-```
-MAKHNAVGIDLGTTYSC...
-```
-(Hint: shell scripts put arguments from the command line into special variables, named $1, $2 etc )
-```
-tr_id=$1
-
-curl -Ls "https://parasite.wormbase.org/rest/sequence/id/${tr_id}?" -H 'Content-type:text/plain'
-```
-
-4. Retrieve a GFF file of all of the genes located on the AgB01 scaffold of the Ascaris suum PRJNA62057 assembly, between the following coordinates: 5284000 to 5836000.
-```
-curl -sL 'https://parasite.wormbase.org/rest/overlap/region/ascaris_suum_prjna62057/AgB01:5284000-5836000?feature=gene' -H 'Content-type:text/x-gff3'
-```
-
-5. Write a program, `retrieve_genes_in_region.sh` which takes species, scaffold, start and end coordinates as arguments and can return the above for any given region. For example, calling
-
-```
-./retrieve_genes_in_region.sh ascaris_suum_prjna62057 AgB01 5284000 5836000
-```
-should print the same result as question 4.
-
-```
-genome=$1
-scaffold=$2
-start=$3
-end=$4
-
-curl -sL "https://parasite.wormbase.org/rest/overlap/region/${genome}/${scaffold}:${start}-${end}?feature=gene" -H 'Content-type:text/x-gff3'
-```
-
-### Gene-set enrichment analysis exercise
+-----
+## Gene-set enrichment analysis exercise <a name="enrichment_exercise"></a>
 
 Use the 24-hour-schistosomule-vs-cercariae.tsv from the previous section and print a list of genes with an adjusted p-value that is less than 0.05, which are most strongly upregulated in the cercariae v the 24h schistosomules.
 
