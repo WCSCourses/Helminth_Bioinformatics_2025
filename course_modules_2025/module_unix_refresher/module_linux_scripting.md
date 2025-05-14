@@ -435,7 +435,7 @@ $ ls -lrt
 
 ### less
 - The `less` command displays the contents of a specified file one screen at a time.
-- To test this command, open a terminal window on the computer, navigate to the directory files in the `Linux_Scripting` directory and type the following command followed by the enter key:
+- To test this command, open a terminal window on the computer, navigate to the directory files in the `Linux_Scripting/genome_1` directory and type the following command followed by the enter key:
 
 ```bash
 # Use the less command to open a gff
@@ -822,7 +822,7 @@ $ grep -v $'^chr1\t' gene_expression_sneaky.bed
 - In Unix, it is possible to replace every match to a character string or regular expression with something else using the command `sed`. This stands for “stream editor”.
 
 ```bash
-# As an example, we wish to replace each incidence of the characters ‘chr’ at the beginning of the line in gene_expression.bed with ‘chromosome
+# As an example, we wish to replace each incidence of the characters ‘chr’ at the beginning of the line in gene_expression.bed with ‘chromosome'
 $ sed 's/^chr/chromosome/' gene_expression.bed
 
 ```
