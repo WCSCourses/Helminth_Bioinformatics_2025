@@ -313,14 +313,14 @@ cd ../genome_2/
 
 cd
 
-cd /home/manager/Module_2_Linux_scripting
+cd /home/manager/Linux_scripting
 
 ```
 - we have subtly introduced you to a new concept of moving around between your directories - **"absolute" and "relative" paths.** 
-- an absolute path is one where we write the **full path** to the directory, eg. `/home/manager/Module_2_Linux_scripting` . 
+- an absolute path is one where we write the **full path** to the directory, eg. `/home/manager/Linux_scripting` . 
 	- The advantage of writing the full path is that regardless of where you are in the directory structure, the opererating system will know where to go. 
 	- The disadvantage is that it requires more typing.
-- a relative path is a short desciption of a path, that is **relative and specific** to where you are in the directory structure. eg. if you are in the `/home/manager/Module_2_Linux_scripting/genome_1/` directory, you can move up one directory using `cd ..`, two directories to the home directory using `cd ../../`, or even move directories using ` cd ../genome_2/` . 
+- a relative path is a short desciption of a path, that is **relative and specific** to where you are in the directory structure. eg. if you are in the `/home/manager/Linux_scripting/genome_1/` directory, you can move up one directory using `cd ..`, two directories to the home directory using `cd ../../`, or even move directories using ` cd ../genome_2/` . 
 	- The advantage of using a relative path is that is it quick to type. 
 	- The disadvantage is that it is very specific to where you currently are in the directory structure, and if you move to a different location, the same command will not work. 
 - You will see some examples of relative and absolute paths in later modules. 
@@ -412,7 +412,7 @@ $ ls -lrt
 ### Exercises
 - Many people panic when they are confronted with a Unix prompt! Please don't! All the commands you need to solve these exercises are provided above. Don't be afraid to make a mistake.
 - If you get lost ask a demonstrator. If you are a person skilled at Unix, be patient this is only a short exercise.
-- To begin, open a terminal window and navigate to the basic directory in the `Module_2_Linux_Scripting` directory (remember use the command `cd`), and then complete the exercise below.
+- To begin, open a terminal window and navigate to the basic directory in the `Linux_Scripting` directory (remember use the command `cd`), and then complete the exercise below.
 
 1. Use the `ls` command to show the contents of the basic directory.
 2. How many files are there in the `genome_2` directory?
@@ -435,7 +435,7 @@ $ ls -lrt
 
 ### less
 - The `less` command displays the contents of a specified file one screen at a time.
-- To test this command, open a terminal window on the computer, navigate to the directory files in the `Module_2_Linux_Scripting` directory and type the following command followed by the enter key:
+- To test this command, open a terminal window on the computer, navigate to the directory files in the `Linux_Scripting` directory and type the following command followed by the enter key:
 
 ```bash
 # Use the less command to open a gff
@@ -661,7 +661,7 @@ $ awk '{ print $1 }' genome_2.bed | sort | uniq | less
 
 
 ### Exercises
-- Open up a new terminal window, navigate to the files directory in the `Module_2_Linux_Scripting` directory and complete the following exercise:
+- Open up a new terminal window, navigate to the files directory in the `Linux_Scripting` directory and complete the following exercise:
 1. Use the `head` command to extract the first 500 lines of the file `genome_1.gff` and store the output in a new file called `genome_1.500.gff`.
 2. Use the `wc` command to count the number of lines in the `genome_2.bed` file.
 3. Use the `sort` command to sort the file `genome_2.bed` on chromosome and then gene position.
@@ -680,7 +680,7 @@ $ awk '{ print $1 }' genome_2.bed | sort | uniq | less
 
 ```bash
 # First we need to go to the correct directory
-$ cd /home/manager/Module_2_Linux_Scripting/grep
+$ cd /home/manager/Linux_Scripting/grep
 
 ```
 <br>
@@ -848,7 +848,7 @@ $ sed 's/^chr/chromosome/' gene_expression.bed > gene_expression_new.bed
 - Before we begin we need to change directory to the correct location.
 
 ```bash
-$ cd ~/Module_2_Linux_Scripting/awk/
+$ cd ~/Linux_Scripting/awk/
 
 ```
 - `awk` reads a file line by line, splitting each line into columns.
@@ -1027,7 +1027,7 @@ $ awk -F"\t" 'BEGIN{OFS="\t"} {$2="new_source"; print $0}' genes.gff
 ```bash
 
 
-# We will use a for loop to run wc on the files in the directory loop_files/ . Note you need to be in the "Module_2_Linux_scripting" directory to run this command.
+# We will use a for loop to run wc on the files in the directory loop_files/ . Note you need to be in the "Linux_scripting" directory to run this command.
 $ for filename in loop_files/*; do wc ${filename}; done
 
 ```
@@ -1164,7 +1164,7 @@ $ chmod +x myscript.sh
 
 ```bash
 # We can view this example using the cat commend we’ve seen earlier
-$ cd ~/Module_2_Linux_scripting/bash_scripts/scripts
+$ cd ~/Linux_scripting/bash_scripts/scripts
 $ cat options_example.sh
 
 ```
@@ -1192,7 +1192,7 @@ $ cat options_example.2.sh
 
 ### Exercises
 1. Write a script which takes a file name from the user, if the file exists, print a human readable message telling the user how many lines the file has.
-2. Navigate to the base `Module_2_Linux_scripting` directory. Use a loop to run the script written in exercise 1 on the files in the `loop_files` subdirectory.
+2. Navigate to the base `Linux_scripting` directory. Use a loop to run the script written in exercise 1 on the files in the `loop_files` subdirectory.
 3. Write a script that takes a GFF filename as input. Make the script produce a summary of various properties of the file.
      - An example input file is provided called `bash_scripts/exercise_3.gff`.
      - Use your imagination as to what you want to summarise.
