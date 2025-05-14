@@ -509,16 +509,16 @@ bwa index hcontortus_mtDNA.fasta
 # !!! START !!!
 for i in $( cd ../raw_reads ; ls -1 *_1.fastq.gz | sed -e 's/_1.fastq.gz//g' ); do
 	# map the reads
-	bwa mem hcontortus_mtDNA.fasta ../raw_reads/${i}_1.fastq.gz ../raw_reads/${i}_2.fastq.gz > ${i}.tmp.sam ;
+	bwa mem hcontortus_mtDNA.fasta ../raw_reads/${i}_1.fastq.gz ../raw_reads/${i}_2.fastq.gz > ${i}.tmp.sam &&
 	
 	# convert the sam to bam format
-	samtools view -q 15 -b -o ${i}.tmp.bam ${i}.tmp.sam ;
+	samtools view -q 15 -b -o ${i}.tmp.bam ${i}.tmp.sam &&
 
 	# sort the mapped reads in the bam file
-	samtools sort ${i}.tmp.bam -o ${i}.sorted.bam ; 
+	samtools sort ${i}.tmp.bam -o ${i}.sorted.bam && 
  
 	# index the sorted bam
-	samtools index ${i}.sorted.bam ;
+	samtools index ${i}.sorted.bam &&
 
 	# lets clean up and remove files we don’t need
 	rm *tmp* ; 
