@@ -412,7 +412,7 @@ $ ls -lrt
 ### Exercises
 - Many people panic when they are confronted with a Unix prompt! Please don't! All the commands you need to solve these exercises are provided above. Don't be afraid to make a mistake.
 - If you get lost ask a demonstrator. If you are a person skilled at Unix, be patient this is only a short exercise.
-- To begin, open a terminal window and navigate to the basic directory in the `Linux_Scripting` directory (remember use the command `cd`), and then complete the exercise below.
+- To begin, open a terminal window and navigate to the basic directory in the `Linux_scripting` directory (remember use the command `cd`), and then complete the exercise below.
 
 1. Use the `ls` command to show the contents of the basic directory.
 2. How many files are there in the `genome_2` directory?
@@ -435,7 +435,7 @@ $ ls -lrt
 
 ### less
 - The `less` command displays the contents of a specified file one screen at a time.
-- To test this command, open a terminal window on the computer, navigate to the directory files in the `Linux_Scripting/genome_1` directory and type the following command followed by the enter key:
+- To test this command, open a terminal window on the computer, navigate to the directory files in the `Linux_scripting/genome_1` directory and type the following command followed by the enter key:
 
 ```bash
 # Use the less command to open a gff
@@ -661,7 +661,7 @@ $ awk '{ print $1 }' genome_2.bed | sort | uniq | less
 
 
 ### Exercises
-- Open up a new terminal window, navigate to the files directory in the `Linux_Scripting` directory and complete the following exercise:
+- Open up a new terminal window, navigate to the files directory in the `Linux_scripting` directory and complete the following exercise:
 1. Use the `head` command to extract the first 500 lines of the file `genome_1.gff` and store the output in a new file called `genome_1.500.gff`.
 2. Use the `wc` command to count the number of lines in the `genome_2.bed` file.
 3. Use the `sort` command to sort the file `genome_2.bed` on chromosome and then gene position.
@@ -680,7 +680,7 @@ $ awk '{ print $1 }' genome_2.bed | sort | uniq | less
 
 ```bash
 # First we need to go to the correct directory
-$ cd /home/manager/Linux_Scripting/grep
+$ cd /home/manager/Linux_scripting/grep
 
 ```
 <br>
@@ -848,7 +848,7 @@ $ sed 's/^chr/chromosome/' gene_expression.bed > gene_expression_new.bed
 - Before we begin we need to change directory to the correct location.
 
 ```bash
-$ cd ~/Linux_Scripting/awk/
+$ cd ~/Linux_scripting/awk/
 
 ```
 - `awk` reads a file line by line, splitting each line into columns.
@@ -967,7 +967,7 @@ $ awk -F"\t" '$5 < $4' genes.gff
 - A final simple sanity check is that each feature has either 8 or 9 columns.
 
 ```bash
-# We do this using a special variable in awk, “NF”, which is the number of columns in a line. Remember to distinguish this from “$NF”, which referes specifically to the final column. This search will give no output if all features pass.
+# We do this using a special variable in awk, “NF”, which is the number of columns in a line. Remember to distinguish this from “$NF”, which refers specifically to the final column. This search will give no output if all features pass.
 $ awk -F"\t" 'NF<8 || NF>9' genes.gff
 
 ```
