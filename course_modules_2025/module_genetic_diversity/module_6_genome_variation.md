@@ -77,7 +77,7 @@ Lets get started!
 
 ```bash 
 # Lets move to the working directory
-cd Module_6_Genetic_Variation
+cd Genetic_Variation
 
 # It is always worth checking that you are in the correct directory with the data you want before attempting to do any work. Use the "list" command to do so:
 ls -lrt 
@@ -287,7 +287,7 @@ To start with, we are going to work on a single sample to familiarise you with t
 
 ```bash
 # First, go back to the module home directory:
-cd ~/Module_6_Genetic_Variation
+cd ~/Genetic_Variation
 
 # make a new directory (mkdir) and move into it (cd):
 mkdir single_sample_analysis
@@ -490,7 +490,7 @@ mapping each set of sequnecing reads to the reference genome.
 
 ```bash
 # First, go back to the module home directory:
-cd ~/Module_6_Genetic_Variation
+cd ~/Genetic_Variation
 
 # To keep our working area organised, let's make a new directory to do this next step in:
 mkdir multi_sample_analysis
@@ -681,7 +681,7 @@ provides a convenient user interface that combines a scripting window, a command
 ### 10.1. Setting up R and loading R libraries
 ```bash
 # In the unix shell, lets prepare your data
-cd ~/Module_6_Genetic_Variation/R_analysis
+cd ~/Genetic_Variation/R_analysis
 cp ../multi_sample_analysis/all_samples.filtered.recode.vcf .
 cp ../sample_metadata.txt .
 
