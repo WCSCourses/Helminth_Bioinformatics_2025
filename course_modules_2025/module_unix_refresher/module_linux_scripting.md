@@ -167,19 +167,19 @@ cd /home/manager/Linux_scripting
 
 ```bash
 # List the contents of a directory
-$ ls
+ls
 
 # List the contents of a directory with extra information about the files
-$ ls –l
+ls –l
 
 # List all contents including hidden files & directories
-$ ls –al 	
+ls –al 	
 
 # List the contents of the directory called basic with extra information
-$ ls –l basic
+ls –l basic
 
 # Suggested usage – this will be the most frequent command used as a bioinformatician!
-$ ls –ltr
+ls –ltr
 
 # where:
 	–l gives the long format,
