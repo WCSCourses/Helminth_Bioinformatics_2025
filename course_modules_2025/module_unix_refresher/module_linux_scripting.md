@@ -248,11 +248,11 @@ ls –ltr
 
 ```bash
 # To find out where you are, type this into your terminal.
-$ pwd
+pwd
 
-$ cd basic
+cd basic
 
-$ pwd
+pwd
 
 ```
 - Remember: Unix is case sensitive, `PWD` is not the same as `pwd`.
@@ -274,13 +274,13 @@ $ pwd
 
 ```bash
 # Move into the genome_1 directory using the cd command
-$ cd genome_1/
+cd genome_1/
 
 # Use the pwd command to check you are in the right place
-$ pwd
+pwd
 
 # it is often useful to list the contents of your new location after moving
-$ ls -lrt
+ls -lrt
 
 ```
 - There are some short cuts for referring to directories:
@@ -354,10 +354,10 @@ cd /home/manager/Linux_scripting
 
 ```bash
 # To copy the file genome_1.gff to a new file called genome_1.withseq use:
-$ cp genome_1.gff genome_1.withseq.gff
+cp genome_1.gff genome_1.withseq.gff
 
 # Use ls to check the contents of the current directory for the copied file:
-$ ls -lrt
+ls -lrt
 
 ```
 
@@ -375,15 +375,15 @@ $ ls -lrt
 
 ```bash
 # To move the file genome_1.withseq.gff from the current directory to the directory above use:
-$ mv genome_1.withseq.gff ..
+mv genome_1.withseq.gff ..
 
 # Use the ls command to check the contents of the current directory and the directory above to see that genome_1.withseq.gff has been moved.
-$ ls –lrt
-$ ls –lrt ../
+ls –lrt
+ls –lrt ../
 
 # you could also change directory to check the file moved
-$ cd ../
-$ ls -lrt
+cd ../
+ls -lrt
 
 ```
 ---
@@ -396,10 +396,10 @@ $ ls -lrt
 
 ```bash
 # To remove the copy of the genome_1 gff file, called genome_1.withseq.gff use:
-$ rm genome_1.withseq.gff
+rm genome_1.withseq.gff
 
 # Use ls to check the contents of the current directory for the copied file:
-$ ls -lrt
+ls -lrt
 
 ```
 - Linux, as a general rule, does exactly what you ask, and does not ask for confirmation.
@@ -439,7 +439,7 @@ $ ls -lrt
 
 ```bash
 # Use the less command to open a gff
-$ less genome_1.gff
+ less genome_1.gff
 
 ```
 - The contents of the file `genome_1.gff` is displayed one screen at a time, to view the next screen press the spacebar.
@@ -460,7 +460,7 @@ $ less genome_1.gff
 
 ```bash
 # To look at the beginning of the file genome_1.gff file use:
-$ head genome_1.gff
+ head genome_1.gff
 
 ```
 
@@ -468,7 +468,7 @@ $ head genome_1.gff
 
 ```bash
 # To look at the end of genome_1.gff use:
-$ tail genome_1.gff
+ tail genome_1.gff
 
 ```
 
@@ -479,7 +479,7 @@ $ tail genome_1.gff
 
 ```bash
 # To look at the last 25 lines of genome_1.gff use:
-$ tail –n 25 genome_1.gff
+ tail –n 25 genome_1.gff
 
 ```
 
@@ -511,13 +511,13 @@ $ tail –n 25 genome_1.gff
 
 ```bash
 # I’m stuck – help!
-$ man tail
+ man tail
 
 #Or
-$ tail –h
+ tail –h
 
 #Or
-$ tail --help
+ tail --help
 
 ```
 
@@ -535,7 +535,7 @@ $ tail --help
 
 ```bash
 # Extract the first line of genome_1.gff and output to a new file
-$ head -1 genome_1.gff > first_genome_1_line.txt
+ head -1 genome_1.gff > first_genome_1_line.txt
 
 ```
 - It's likely that nothing obvious will have happened….
@@ -552,7 +552,7 @@ $ head -1 genome_1.gff > first_genome_1_line.txt
 
 ```bash
 # Read you new file using the cat command
-$ cat first_genome_1_line.txt
+ cat first_genome_1_line.txt
 
 # we don’t actually need this file, so lets remove it
 rm first_genome_1_line.txt
@@ -566,10 +566,10 @@ rm first_genome_1_line.txt
 
 ```bash
 # Join the two files using the cat command
-$ cat genome_1.noseq.gff genome_1.fa > genome_1.concatenated.gff
+ cat genome_1.noseq.gff genome_1.fa > genome_1.concatenated.gff
 
 # lets check that the new file has been generated
-$ ls -lrt
+ ls -lrt
 
 ```
 
@@ -583,10 +583,10 @@ $ ls -lrt
 
 ```bash
 # use the wc command on the file directly
-$ wc -l genome_1.gff
+ wc -l genome_1.gff
 
 # use cat to open the file, and “pipe” the result to the wc command
-$ cat genome_1.gff | wc -l
+ cat genome_1.gff | wc -l
 
 ```
 
@@ -597,10 +597,10 @@ $ cat genome_1.gff | wc -l
 
 ```bash
 # For example to count the number of files that are listed by ls use:
-$ ls | wc –l
+ ls | wc –l
 
 # You can connect as many commands as you want. For example:
-$ ls | grep ".gff" | wc -l
+ ls | grep ".gff" | wc -l
 
 ```
 
@@ -617,13 +617,13 @@ $ ls | grep ".gff" | wc -l
 
 ```bash
 # For example, to sort the contents of a BED file use:
-$ sort genome_2.bed | head
+ sort genome_2.bed | head
 
 # look at the other end of the file using tail
-$ sort genome_2.bed | tail
+ sort genome_2.bed | tail
 
 # To sort the contents of a BED file on a particular column, we can specify that using the "-k" flag.
-$ sort -k 2 -n genome_2.bed
+ sort -k 2 -n genome_2.bed
 
 ```
 - The `sort` command can sort by multiple columns e.g. 1st column and then 2nd column by specifying successive -k parameters in the command.
@@ -640,7 +640,7 @@ $ sort -k 2 -n genome_2.bed
 
 ```bash
 # To get the list of chromosomes in the genome_2 bed file use:
-$ awk '{ print $1 }' genome_2.bed | sort | uniq
+ awk '{ print $1 }' genome_2.bed | sort | uniq
 
 ```
 - How many chromosomes are there?
@@ -651,9 +651,9 @@ $ awk '{ print $1 }' genome_2.bed | sort | uniq
 
 ```bash
 # Lets see what happens when we build a command using pipes
-$ awk '{ print $1 }' genome_2.bed | less
-$ awk '{ print $1 }' genome_2.bed | sort | less
-$ awk '{ print $1 }' genome_2.bed | sort | uniq | less
+ awk '{ print $1 }' genome_2.bed | less
+ awk '{ print $1 }' genome_2.bed | sort | less
+ awk '{ print $1 }' genome_2.bed | sort | uniq | less
 
 ```
 ---
@@ -680,7 +680,7 @@ $ awk '{ print $1 }' genome_2.bed | sort | uniq | less
 
 ```bash
 # First we need to go to the correct directory
-$ cd /home/manager/Linux_scripting/grep
+ cd /home/manager/Linux_scripting/grep
 
 ```
 <br>
@@ -698,14 +698,14 @@ $ cd /home/manager/Linux_scripting/grep
 
 ```bash
 # Use cat to view the file contents
-$ cat gene_expression.bed
+ cat gene_expression.bed
 
 ```
 - This is a short example but files of this format may contain hundreds or thousands of lines, making it impractical to read them manually.
 
 ```bash
 # We are interested in chromosome 2 so wish to find all lines involving it using grep.
-$ grep chr2 gene_expression.bed
+ grep chr2 gene_expression.bed
 
 ```
 - This has shown us all lines containing the text “chr2”.
@@ -713,14 +713,14 @@ $ grep chr2 gene_expression.bed
 
 ```bash
 # We can search the output of the grep search using a pipe
-$ grep chr2 gene_expression.bed | grep +
+ grep chr2 gene_expression.bed | grep +
 
 ```
 - As `grep` reports matches to a string anywhere on a line, such simple searches can have undesired consequences.
 
 ```bash
 # We will modify our original search slightly to find all data on chromosome 1
-$ grep chr1 gene_expression.bed
+ grep chr1 gene_expression.bed
 
 ```
 - You should notice that, in addition to lines from chromosome 1, `grep` reports lines from chromosome 10 also.
@@ -728,14 +728,14 @@ $ grep chr1 gene_expression.bed
 
 ```bash
 # Look at another bed file we have provides
-$ cat gene_expression_sneaky.bed
+ cat gene_expression_sneaky.bed
 
 ```
 - You will notice some inconsistency in column 4.
 
 ```bash
 # See what happens when we grep for genes on chromosome 1, on the negative strand. (Note, we put the minus sign in quotes to stop Unix interpreting this as an option in grep
-$ grep chr1 gene_expression_sneaky.bed | grep "-"
+ grep chr1 gene_expression_sneaky.bed | grep "-"
 
 ```
 - You will notice that `grep` reports several lines form genes which aren’t on chromosome 1.  
@@ -753,14 +753,14 @@ $ grep chr1 gene_expression_sneaky.bed | grep "-"
 
 ```bash
 # Repeat the first part of our search but including ^. Note, to be safe, we will put the search term in quotes.
-$ grep '^chr1' gene_expression_sneaky.bed
+ grep '^chr1' gene_expression_sneaky.bed
 
 ```
 - We can now refine our search further to avoid the remaining genes not on chromosome 1.
 
 ```bash
 # This can be done by searching for a tab character following the chromosome name. Tab is represented by ‘\t’. For reasons beyond the scope of this course,we must start the search term with a dollar symbol to recognise tab.
-$ grep $'^chr1\t' gene_expression_sneaky.bed
+ grep $'^chr1\t' gene_expression_sneaky.bed
 
 ```
 - As expected, there are now three genes left, all on chromosome 1.
@@ -768,7 +768,7 @@ $ grep $'^chr1\t' gene_expression_sneaky.bed
 
 ```bash
 # Searching for a string at the end of the line is done using a $ symbol at the end of the search term. In this case, we will backslash the - symbol for safety.
-$ grep $'^chr1\t' gene_expression_sneaky.bed | grep '\-$'
+ grep $'^chr1\t' gene_expression_sneaky.bed | grep '\-$'
 
 ```
 - We now have only one gene reported and it is on chromosome 1 and on the negative strand.
@@ -784,7 +784,7 @@ $ grep $'^chr1\t' gene_expression_sneaky.bed | grep '\-$'
 
 ```bash
 # We will repeat a previous search but include the -c option to count matches rather than just returning them.
-$ grep -c  $'^chr1\t' gene_expression_sneaky.bed
+ grep -c  $'^chr1\t' gene_expression_sneaky.bed
 
 ```
 - Another common requirement is to make searches case insensitive. 
@@ -792,17 +792,17 @@ $ grep -c  $'^chr1\t' gene_expression_sneaky.bed
 
 ```bash
 # Consider the fasta file sequences.fasta.
-$ cat sequences.fasta
+ cat sequences.fasta
 
 # A simple search for ACGT will not hit all relevant sequences.
-$ grep ACGT sequences.fasta
+ grep ACGT sequences.fasta
 
 ```
 - Therefore, we need to make the search case insensitive.
 
 ```bash
 # The -i option does this:
-$ grep -i ACGT sequences.fasta
+ grep -i ACGT sequences.fasta
 
 ```
 
@@ -810,7 +810,7 @@ $ grep -i ACGT sequences.fasta
 
 ```bash
 # The -v option does this:
-$ grep -v $'^chr1\t' gene_expression_sneaky.bed
+ grep -v $'^chr1\t' gene_expression_sneaky.bed
 
 ```
 
@@ -823,14 +823,14 @@ $ grep -v $'^chr1\t' gene_expression_sneaky.bed
 
 ```bash
 # As an example, we wish to replace each incidence of the characters ‘chr’ at the beginning of the line in gene_expression.bed with ‘chromosome'
-$ sed 's/^chr/chromosome/' gene_expression.bed
+ sed 's/^chr/chromosome/' gene_expression.bed
 
 ```
 - Note: this will output to the terminal window. The output can be redirected to a new file using the `>` character.
 
 ```bash
 # For example:
-$ sed 's/^chr/chromosome/' gene_expression.bed > gene_expression_new.bed
+ sed 's/^chr/chromosome/' gene_expression.bed > gene_expression_new.bed
 
 ```
 
@@ -848,7 +848,7 @@ $ sed 's/^chr/chromosome/' gene_expression.bed > gene_expression_new.bed
 - Before we begin we need to change directory to the correct location.
 
 ```bash
-$ cd ~/Linux_scripting/awk/
+ cd ~/Linux_scripting/awk/
 
 ```
 - `awk` reads a file line by line, splitting each line into columns.
@@ -857,7 +857,7 @@ $ cd ~/Linux_scripting/awk/
 
 ```bash
 # First we will view the GFF file to look at its structure.
-$ cat genes.gff
+ cat genes.gff
 
 ```
 <br>
@@ -878,7 +878,7 @@ $ cat genes.gff
 
 ```bash
 # We can ask awk just to give us the first column of a file. awk calls the columns $1, $2 etc. with $0 representing the full line.
-$ awk -F"\t" '{print $1}' genes.gff
+ awk -F"\t" '{print $1}' genes.gff
 
 ```
 
@@ -896,7 +896,7 @@ $ awk -F"\t" '{print $1}' genes.gff
 
 ```bash
 # The filtering criteria can be added before the braces. For example, this will extract just chromosome 1 data from the file.
-$ awk -F"\t" '$1=="chr1" { print $0 }' genes.gff
+ awk -F"\t" '$1=="chr1" { print $0 }' genes.gff
 
 ```
 
@@ -912,35 +912,35 @@ $ awk -F"\t" '$1=="chr1" { print $0 }' genes.gff
 
 ```bash
 # In this example we will search for just the genes from chromosome 1.
-$ awk -F"\t" '$1=="chr1" && $3=="gene"' genes.gff
+ awk -F"\t" '$1=="chr1" && $3=="gene"' genes.gff
 
 ```
 - Similarly, "\|\|" is used in awk to mean "or".
 
 ```bash
 # In this example we will search for features which are on chromosome 1 or are repeats
-$ awk -F"\t" '$1=="chr1" || $3=="repeat"' genes.gff
+ awk -F"\t" '$1=="chr1" || $3=="repeat"' genes.gff
 
 ```
 - So far, we have only filtered using strings. Numbers can also be used.
 
 ```bash
 # In this example we will search for genes on chromosome 1 which start before base position 1100
-$ awk -F"\t" '$1=="chr1" && $3=="gene" && $4 < 1100' genes.gff
+ awk -F"\t" '$1=="chr1" && $3=="gene" && $4 < 1100' genes.gff
 
 ```
 - If we do not specify a column, `awk` will match the entire line as it assumes it is searching `$0`.
 
 ```bash
 # Note that -F"\t" can be omitted here. As we're searching the whole line, the column delimiter is not relevant.
-$ awk '/repeat/' genes.gff
+ awk '/repeat/' genes.gff
 
 ```
 - Similarly to `grep`, via its `-v` option, `awk` can invert its match. In this case, we use the `"!~"` operator to represent “does not match”.
 
 ```bash
 # Here we simply look for the inverse of the previous search.
-$ awk ‘!/repeat/’ genes.gff
+ awk ‘!/repeat/’ genes.gff
 
 ```
 
@@ -954,21 +954,21 @@ $ awk ‘!/repeat/’ genes.gff
 
 ```bash
 # One thing we may want to do is check that each gene has been assigned a strand. To do this, we need to check whether column 7 contains either a + or - symbol.
-$ awk -F"\t" '$3=="gene" && !($7 == "+" || $7 == "-")' genes.gff
+ awk -F"\t" '$3=="gene" && !($7 == "+" || $7 == "-")' genes.gff
 
 ```
 - Likewise, we may want to check whether the coordinates of all features make sense.
 
 ```bash
 # To do this, we simply need to check that the end coordinate of the feature is not less than the start coordinate.
-$ awk -F"\t" '$5 < $4' genes.gff
+ awk -F"\t" '$5 < $4' genes.gff
 
 ```
 - A final simple sanity check is that each feature has either 8 or 9 columns.
 
 ```bash
 # We do this using a special variable in awk, “NF”, which is the number of columns in a line. Remember to distinguish this from “$NF”, which refers specifically to the final column. This search will give no output if all features pass.
-$ awk -F"\t" 'NF<8 || NF>9' genes.gff
+ awk -F"\t" 'NF<8 || NF>9' genes.gff
 
 ```
 
@@ -982,7 +982,7 @@ $ awk -F"\t" 'NF<8 || NF>9' genes.gff
 
 ```bash
 # As a simple example, we will change the value in the source column (column 2) to a new value for each line.
-$ awk -F"\t" '{$2="new_source"; print $0}' genes.gff
+ awk -F"\t" '{$2="new_source"; print $0}' genes.gff
 
 ```
 
@@ -991,7 +991,7 @@ $ awk -F"\t" '{$2="new_source"; print $0}' genes.gff
 
 ```bash
 # This is achieved by adding "BEGIN{OFS="\t"}" to the code, as below. Before awk reads any lines of the file, it reads the BEGIN block of code, in this case, changing OFS to a tab character.
-$ awk -F"\t" 'BEGIN{OFS="\t"} {$2="new_source"; print $0}' genes.gff
+ awk -F"\t" 'BEGIN{OFS="\t"} {$2="new_source"; print $0}' genes.gff
 
 ```
 
@@ -1028,7 +1028,7 @@ $ awk -F"\t" 'BEGIN{OFS="\t"} {$2="new_source"; print $0}' genes.gff
 
 
 # We will use a for loop to run wc on the files in the directory loop_files/ . Note you need to be in the "Linux_scripting" directory to run this command.
-$ for filename in loop_files/*; do wc ${filename}; done
+ for filename in loop_files/*; do wc ${filename}; done
 
 ```
 - Notice the syntax used.
@@ -1038,7 +1038,7 @@ $ for filename in loop_files/*; do wc ${filename}; done
 
 ```bash
 # Next we will use a while read a file line-by-line, and only print lines for chromosome 1 and on the sense strand
-$ while read -r chr start end name strand; do \
+ while read -r chr start end name strand; do \
 		if [[ $chr == "01" && $strand == "1" ]]; then \
 		echo $chr $start $end $name $strand; \
 		fi; \
@@ -1071,12 +1071,12 @@ $ while read -r chr start end name strand; do \
 
 ```bash
 # In a terminal window, navigate to your home directory and create a directory called scripts
-$ cd
-$ mkdir scripts
-$ cd scripts
+ cd
+ mkdir scripts
+ cd scripts
 
 # Open a text editor to create your script. Do not use a word processor. An example is gedit. If you don’t have a favourite text editor already run this.
-$ gedit &
+ gedit &
 
 # In the editor window type ‘echo “Hello world!”’ and save the file with the name "hello.sh".
 
@@ -1086,8 +1086,8 @@ $ gedit &
 
 ```bash
 # First check to see whether the file in place then run it.
-$ ls hello.sh
-$ bash hello.sh
+ ls hello.sh
+ bash hello.sh
 
 ```
 
@@ -1106,7 +1106,7 @@ $ bash hello.sh
 
 ```bash
 # chmod changes the permissions of the file
-$ chmod +x hello.sh
+ chmod +x hello.sh
 
 ```
 
@@ -1117,7 +1117,7 @@ $ chmod +x hello.sh
 
 ```bash
 # First we want to check what our PATH currently is.
-$ echo $PATH
+ echo $PATH
 
 ```
 
@@ -1126,7 +1126,7 @@ $ echo $PATH
 
 ```bash
 # We can modify the PATH environment variable in the current terminal
-$ export PATH=$PATH:~/scripts
+ export PATH=$PATH:~/scripts
 
 ```
 
@@ -1137,16 +1137,16 @@ $ export PATH=$PATH:~/scripts
 
 ```bash
 # To check the change has worked, open a new terminal and run your script with no location set.
-$ hello.sh
+ hello.sh
 
 ```
 
 - With this set up, to create a new script, you can copy and edit an existing script or create a new one
 
 ```bash
-$ cd ~/scripts
-$ touch myscript.sh
-$ chmod +x myscript.sh
+ cd ~/scripts
+ touch myscript.sh
+ chmod +x myscript.sh
 
 ```
 
@@ -1164,15 +1164,15 @@ $ chmod +x myscript.sh
 
 ```bash
 # We can view this example using the cat commend we’ve seen earlier
-$ cd ~/Linux_scripting/bash_scripts/scripts
-$ cat options_example.sh
+ cd ~/Linux_scripting/bash_scripts/scripts
+ cat options_example.sh
 
 ```
 
 - Having looked at the script, run it to observe the output
 
 ```bash
-$ ./options_example.sh test_file 2
+ ./options_example.sh test_file 2
 
 ```
 - You will notice that, whilst the script works, is not very readable.
@@ -1180,7 +1180,7 @@ $ ./options_example.sh test_file 2
 
 ```bash
 # We have provided a second version of the script which is more readable
-$ cat options_example.2.sh
+ cat options_example.2.sh
 
 ```
 
