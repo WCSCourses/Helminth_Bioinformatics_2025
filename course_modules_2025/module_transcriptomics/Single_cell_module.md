@@ -252,7 +252,7 @@ day2somules
 
 ```
 
-Now there are 8,347 genes detected across this experiment, and there are 3,843 cells.
+Now there are 8,347 genes detected across this experiment, and there are 4,044 cells.
 
 Can we still tell which cells came from which sample? Let's make sure by adding a metadata column to the combined Seurat object
 
