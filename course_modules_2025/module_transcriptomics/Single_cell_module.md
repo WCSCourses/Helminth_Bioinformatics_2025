@@ -252,7 +252,7 @@ day2somules
 
 ```
 
-Now there are 8,347 genes detected across this experiment, and there are 3,843 cells.
+Now there are 8,347 genes detected across this experiment, and there are 4,044 cells.
 
 Can we still tell which cells came from which sample? Let's make sure by adding a metadata column to the combined Seurat object
 
@@ -648,8 +648,7 @@ FeaturePlot(day2somules, features = "your_gene")
 
 You can also look for co-expression - are two genes you're interested in expressed in the same cells?
 ```R
-coexpression.plot <-FeaturePlot(day2somules, features = c("Smp-179320", "Smp-086860"), blend = TRUE)
-coexpression.plot
+FeaturePlot(day2somules, features = c("Smp-179320", "Smp-086860"), blend = TRUE)
 #ggsave(paste0("day2somules-coexpressed-Smp-179320-Smp-086860-",st, ".jpg"), width = 45, height = 25)
 ```
 ![](figures/SC_Figure_16.png)
