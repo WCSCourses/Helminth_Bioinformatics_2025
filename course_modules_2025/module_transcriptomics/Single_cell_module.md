@@ -648,8 +648,7 @@ FeaturePlot(day2somules, features = "your_gene")
 
 You can also look for co-expression - are two genes you're interested in expressed in the same cells?
 ```R
-coexpression.plot <-FeaturePlot(day2somules, features = c("Smp-179320", "Smp-086860"), blend = TRUE)
-coexpression.plot
+FeaturePlot(day2somules, features = c("Smp-179320", "Smp-086860"), blend = TRUE)
 #ggsave(paste0("day2somules-coexpressed-Smp-179320-Smp-086860-",st, ".jpg"), width = 45, height = 25)
 ```
 ![](figures/SC_Figure_16.png)
