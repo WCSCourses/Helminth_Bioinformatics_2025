@@ -450,8 +450,8 @@ head(day2somules[["RNA"]]$data[,1:20],n=20L)
 SCTransform normalises and scales the data, and finds variable features. It has some improvements from earlier versions of Seurat and replaces NormalizeData(), ScaleData(), and FindVariableFeatures()).
 
 ```R
-# run sctransform
-day2somules <- SCTransform(day2somules, assay="RNA", new.assay.name="SCT", verbose = TRUE)
+# It may take some time. We won't run the command.
+#day2somules <- SCTransform(day2somules, assay="RNA", new.assay.name="SCT", verbose = TRUE)
 ```
 
 The results of this is stored day2somules[["SCT"]]$data.
