@@ -23,7 +23,7 @@ Steve Doyle, 2025
 
 ## 1. Overview and Aims <a name="intro"></a>
 Genetic variation can tell us a lot about an organism's evolutionary past, broad and fine-scale relationships within and between species, and the mechanisms by
-which organisms adapt to new environments or selection pressures such as drug treatmennt. The use of genomics to understand genetic variation offers insight into 
+which organisms adapt to new environments or selection pressures such as drug treatment. The use of genomics to understand genetic variation offers insight into 
 these processes at a range of resolutions, from single nucleotide polymorphisms to genome-wide chromosomal rearrangements.   
 
 Modern genomic approaches such as high-throughput sequencing have enabled not only the rapid increase in reference genome assemblies, but also the ability to resequence 
