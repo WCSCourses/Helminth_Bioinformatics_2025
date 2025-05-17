@@ -41,7 +41,7 @@ the worms at different stages of development are transcriptionally
 different and what does that tell us about the nature of these worms and
 the infection they cause.
 
-At the end of this module, you will have acuired hands-on experience
+At the end of this module, you will have acquired hands-on experience
 in - mapping RNA-seq data to a reference genome - acquiring read counts
 results and import them to R - visualising transcriptomic profiles in
 R - using R packages to identify differentially expressed genes and
@@ -63,11 +63,11 @@ understanding cellular biology. However, given the nature of proteins
 and the matabolits in the metabolic pathways, these are more difficult
 to profile.
 
-Transcriptome profilng, also called *RNA-seq profiling*, using for
+Transcriptome profiling, also called *RNA-seq profiling*, using for
 instance Sequencing-by-Synthesis method, has *de facto* displaced all
-other technologies due to its low cost, versatiity, dynamic range and
+other technologies due to its low cost, versatility, dynamic range and
 independence from a reference sequence (such as a genome or a known
-gene) making it particularily attractive to the sequencing of
+gene) making it particularly attractive to the sequencing of
 "neglected" non-modele organisms.
 
 One of the most common uses of *RNA-seq profiling* is for differential
@@ -104,24 +104,18 @@ multiple measurements from the same biological sample e.g. sequencing
 the same library on multiple lanes, same sample is sequenced multiple
 times \* do not account for the variability that really exists in
 biological systems or the experimental error between batches of
-parasites \* The noise from technical variation is often quite low
+parasites \* The noise from technical variation is often quite low.
 
 *Biological replicates: “true” biological variation* \* From independent
 and distinct individual/cells/experiments e.g. growing up three batches
 of parasites, treating them all identically, extracting RNA from each
 and sequencing the three samples separately, cells that are grown
-separately (although, this is arguable for cell lines), individual plant
+separately (although, this is arguable for cell lines), individual plants, etc. 
 
 *How many replicates to do?* \* The number of replicate affect
-statistical power in identifying DE genes \* More replicates will help
-improve power for genes that are already detected at high levels, while
-deeper sequencing will improve power to detect differential expression
-for genes which are expressed at low levels. \* For differential
-expression analysis, most published RNA-seq papers use 3 replicates \*
-However, some studies suggest at least 6 replicates, and that 12
-replicates would allow reliable detection of lowly expressed genes or
+statistical power in identifying differentially expressed genes \* More replicates will help improve power for genes that are already detected at high levels, while deeper sequencing will improve power to detect differential expression for genes which are expressed at low levels. \* For differential expression analysis, most published RNA-seq papers use 3 replicates \* However, some studies suggest at least 6 replicates, and that 12 replicates would allow reliable detection of lowly expressed genes or
 genes with small changes between conditions \* If your are able to
-choose, go for more replicates rather than high number of reads
+choose, go for more replicates rather than high number of reads.
 
 #### Numbers of reads
 
@@ -234,33 +228,20 @@ work with repetitive sequence elements.
 
 *Thinking beyond these notes*
 
--   Can you exlpain why pair-end sequencing is better at read mappig or
-    identifying indels? Draw a diagram
+-   Can you exlpain why pair-end sequencing is better at read mappig or identifying indels? Draw a diagram to explain you argument.
 
 [↥ **Back to top**](#top)
 
 ## Now for your hands-on data analysis
 
-We will use data of *S. mansoni* from experimentally-infected mice that
-were collected at different time post-infection. These are worms from
-the lung stage (day 6 after the infection), the liver stage (day 13, 17,
-21 after infection), and the adult stage (day 28 when they look like
-adults, and day 35 when the egg-laying has started and liver pathology
-can be noticable). Most groups have three biological replicates, except
-for the lung stage (day-6) where there are 7 biological replicates.
-Therefore we have 22 RNA samples, each has been sequenced on an Illumina
-HiSeq sequencing machine. All were sequenced as paired-end.
+We will use data of *S. mansoni* from experimentally-infected mice that were collected at different time post-infection. These are worms from the lung stage (day 6 after the infection), the liver stage (day 13, 17, 21 after infection), and the adult stage (day 28 when they look like adults, and day 35 when the egg-laying has started and liver pathology can be noticable). Most groups have three biological replicates, except for the lung stage (day-6) where there are 7 biological replicates. Therefore there are 22 RNA samples, each has been sequenced on an Illumina HiSeq sequencing machine. All were sequenced as paired-end.
 
 ## Mapping RNA-seq reads to a reference genome
 
-Mapping RNA-seq data typically requires substantial computing power and
-is often performed on a high-performance computing cluster or in the
-Cloud. It can take several hours to process each sample. For the
+Mapping RNA-seq data typically requires substantial computing power and is often performed on a high-performance computing cluster or in the Cloud. It can take several hours to process each sample. For the
 purposes of this demonstration, we are using datasets with a reduced
 number of reads to shorten the runtime while still allowing you to
-observe what a typical run looks like. We also provide the output of a
-mapping run using the full dataset, which we will use for differential
-expression analysis later this afternoon.
+observe what a typical run looks like. We also provide the output of a mapping run using the full dataset, which we will use for differential expression analysis later this afternoon.
 
 To begin, we will use
 [HISAT2](https://pubmed.ncbi.nlm.nih.gov/25751142/) to align RNA-seq
@@ -280,7 +261,7 @@ organisms.
 before the mapping step. This is because contaminated reads or reads
 with low-quality would also have low mapping score and will be excluded
 during the read counting step. However, if the number of mapped reads or
-mapping results seem off, you may want to look at QC of the raw read
+mapping results seem off, you may want to look at QC (quality control) of the raw read
 data to figure out where things might have gone wrong.
 
 Use the following command on your Terminal window.
@@ -294,7 +275,7 @@ Use the following command on your Terminal window.
 
 ``` bash
 # Go to the location of the reference genome
-cd ~/Module_7_Transcriptome/References_v10/
+cd ~/Transcriptomics/References_v10/
 
 # Index reference genome so that it can be read by HISAT2
 # The template syntax for indexing command is hisat2-build <reference genome in .fa> <prefix for the index file>
@@ -308,7 +289,7 @@ for sequencing, each of the sequences obtained is called a “read”. The
 sequences (or reads) are accessible via compressed FASTQ files which
 could be many gigabytes in size! This is essentially our raw data for
 the transcriptome analysis. The very first thing we could do with the
-data is to QC it, as we have done for the Genetic Diversity module.
+data is to QC it, that is to check the queality of the data against some pre-defined parameters. 
 Then, we map it to the genome and, for gene expression analysis, count
 the number of reads that map to individual gene locations.
 
@@ -430,8 +411,7 @@ about the alignment rate of this mapping? - In which scenerio might you
 get a low alignment rate in mapping of helminth sequences?
 
 HISAT2 outputs a SAM file which contains information of the read's
-mapping location in the reference and their scores (remember from
-Genetic Variation module?). We will convert this SAM file to a BAM file,
+mapping location in the reference and their scores. We will convert this SAM file to a BAM file,
 a binary sibling which takes less space on a disk and allows faster
 processing time for the next step (sorting).
 
@@ -446,7 +426,7 @@ ls -lth
 samtools sort -n -O BAM -o ERR3489994_sorted.bam ERR3489994.bam
 ```
 
-### Exercise 7.1
+### Exercise 1
 
 Now that SAM files have been converted to BAM, the SAMs are no longer
 useful and they take up a lot of space. Use Unix commands to:
@@ -547,7 +527,7 @@ into R and run differential expression analysis.
 
 We mapped and performed read counting for two example samples so far,
 the real samples have been done for you and are in a directory called
-`v10counts`.
+`RNAseq_featureCounts`. 
 
 [↥ **Back to top**](#top)
 
@@ -605,7 +585,9 @@ Let's get your R workspace set up:
 # Set up work directory
 # setwd command sets the working directory for the current R session. After running this line, if we import or export files without defining a specific directory (i.e. full or relative path), R will assume the current working directory as your destination.
 # The **path to your data (location of your data on the machine)** is considered a "string" or "character" in R, so we need to put it inside a quotation mark
-setwd("/location/of/data/Module_7_Transcriptome/")
+setwd("/FULL_PATH/Transcriptomics/")
+
+## note: FULL_PATH above refers to the folder structure that direct R to the foler "Transcriptomics" (R `setwd` is equivalent to unix `cd`) 
 
 # Load required packages into R environment 
 # R comes with standard packages (i.e. set of tools). We use the library command to load additional tools that we need for RNA-seq data analysis.
@@ -620,7 +602,7 @@ library(RColorBrewer)  # for a wider range of plot colours
 library(pheatmap)        # for (visually pleasing) heatmaps
 
 # Try installing the missing package(s) by following R package repository guideline. You usually need to do this step only once for each package on a given computer, unless essential version update is required.
-# !!HINT!! Google the package name with the keyword "install". Follow the link that are either Bioconduction website or CRAN website.  
+# !!HINT!! Google the package name with the keyword "install". Follow the link to either the Bioconductior or CRAN websites.  
 ___your package installation command here___
 
 # Once you have installed the missing package(s), run the library() command on those newly-install package(s) again. Notice how the command responds this time. 
@@ -661,8 +643,8 @@ for DESeq2.
 
 ``` r
 # Tell the location of the read count files
-# Create a datadir object to keep the path to the directory v10counts in your module 7 files
-datadir <- "/location/of/data/Module_7_Transcriptome/RNAseq_featureCounts/" 
+# Create a datadir object to keep the path to the directory RNAseq_featureCounts in your module transcriptomics files
+datadir <- "/FULL_PATH/Transcriptomics/RNAseq_featureCounts/" 
 
 # list files in this directory, output as an R vector
 list.files(datadir)   # this should list 22 files
@@ -722,7 +704,7 @@ rld <- rlogTransformation(dds, blind = FALSE)
 
 [↥ **Back to top**](#top)
 
-## Visualising overview of transcriptomic data in R <a name="pca"></a>
+## Visualising overview of transcriptomic data in R
 
 We will use exploratory analyses and plots to have an overview of our
 dataset before digging into gene-level details.
@@ -1007,7 +989,7 @@ res_D13D06[order(res_D13D06$padj),][1:20,]
 res_D13D06[which(res_D13D06$log2FoldChange > 1 & res_D13D06$padj < 0.01),]
 ```
 
-### Exercise 7.2
+### Exercise 2
 
 Look at the result of differential gene expression analysis between
 day-13 and day-6 worms.
@@ -1163,7 +1145,7 @@ main = "Top 20 DE genes: day-13 / day-6")
 
 **Figure 15.** Heatmap - customised
 
-### Exercise 7.3
+### Exercise 3
 
 1)  Compare the volcano plot or MA plot of D13vsD06 and D17vsD13 worms. What
     do you notice about the range of log2FC and adjusted p-values? It
@@ -1218,15 +1200,15 @@ To get started, open your Terminal and download run_topGO.R from the course GitH
 
 
 ``` bash
-cd /home/manager/Module_7_Transcriptome/
-wget https://raw.githubusercontent.com/WCSCourses/HelminthBioinformatics_2023/main/manuals/module_7_transcriptomics/run_topGO.R
+cd /home/manager/Transcriptomics/
+wget https://raw.githubusercontent.com/WCSCourses/Helminth_Bioinformatics_2025/main/course_modules_2025/module_transcriptomics/run_topGO.R
 ```
 
 Move back into RStudio
 
 ``` r
 # Load the R wrapper script for running topGO
-source("/location/of/your/file/Module_7_Transcriptome/run_topGO.R")
+source("/location/of/your/file/Transcriptomics/run_topGO.R")
 
 # Collect ID of genes that were up-regulated in D13 (pass cut-off of padj < 0.01 and log2FC > 1)
 D13D06_upinD13 <- rownames(res_D13D06)[which(res_D13D06$padj < 0.01 & res_D13D06$log2FoldChange > 1)]
@@ -1238,7 +1220,7 @@ length(D13D06_upinD13)
 ``` r
 # Before Run topGo
 # Make topGO reference file
-GOref <- read.delim("/location/of/your/file/Module_7_Transcriptome/References_v10/Sm_v10_GOref.txt", header = FALSE)
+GOref <- read.delim("/location/of/your/file/Transcriptomics/References_v10/Sm_v10_GOref.txt", header = FALSE)
 head(GOref) 
 colnames(GOref) <- c("Gene.stable.ID", "GO.term.accession")
 
@@ -1268,7 +1250,7 @@ write.table(GOref2, file = "GO_annotation_Smv10.tsv", quote = FALSE, sep = "\t",
 # - reference GO annotation (GO terms associated with each gene)
 # - list of genes to test for GO enrichment
 # - threshold for calling “significant” enrichment
-topGO_D13D06_upinD13  <- run_topGO_R(ref = "/location/of/your/file/Module_7_Transcriptome/GO_annotation_Smv10.tsv", genelist = D13D06_upinD13, thres = 0.05)
+topGO_D13D06_upinD13  <- run_topGO_R(ref = "/FULL_PATH/Transcriptomics/GO_annotation_Smv10.tsv", genelist = D13D06_upinD13, thres = 0.05)
 
 # Check topGO result. Column 1 to 7 are standard topGO output; column 8 give a list of input genes with that GO term. We won’t look at that at the moment. 
 topGO_D13D06_upinD13[,1:7]
@@ -1278,7 +1260,7 @@ topGO_D13D06_upinD13[,1:7]
 
 **Figure 16.** Example of topGO result
 
-### Exercise 7.4
+### Exercise 4
 
 1)  Run topGO using genes that were **up-regulated in day-6 worms**,
     compared to day-13 worms ()
