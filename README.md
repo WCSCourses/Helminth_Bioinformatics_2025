@@ -99,6 +99,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 - Presentation<br>
 - [Online Manual](course_modules_2025/module_unix_refresher/module_linux_scripting.md)<br>
 
+
 **Assembly**
 - Presentation<br>
 - Online Manual<br>   
