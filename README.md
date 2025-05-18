@@ -116,13 +116,13 @@ The programme will cover several aspects of analysis of next generation sequenci
 - Presentation<br>
 - [Online Manual](course_modules_2025/module_WBPS_2_Tools/module_3_WBPS2.md)<br>
 
-**Apollo Setup**
-- Presentation<br>
-- Online Manual<br>
+**Comparative genomics using Apollo**
+- [Presentation](https://github.com/glaParaBio/helminth-apollo-workshop-2025/blob/main/tutorial/hlm25_intro_slides.pdf)<br>
+- [Online Manual: Setup](https://github.com/glaParaBio/helminth-apollo-workshop-2025/blob/main/tutorial/01-setting-up.md)<br>
+- [Online Manual: Loading data](https://github.com/glaParaBio/helminth-apollo-workshop-2025/blob/main/tutorial/02-loading-data.md)<br>
+- [Online Manual: Annotating](https://github.com/glaParaBio/helminth-apollo-workshop-2025/blob/main/tutorial/03-annotating.md)<br>
+- [Online Manual: Preparing a synteny track with tBLASTx](https://github.com/glaParaBio/helminth-apollo-workshop-2025/blob/main/tutorial/04-tblastx.md)<br>
 
-**Comparative Genomics and Apollo**
-- Presentation<br>
-- Online Manual<br>
 
 **R Refresher**
 - Presentation<br>
