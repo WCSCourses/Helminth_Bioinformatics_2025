@@ -97,7 +97,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 **Unix Refresher**
 - Presentation<br>
-- [Online Manual](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/course_manuals_2023/module_2_linux_scripting/module_linux_scripting.md)<br>
+- [Online Manual](course_modules_2025/module_2_linux_scripting/module_linux_scripting.md)<br>
 
 **Assembly**
 - Presentation<br>
@@ -109,11 +109,11 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 **WormBase ParaSite Basics**
 - Presentation<br>
-- [Online Manual](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/course_modules_2025/module_WBPS_1_Basics/module_WBPS1_Basics.md)<br>
+- [Online Manual](course_modules_2025/module_WBPS_1_Basics/module_WBPS1_Basics.md)<br>
 
 **WormBase Parasite 2: Tools and Biomart**
 - Presentation<br>
-- [Online Manual](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/course_modules_2025/module_WBPS_2_Tools/module_3_WBPS2.md)<br>
+- [Online Manual](course_modules_2025/module_WBPS_2_Tools/module_3_WBPS2.md)<br>
 
 **Apollo Setup**
 - Presentation<br>
@@ -125,20 +125,20 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 **R Refresher**
 - Presentation<br>
-- [Online Manual](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/course_modules_2025/module_R_refresher/module_5_R_and_Rstudio.v2.html)<br>
+- [Online Manual](course_modules_2025/module_R_refresher/module_5_R_and_Rstudio.v2.html)<br>
 
 **Transcriptomics**
 - Presentation<br>
-- [Online Manual - bulk RNAseq](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/course_modules_2025/module_transcriptomics/bulk_rnaseq.md)<br>
-- [Online Manual - single-cell RNAseq](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/course_modules_2025/module_transcriptomics/Single_cell_module.md)<br>
+- [Online Manual - bulk RNAseq](course_modules_2025/module_transcriptomics/bulk_rnaseq.md)<br>
+- [Online Manual - single-cell RNAseq](course_modules_2025/module_transcriptomics/Single_cell_module.md)<br>
 
 **Genetic Diversity**
 - Presentation<br>
-- [Online Manual](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/course_modules_2025/module_genetic_diversity/module_6_genome_variation.md)<br>
+- [Online Manual](course_modules_2025/module_genetic_diversity/module_6_genome_variation.md)<br>
 
 **Mitogenomics:Phylogenomics**
 - Presentation<br>
-- [Online Manual](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/course_modules_2025/module_phylogenomics/README.md)<br>
+- [Online Manual](course_modules_2025/module_phylogenomics/README.md)<br>
 
 
 ******
