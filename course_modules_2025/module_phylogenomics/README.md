@@ -285,6 +285,7 @@ e.g.  can modify the size of the fonts (in Tip Labels, Legend, etc).
 8. Check whether the taxonomy aligns with the phylogenetic pattern we observed:
 
 ### Trematode Taxonomy of Species Included in the Phylogenetic Analysis
+
 | **Order**         | **Family**           | **Species**                                                                                                                                 |
 |-------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | **Plagiorchiida** | Allocreadiidae       | *Allocreadium lobatum*                                                                                                                        |
