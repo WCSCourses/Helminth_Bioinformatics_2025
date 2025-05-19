@@ -106,7 +106,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 **Mitochondrial Annotation**
 - Presentation<br>
-- Online Manual<br>
+- [Online Manual](course_modules_2025/Mitogenomic_assembly/Mitogenome_assembly_guide.pdf)<br>
 
 **WormBase ParaSite Basics**
 - Presentation<br>
