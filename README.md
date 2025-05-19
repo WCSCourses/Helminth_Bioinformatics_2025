@@ -96,7 +96,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 - [Presentation](https://github.com/WCSCourses/Helminth_Bioinformatics_2025/blob/main/seminar_slides_2025/Long_read/Long_reads_lecture_Kamenetzky_Laura.pdf)<br>
 
 **Unix Refresher**
-- Presentation<br>
+- [Presentation](seminar_slides_2025/WCS_Helminth-Bioinformatics_2025_Unix.pptx)<br>
 - [Online Manual](course_modules_2025/module_unix_refresher/module_linux_scripting.md)<br>
 
 
