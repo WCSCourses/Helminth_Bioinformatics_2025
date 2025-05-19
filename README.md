@@ -102,7 +102,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 **Assembly**
 - Presentation<br>
-- Online Manual<br>   
+- [Online Manual](course_modules_2025/Mitogenomic_assembly/Mitogenome_assembly_guide.pdf)<br>   
 
 **Mitochondrial Annotation**
 - Presentation<br>
