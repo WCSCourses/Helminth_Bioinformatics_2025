@@ -138,7 +138,7 @@ and provide examples of how they can be used in bioinformatics analyses.
 ![](figures/02_linux_prompt.png)
 
 ```bash
-# your first command – move to the working directory to get started!
+# your first command - move to the working directory to get started!
 cd /home/manager/Module_2_Linux_scripting
 
 ```
@@ -170,28 +170,28 @@ cd /home/manager/Module_2_Linux_scripting
 $ ls
 
 # List the contents of a directory with extra information about the files
-$ ls –l
+$ ls -l
 
 # List all contents including hidden files & directories
-$ ls –al 	
+$ ls -al 	
 
 # List the contents of the directory called basic with extra information
-$ ls –l basic
+$ ls -l basic
 
-# Suggested usage – this will be the most frequent command used as a bioinformatician!
-$ ls –ltr
+# Suggested usage - this will be the most frequent command used as a bioinformatician!
+$ ls -ltr
 
 # where:
-	–l gives the long format,
+	-l gives the long format,
 	-t sort the output by time,
-	–r reverse sorts the output.
+	-r reverse sorts the output.
 
 # here, we have merged three flags together, ie. rather than "ls -l -r -t", we have combined the "-lrt".
 # Using "ls -lrt" will therefore provide a detailed list, with the most recent files at the bottom. This is really useful if you have a lot of files in the same directory
 
 ```
 
-- By using the ```–l``` (lowercase L for "long") option we can change the behaviour of the ```ls``` command. Instead of printing out a simple list, it will print out additional information about each file. There is a space between the command ```ls``` and the ```–l``` option. There is no space between the dash and the letter l.
+- By using the ```-l``` (lowercase L for "long") option we can change the behaviour of the ```ls``` command. Instead of printing out a simple list, it will print out additional information about each file. There is a space between the command ```ls``` and the ```-l``` option. There is no space between the dash and the letter l.
 
 ![](figures/04_ls_long.png)
 
@@ -378,8 +378,8 @@ $ ls -lrt
 $ mv genome_1.withseq.gff ..
 
 # Use the ls command to check the contents of the current directory and the directory above to see that genome_1.withseq.gff has been moved.
-$ ls –lrt
-$ ls –lrt ../
+$ ls -lrt
+$ ls -lrt ../
 
 # you could also change directory to check the file moved
 $ cd ../
@@ -479,7 +479,7 @@ $ tail genome_1.gff
 
 ```bash
 # To look at the last 25 lines of genome_1.gff use:
-$ tail –n 25 genome_1.gff
+$ tail -n 25 genome_1.gff
 
 ```
 
@@ -510,18 +510,18 @@ $ tail –n 25 genome_1.gff
 - For example, to get help using the `tail` command, we could use one of the following:
 
 ```bash
-# I’m stuck – help!
+# I’m stuck - help!
 $ man tail
 
 #Or
-$ tail –h
+$ tail -h
 
 #Or
 $ tail --help
 
 ```
 
-- The prefix `man` will typically give extensive detail about the command and its options, whereas `–h` and `--help` tend to give an abbreviated version.
+- The prefix `man` will typically give extensive detail about the command and its options, whereas `-h` and `--help` tend to give an abbreviated version.
 - IMPORTANTLY, each will give an example command, or usage statement.
 
 - There are several other useful commands that can be used to manipulate and summarise information inside files and we will introduce some of these next, `cat`, `sort`, `wc` and `uniq`.
@@ -597,7 +597,7 @@ $ cat genome_1.gff | wc -l
 
 ```bash
 # For example to count the number of files that are listed by ls use:
-$ ls | wc –l
+$ ls | wc -l
 
 # You can connect as many commands as you want. For example:
 $ ls | grep ".gff" | wc -l
