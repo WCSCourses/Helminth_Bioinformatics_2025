@@ -48,7 +48,7 @@ R - using R packages to identify differentially expressed genes and
 finding patterns in the data - performing GO term enrichment and
 interpret the results
 
-[↥ **Back to top**](#top)
+[**Back to top**](#top)
 
 ## Introduction to transcriptome and experiment design <a name="basic"></a>
 
@@ -230,7 +230,7 @@ work with repetitive sequence elements.
 
 -   Can you exlpain why pair-end sequencing is better at read mappig or identifying indels? Draw a diagram to explain you argument.
 
-[↥ **Back to top**](#top)
+[**Back to top**](#top)
 
 ## Now for your hands-on data analysis
 
@@ -436,7 +436,7 @@ useful and they take up a lot of space. Use Unix commands to:
 2)  Remove all SAM files. *Make sure you do not accidentally delete BAM
     files; BAM files are needed for the next step!*
 
-[↥ **Back to top**](#top)
+[**Back to top**](#top)
 
 ## Counting the number of reads mapped to each gene
 
@@ -529,7 +529,7 @@ We mapped and performed read counting for two example samples so far,
 the real samples have been done for you and are in a directory called
 `RNAseq_featureCounts`. 
 
-[↥ **Back to top**](#top)
+[**Back to top**](#top)
 
 ## Setting up RStudio
 
@@ -702,7 +702,7 @@ transformation for this purpose.
 rld <- rlogTransformation(dds, blind = FALSE)
 ```
 
-[↥ **Back to top**](#top)
+[**Back to top**](#top)
 
 ## Visualising overview of transcriptomic data in R
 
@@ -877,7 +877,7 @@ dev.off()
 heatmap(sampleDistMatrix, Rowv = sampleDist, Colv = sampleDist, cexRow = 0.7, labCol = FALSE)
 ```
 
-[↥ **Back to top**](#top)
+[**Back to top**](#top)
 
 ## Identifying differentially expressed genes 
 
@@ -1002,23 +1002,24 @@ day-13 and day-6 worms.
 3)  Try using WormBaseParaSite to explore some of the top differentially
     expressed genes ranked by log2FC.
     
-4)  Your collaborators say that they have run the same analysis, ''filtering'' for \|log2FC\| \> 1 and adjusted p-value \< 0.01 but did not get the same results. You ask to see the code they wrote (below). Can you explain why the two sets of results differ? 
+4)  Your collaborators say that they have run the same analysis, ''filtering'' for \|log2FC\| \> 1 and adjusted p-value \< 0.01 but did not get the same results. You ask to see the code they wrote (below). Can you explain why the two sets of results differ? Hint: search the DESeq2 help in the R Vigniette or online.
 
 ``` r
 # Create my own results table for D13 vs D06
 # alpha = 0.01 specify the adjusted p-value cut off to use when summary() function count the number of differentially expressed genes
-res_D13D06 <- results(dds, contrast = c("condition", "D13", "D06"), lfcThreshold = 1 , test = "Wald", alpha = 0.01) 
+res_D13D06_B <- results(dds, contrast = c("condition", "D13", "D06"), lfcThreshold = 1 , test = "Wald", alpha = 0.01) 
 ```
 
+Once you have explore the possible answers, check *Bioconductor support* thread [Effect of lfcThreshold on p-value in DESeq2](https://support.bioconductor.org/p/101504/)
 
-[↥ **Back to top**](#top)
+[**Back to top**](#top)
 
 
 ## Exploring gene expression using gene plots and heatmaps
 
 We have looked at the results of pairwise comparison so far in form of
 large tables with multiple columns and thousands of rows, representing
-all genes in the *S. mansoni* annotation we used. This information can
+all genes in the _S. mansoni_ annotation we used. This information can
 be visualised using **MA plots** (log2FC and baseMean expression level shown
 on log scale) and **volcano plots** (log2FC and adjusted p-value). We
 can also plot expression of a particular gene across all samples.
@@ -1157,7 +1158,7 @@ main = "Top 20 DE genes: day-13 / day-6")
     D13vsD06 and produce a gene plot. Find out the product name of that
     gene and add it to the title of the gene plot.
 
-[↥ **Back to top**](#top)
+[**Back to top**](#top)
 
 ## Functional analysis using GO term enrichment
 
@@ -1340,4 +1341,4 @@ InnateDB (<http://www.innatedb.com/>)
 -    InterproScan
 (<https://www.ebi.ac.uk/interpro/search/sequence-search>)
 
-[↥ **Back to top**](#top)
+[**Back to top**](#top)
