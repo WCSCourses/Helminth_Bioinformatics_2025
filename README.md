@@ -101,7 +101,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 
 **Assembly**
-- [Presentation](seminar_slides_2025/Mitochondrial genome assembly_final.pdf)<br>
+- [Presentation](seminar_slides_2025/Mitochondrial_genome_assembly_final.pdf)<br>
 - [Online Manual](course_modules_2025/Mitogenomic_assembly/Mitogenome_assembly_guide.pdf)<br>   
 
 **Mitochondrial Annotation**
