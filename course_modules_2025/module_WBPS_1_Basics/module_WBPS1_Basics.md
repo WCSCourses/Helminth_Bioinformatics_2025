@@ -609,10 +609,11 @@ Notice that this RNA-Seq data is stranded- this means that the library preparati
 ### _EXERCISE 3 - JBrowse data visualization exercise_ <a name="jbrowse_exercise"></a>
 
 In the module data directory you should find a compressed file named somules.7z, generated from another experiment, containing transcriptomic data from that stage of the parasite. 
-Ubcompress the file and check if you have all the necessary data lo visualize it in JBrowse.
- Use samtools to view the reads within the file. Are there anything strange of these files?
-Load this data and compare to the data available in wormbase parasite, and the one you just uploaded.
-What are the differences? Why? 
+Ubcompress the file and check if you have all the necessary data lo visualize it in JBrowse.    
+ Use samtools to view the reads within the file. Are there anything strange of these files?    
+Load this data and compare to the data available in wormbase parasite, and the one you just uploaded.    
+What are the differences?    
+What can explain it ? 
 
 [↥ **Back to top**](#top)
 
