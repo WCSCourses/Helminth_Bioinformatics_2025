@@ -96,7 +96,7 @@ This BAM file contains “IsoSeq” data, from the Pacific Biosciences platform,
 
 Now we can see the IsoSeq reads aligned to the genome.     
 
-![](figures/jbrowse12.png)
+![](figures/jbrowse_12P.png)
 
 Notice that IsoSeq data is stranded- this means that the library preparation protocol preserved information on which end of the RNA molecule was 5-prime and which end was 3-prime, so we can infer which strand of DNA it was transcribed from.   
 This information is encoded in the BAM file, and JBrowse colours the reads accordingly: reads aligning to the forward strand are pink, and reads aligning to the reverse strand are purple.
