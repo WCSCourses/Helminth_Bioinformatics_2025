@@ -41,6 +41,7 @@ Go to the gene page for the _Trichuris muris_ gene TMUE_2000008757 and retrieve 
    3. Click "Download sequence" at the center of the page.
    4. Select "Sequences to export" -> "3' UTRs" on the pop-up dialog box.
    5. Click "Download"
+
 5. What identifier would you use to search for the gene in Uniprot?
    1. We could use the Gene Name (WBGene00286032)
    2. We could use its UniProt ID:
@@ -48,15 +49,18 @@ Go to the gene page for the _Trichuris muris_ gene TMUE_2000008757 and retrieve 
       2. Click "External references" in the navigation menu on the left hand side of the page.
       3. The UniProt ID is the one next to the "UniProtKB/TrEMBL" external database on the "Extrnal References" table: A0A5S6QPG2.11
    3. You can try both at UniProt's website.
+
 6. Where is this gene’s protein predicted to localise to?
    1. Navigate back to the gene page by clicking the "Gene: TMUE_2000008757" tab at the top of the page.
    2. Click "Cellular component" under "Gene Ontology" in the navigation menu on the left hand side of the page.
    3. According to the Cellular component gene ontologies the protein is predicted to localise to: nucleus, cytoplasm
+
 7. Which Pfam domains is the protein predicted to have? Which of these is responsible for its DNA binding activity?
    1. On the gene page, click the transcript ID (TMUE_2000008757.1) in the transcript table to navigate to the transcript page.
    2. Click the “Domains & features” menu option in the navigation menu on the transcript page.
    3. According to the table there are 2 PFAM domains annotated on the protein: "MAD homology 1, Dwarfin-type" and  "SMAD domain, Dwarfin-type".
    4. You can navigate to the InterPro pages by clicking on the links for these domains in the "Accession" column (PF03165, PF03166). According to the InterPro website pages, the "MAD homology 1, Dwarfin-type" domain is the one responsible for the protein's DNA binding activity.
+
 8. Download the protein alignment of TMUE_2000008757 and its _C. elegans_ orthologue. Is there any published literature on the _C. elegans_ orthologue?
    1. Protein Alignment:
       1. Navigate back to the gene page by clicking the "Gene: TMUE_2000008757" tab at the top of the page.
@@ -67,6 +71,7 @@ Go to the gene page for the _Trichuris muris_ gene TMUE_2000008757 and retrieve 
    2. Literature:
       1. Click the orthologue's gene ID (WBGene00004858) to navigate to the orthologue's gene page.
       2. Click "Literature" in the navigation menu on the left hand side of the C. elegans gene page to find a table with published literature on this gene.
+
 9. Are there any phenotypes associated with this _T. muris_ gene according to the gene page? Which one(s)? Where are these gene-phenotype associations inferred from?
 * TMUE_2000008757 gene page -> Click "Phenotypes" in the left navigation menu:
    * Phenotypes associated with this gene: None Found
@@ -74,3 +79,22 @@ Go to the gene page for the _Trichuris muris_ gene TMUE_2000008757 and retrieve 
 * The second table shows phenotype, disease and trait annotations associated orthologues of this gene in other species. Usually, there are not many phenotypic data available for parasitic worms, for this reason exploring phenotypes associated with other species like C. elegans is really useful for scientists. You can use the links in the table to navigate to the orthologous gene in the other species and find more information there. 
 
 ---
+## 3. Jbrowse exercise <a name="jbrowse_exercise"></a>
+
+The file provided is from a PacBio iso-seq run. It means that they are long stranded reads.    
+First you need to visualize the data...   
+
+samtools view -h somules_isoseq_sorted.bam | less
+The SAM file starts with a header section. All header lines begin with a ‘@’ character.
+Move down through the file (by pressing the space bar) until you come to the alignment section. Here, each line represents a sequencing read (though be aware that the lines are long, so a single line will probably wrap around your terminal window a few times). Some of the key fields are labelled below:
+
+The full SAM specification is available here: http://samtools.github.io/hts-specs/
+
+If you’ve looked at RNA sequencing data before, you may notice something unusual about the reads in this file: they’re very long!     
+Until recently, next generation sequencing reads were typically ~100bp in length, so transcripts had to be sequenced in short sections at high coverage and reconstructed computationally.     
+This BAM file contains “IsoSeq” data, from the Pacific Biosciences platform, whereby full length transcripts have been sequences in their entirety.
+
+Now we can see the IsoSeq reads aligned to the genome. Notice that IsoSeq data is stranded- this means that the library preparation protocol preserved information on which end of the RNA molecule was 5-prime and which end was 3-prime, so we can infer which strand of DNA it was transcribed from.   
+This information is encoded in the BAM file, and JBrowse colours the reads accordingly: reads aligning to the forward strand are pink, and reads aligning to the reverse strand are purple.
+
+ ---
