@@ -322,7 +322,9 @@ The results are presented in pie-charts and an interactive table:
 - Pie Charts: The pie charts give a summary of the consequences of the variants found in the file. Variants with coding consequences are found in the protein-coding sequence of genes, whilst variants with non-coding consequences are in intergenic regions or non-coding regions of genes. These variants could still be functionally important; for example, variants in non-coding regions near genes can have effects on expression dynamics.
 - Results Table: The results table shows one row per transcript and variant. By default all of the columns are shown; to temporarily hide columns, click the blue "Show/hide columns" button and select or deselect the columns you wish to view. The columns you select will be recalled when viewing other jobs.
 
-7. You can explore the results interactively on the webpage using the Results Preview filter panel at the centre. Use this panel and filter for variant that cause (select "consequence") changes to amino acids (select "missense_variant").  
+7. You can explore the results interactively on the webpage using the Results Preview filter panel at the centre. Use this panel and filter for variant that cause (select "consequence") changes to amino acids (select "missense_variant"), and press add.
+   The table will be updated to show the results. You can save either the initial uploaded data or the filtered one. Download all the variants as VEP file.  
+   
 
 You can actually visualise the affected Amino acid by the "missense_variant" on the protein's 3D AlphaFold model ([We talked about these in our previous WBP module](https://github.com/WCSCourses/HelminthBioinformatics_2023/blob/main/manuals/module_1_WBP1/module_1_WBP1.md#af)).
 
@@ -340,12 +342,11 @@ To do this:
 
 ### _EXERCISE 3 : Variant Effect Prediction exercise_ <a name="vep_exercise"></a>
 
-Download the VEP results from the example above as a “VEP file”. Use this file and the original VCF file to answer the following questions. 
-You can either filter the table using a spreadsheet manager like the LibreOfficecalc or else you can try to use some of the command line skills you already learned. 
+Use the VEP file you just downloaded and the original VCF file to answer the following questions. You can either filter the table using a spreadsheet manager like the LibreOfficecalc, or else you can try to use some of the command line skills you already learned. 
 
 1. How many variants were there in the original dataset?
 
-2. What are the different types of consequence that are found in the file, and how often does each occur?
+2. What are the different types of consequences that are found in the file, and how often does each occur?
 
 3. List all of the variants found in SRAE_2000005500.1.  Which variant or variants show the greatest impact?
 
