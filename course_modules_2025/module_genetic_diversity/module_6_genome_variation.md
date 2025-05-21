@@ -438,35 +438,8 @@ art &
 
 ---
 
-[↥ **Back to top**](#top)
-<br>
-<br>
-
-## 6. Visualising mapped reads and variants using Artemis <a name="artemis"></a>
-We will use **Artemis** to visualise your mapped reads, and identify variant positions from the SNP calling we have 
-performed on our single sample. Artemis ([instructions and download](http://sanger-pathogens.github.io/Artemis/Artemis/)) 
-has many features for exploring genomes, genome annotations, and genomic data (DNAseq, RNAseq, and more) that can be 
-layered onto the genome. To explore the full functionality, you would need at least a week-long course, so we will 
-just touch on the basics. However, feel free to explore Artemis in your own time, and do ask questions if you have any.   
-
-![](figures/figure6.5.PNG)  
-**Figure.** Opening and viewing reference sequencing data in Artemis
-
-![](figures/figure6.6.PNG)  
-**Figure.** Opening and viewing read and variant data in Artemis
 
 
-Lets explore our data.
-1. You can zoom in and zoom out using the scroll bar on the right hand side.
-2. Try double clicking on a mapped read. Can you find the read and its mate? Hovering over a read with your mouse pointer may help.
-	- We can visualise our paired-reads easily by right clicking on the mapped reads, select "Views" and select "Paired Stack". 
-3. Similarly, hovering over a SNP call will give you information about the SNP. What do the different colours mean?
-4. We can visualise the SNP calls on the mapped reads. Right click on the mapped reads, select "Show" and check the "SNP marks" box. 
-  Red lines show show on the mapped reads. What do you think the difference between the red lines that cover all reads at a single position, 
-  compared to sporadic red lines that affect on a few reads?
-
-
----
 
 [↥ **Back to top**](#top)
 <br>
@@ -610,54 +583,6 @@ vcftools --gzvcf all_samples.vcf.gz --maf 0.05 --min-alleles 2 --max-alleles 2 -
 #### 8.1. Questions:
 - how many variants were kept after filtering?
 - it is possible that not all samples will contain all of the SNPs, ie. there is some degree of "missingness". Can you find a flag in the vcftools manual to test this? Are there samples with a lot of missing data?
-
-
----
-
-[↥ **Back to top**](#top)
-<br>
-<br>
-
-
-## 9. Visualising SNP data using WormBase ParaSite and Artemis <a name="snps_vis"></a>
-### 9.1. Analysing your SNPs in WormBase ParaSite
-One aspect of characterising genetic variants is to ask - are any of our variants in genes, and if so, do they have a functional consequence?
-There are many ways a variant can have a functional consequence on a gene, some more easy to predict than others. This is perhaps beyond the scope of this workshop. However, we can easily determine if there are putative changes to the coding sequences using WormBase ParaSite's "Variant Effect Predictor". 
-
-Perform the following to explore variant effects in your dataset:
-- navigate to [WormBase ParaSite](https://parasite.wormbase.org/index.html)
-- in the top menu, select "Tools", and then when the new page loads, select "Variant Effect Predictor"
-- select "New job"
-- change the "Species" and upload your filtered VCF file.
-- select "Run" and wait for the job to finish (it shouldn't take too long) - you should see a small green "Done" when completed.
-- once finished, select "View results", and explore the output
-
-#### 9.2. Questions:
-- what proportion of SNPs are in coding regions vs non-coding regions? Why would this happen?
-- what proporiton of variants are a "synonymous_variant" and what proportion are "missense_variants"? What effect to these variants have on the coding sequence?
-- find a gene with a missense variant - what is the amino acid change, and is it likely to have an effect on the protein? (use the following table to help you: [table](https://en.wikipedia.org/wiki/File:ProteinogenicAminoAcids.svg)) 
-- can you think of other ways to determine if this variant might impact the function of this protein?
-
-
-<br>
-
-### 9.3. Visualising SNPs in Artemis
-
-Lets have a quick look in Artemis to see what our new data looks like. 
-
-If you have closed the previous Artemis window down, follow the previous instructions to load Artemis and your reference sequence.
-
-If you have kept the previous window open,  or have now reloaded Artemis, do the following
-- select "File", "Read a BAM / CRAM / VCF" and open "all_samples.vcf.gz"
-- On the SNP window, right click and check the box "Show Labels"
-
-You should now be able to see all of the SNPs called for all of your samples. Just quickly, looking at the sample names, can you see 
-any patterns in the SNPs based on similar names? Scrolling up and down in the SNP window will help. This is what we are trying to find. 
-
-Artemis provides a very broad-scale view of genetic variation - it is possible to see some differences between samples, and perhaps, some patterns in the presence or absence of variants that may suggest some "structure" to the way variants are distributed. However, it doesnt "scale" well - we can only observe a vary small part of the genome at one time, and it would be difficult to handle many more variants or samples. 
-
-To undertake a more meaningful and quantitative analysis, we need to move back to the command line to find patterns 
-and genetic relationships among our samples. 
 
 
 ---
