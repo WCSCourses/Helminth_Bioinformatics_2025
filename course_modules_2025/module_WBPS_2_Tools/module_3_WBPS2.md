@@ -348,7 +348,7 @@ Use the VEP file you just downloaded and the original VCF file to answer the fol
 
 2. What are the different types of consequences that are found in the file, and how often does each occur?
 
-3. List all of the variants found in SRAE_2000005500.1.  Which variant or variants show the greatest impact?
+3. List all of the variants found in the SRAE_2000005500.1 gene.  Which variant or variants show the greatest impact?
 
 4. Create a list of genes where a missense variant is found.  
 
