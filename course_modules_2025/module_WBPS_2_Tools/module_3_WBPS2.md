@@ -292,7 +292,7 @@ For example, you might sequence two populations of worm: one that is susceptible
 
 VEP is a tool that allows you to predict what the consequences of these variants are: whether they fall within or near genes, and whether they result in a change to the amino acid sequence of a protein.
 
-The standard file format for storing variation data is the [Variant Call Format (VCF)](https://samtools.github.io/hts-specs/VCFv4.2.pdf); this is another tab-delimited text format. Later in the course, you’ll see how to make one of these files. In the meantime, for some helminth genomes, these files have already been shared by other researchers. Today you’ll be using an available VCF file for _Strongyloides ratti_ corresponding to the first 250kb of _S. ratti_ chromosome 2. The file is in the data folder of this module. 
+The standard file format for storing variation data is the [Variant Call Format (VCF)](https://samtools.github.io/hts-specs/VCFv4.2.pdf); this is another tab-delimited text format. Later in the course, you’ll see how to make one of these files. In the meantime, for some helminth genomes, these files have already been shared by other researchers. Today you’ll be using an available VCF file for _Strongyloides ratti_ corresponding to the first 250kb of _S. ratti_ chromosome 2.  
 
 
 4. Copy the file to the "Module_3_WormBaseParaSite_2" directory and have a look at it to see how a VCF file is structured:
