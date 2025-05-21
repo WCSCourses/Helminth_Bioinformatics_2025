@@ -73,16 +73,16 @@ gene) making it particularly attractive to the sequencing of
 One of the most common uses of *RNA-seq profiling* is for differential
 gene expression studies, which will be covered in this course. However,
 the extensive and high-throughput nature of RNA-seq data means there are
-other potential usages. For example, it can be used to profile total RNA
-(e.g. miRNA and mRNA) in exosomes and other secretory products; help
+other potential usages. For example, it can be used for gene finding,  profiling total RNA (e.g. miRNA and mRNA) in exosomes and other secretory products; help
 identify different splice isoforms; provide evidence for gene annotation
 and improve quality of reference genomes. Meta-transcriptome, the
-combinations and re-analysis of a pool of transcriptomics data from
+combination and re-analysis of a pool of transcriptomics data from
 multiple experiments, and comparative gene expression between species
 could be seen as an extension of differential gene expression.
 Furthermore, genetic variation particularly SNP calling could use
 information from transcriptomics data which would carry SNPs from
 transcribed genes.
+
 
 ### Designing a transcriptome experiment: things to consider
 
@@ -152,53 +152,6 @@ multiple lanes. For this, think about a way to group samples to minimise
 ![](figures/AvoidingBatchEffect.png)\
 **Figure 1.** Avoiding batch effect
 
-*Thinking beyond these notes*
-
-Consider this experimental design.
-
-Joseph is your doctoral student. He wants to investigate the effect of
-adding a type of drug on the development of larvae. They would like to
-test the hypothesis that the worms will grow slower at the end of one
-day of treatment. He's what they propose:
-
-| Sample Type | Sample name | Time point (hours) | drug treatment |
-|-------------|-------------|--------------------|----------------|
-| Experiment  | 1.1         | 12                 | yes            |
-| Experiment  | 1.2         | 12                 | yes            |
-| Experiment  | 2.1         | 24                 | yes            |
-| Experiment  | 2.2         | 24                 | yes            |
-| Experiment  | 3.1         | 1                  | no (baseline)  |
-| Experiment  | 3.2         | 1                  | no (baseline)  |
-| Control     | A.1         | 1                  | no             |
-| Control     | A.2         | 1                  | no             |
-| Control     | B.1         | 12                 | no             |
-| Control     | B.2         | 12                 | no             |
-| Control     | C.1         | 24                 | no             |
-| Control     | C.2         | 24                 | no             |
-
-As their supervisor, would you agree with this experimental design? Why?
-
-Unfortunately, you need to give Joseph some bad news: "There are enough
-reagents to produce only 10 samples!". You ask them to reconsider the
-design. Here's what they come back with adding that they will leave one
-sample's worth reagents just in case something goes wrong.
-
-Would you agree with this new design? Why?
-
-| Sample Type | Sample name | Time point (hours) | drug treatment |
-|-------------|-------------|--------------------|----------------|
-| Experiment  | 1.1         | 12                 | yes            |
-| Experiment  | 1.2         | 12                 | yes            |
-| Experiment  | 2.1         | 24                 | yes            |
-| Experiment  | 2.2         | 24                 | yes            |
-| Experiment  | 3.1         | 1                  | no (baseline)  |
-| Experiment  | 3.2         | 1                  | no (baseline)  |
-| Control     | A.1         | 1                  | no             |
-| Control     | B.1         | 12                 | no             |
-| Control     | C.1         | 24                 | no             |
-
-If not, can you propose an new design that generated the data needed for
-to test the hypothesis while keeping the samples to a max of 10?
 
 #### Strand-specificity
 
@@ -269,7 +222,7 @@ Use the following command on your Terminal window.
 -   **Some example command lines will need to be changed to fit your
     computer setting**
 
--   **if you see `/some/text/like/this` just copy-paste will not work**
+-   **if you see `/some/text/like/this` just copy-paste may not work**
 
 -   **Remember to use TAB for auto-completion**
 
@@ -313,6 +266,10 @@ unmapped reads and map them across exon boundaries.
 ![](figures/splicedMapping.png)\
 **Figure 2.** How spliced mapping works (From
 <https://galaxyproject.github.io/training-material/topics/transcriptomics/tutorials/ref-based/tutorial.html#mapping>)
+
+*Thinking byond this notes*
+Previoulsy, we said that RNA-seq could be used for gene finding. Taking into consideration the image above, how do you think these data can be used to find genes/transcripts in a genome? 
+
 
 #### Non-unique/repeated mapping regions
 
@@ -1342,3 +1299,53 @@ InnateDB (<http://www.innatedb.com/>)
 (<https://www.ebi.ac.uk/interpro/search/sequence-search>)
 
 [**Back to top**](#top)
+
+### Further activities
+
+*Thinking beyond these notes*
+
+Consider this experimental design.
+
+Joseph is your doctoral student. He wants to investigate the effect of
+adding a type of drug on the development of larvae. They would like to
+test the hypothesis that the worms will grow slower at the end of one
+day of treatment. He's what they propose:
+
+| Sample Type | Sample name | Time point (hours) | drug treatment |
+|-------------|-------------|--------------------|----------------|
+| Experiment  | 1.1         | 12                 | yes            |
+| Experiment  | 1.2         | 12                 | yes            |
+| Experiment  | 2.1         | 24                 | yes            |
+| Experiment  | 2.2         | 24                 | yes            |
+| Experiment  | 3.1         | 1                  | no (baseline)  |
+| Experiment  | 3.2         | 1                  | no (baseline)  |
+| Control     | A.1         | 1                  | no             |
+| Control     | A.2         | 1                  | no             |
+| Control     | B.1         | 12                 | no             |
+| Control     | B.2         | 12                 | no             |
+| Control     | C.1         | 24                 | no             |
+| Control     | C.2         | 24                 | no             |
+
+As their supervisor, would you agree with this experimental design? Why?
+
+Unfortunately, you need to give Joseph some bad news: "We have only enough
+reagents to produce 10 samples!". You ask them to reconsider the
+design. The table below shows the new design. Note that there are only 9 samples in this design, leaving one sample's worth just in case something goes wrong.
+
+Would you agree with this new design? Why?
+
+| Sample Type | Sample name | Time point (hours) | drug treatment |
+|-------------|-------------|--------------------|----------------|
+| Experiment  | 1.1         | 12                 | yes            |
+| Experiment  | 1.2         | 12                 | yes            |
+| Experiment  | 2.1         | 24                 | yes            |
+| Experiment  | 2.2         | 24                 | yes            |
+| Experiment  | 3.1         | 1                  | no (baseline)  |
+| Experiment  | 3.2         | 1                  | no (baseline)  |
+| Control     | A.1         | 1                  | no             |
+| Control     | B.1         | 12                 | no             |
+| Control     | C.1         | 24                 | no             |
+
+If not, can you propose an new design that generated the data needed for
+to test the hypothesis while keeping the samples to a max of 10?
+
