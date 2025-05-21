@@ -292,10 +292,10 @@ For example, you might sequence two populations of worm: one that is susceptible
 
 VEP is a tool that allows you to predict what the consequences of these variants are: whether they fall within or near genes, and whether they result in a change to the amino acid sequence of a protein.
 
-The standard file format for storing variation data is the [Variant Call Format (VCF)](https://samtools.github.io/hts-specs/VCFv4.2.pdf); this is another tab-delimited text format. Later in the course, you’ll see how to make one of these files. In the meantime, for some helminth genomes, these files have already been shared by other researchers. Today you’ll be using an available VCF file for _Strongyloides ratti_ corresponding to the first 250kb of _S. ratti_ chromosome 2.  
+The standard file format for storing variation data is the [Variant Call Format (VCF)](https://samtools.github.io/hts-specs/VCFv4.2.pdf); this is another tab-delimited text format. Later in the course, you’ll see how to make one of these files. In the meantime, for some helminth genomes, these files have already been shared by other researchers. Today you’ll be using an available VCF file for _Strongyloides ratti_ corresponding to the first 250kb of _S. ratti_ chromosome 2.  The file is in this same folder.
 
 
-4. Copy the file to the "Module_3_WormBaseParaSite_2" directory and have a look at it to see how a VCF file is structured:
+1. Copy the file to the "Module_3_WormBaseParaSite_2" directory and have a look at it to see how a VCF file is structured:
 
 ```bash
 # look at the contents
@@ -306,15 +306,15 @@ You'll have to scroll down beyond the headers (lines starting with ##) to see th
 
 ![](figures/vep_1.png)
 
-5. From the WormBase ParaSite homepage, select “Tools” from the toolbar.
-6. From the “Tools” page, select Variant Effect Predictor
-7. To submit a VEP job, just select the correct species (_Strongyloides ratti_), upload the VCF file we just downloaded and click “Run”.
+2. From the WormBase ParaSite homepage, select “Tools” from the toolbar.
+3. From the “Tools” page, select Variant Effect Predictor
+4. To submit a VEP job, just select the correct species (_Strongyloides ratti_), upload the VCF file we just downloaded and click “Run”.
 
 ![](figures/vep_2.png)
 
-8. Once you have clicked "Run", your input will be checked and submitted to the VEP as a job. All jobs associated with your session or account are shown in the "Recent Tickets" table. You may submit multiple jobs simultaneously.
+5. Once you have clicked "Run", your input will be checked and submitted to the VEP as a job. All jobs associated with your session or account are shown in the "Recent Tickets" table. You may submit multiple jobs simultaneously.
 
-9. Navigate to the results page:
+6. Navigate to the results page:
 
 ![](figures/vep_3.png)
 
@@ -322,17 +322,17 @@ The results are presented in pie-charts and an interactive table:
 - Pie Charts: The pie charts give a summary of the consequences of the variants found in the file. Variants with coding consequences are found in the protein-coding sequence of genes, whilst variants with non-coding consequences are in intergenic regions or non-coding regions of genes. These variants could still be functionally important; for example, variants in non-coding regions near genes can have effects on expression dynamics.
 - Results Table: The results table shows one row per transcript and variant. By default all of the columns are shown; to temporarily hide columns, click the blue "Show/hide columns" button and select or deselect the columns you wish to view. The columns you select will be recalled when viewing other jobs.
 
-10. You can explore the results interactively on the webpage using the Results Preview filter panel at the centre. Use this panel and filter for variant that cause (select "consequence") changes to amino acids (select "missense_variant").  
+7. You can explore the results interactively on the webpage using the Results Preview filter panel at the centre. Use this panel and filter for variant that cause (select "consequence") changes to amino acids (select "missense_variant").  
 
 You can actually visualise the affected Amino acid by the "missense_variant" on the protein's 3D AlphaFold model ([We talked about these in our previous WBP module](https://github.com/WCSCourses/HelminthBioinformatics_2023/blob/main/manuals/module_1_WBP1/module_1_WBP1.md#af)).
 
 To do this:
 
-11. Go to the "Protein matches" column of the results table. If the "Protein matches" column has not been switched on you can do so by using the "Show/hide columns" button at the top left of the table". If the protein affected by the "missense_variant" has an AlphaFold protein model available, then you should see an "AlphaFold model" button in the "Protein matches" column. Click it.
+8. Go to the "Protein matches" column of the results table. If the "Protein matches" column has not been switched on you can do so by using the "Show/hide columns" button at the top left of the table". If the protein affected by the "missense_variant" has an AlphaFold protein model available, then you should see an "AlphaFold model" button in the "Protein matches" column. Click it.
 
 ![](figures/vep_4.png)
 
-12. Explore the 3D protein model. You can  Click the "Focus" button underneath the variant information to zoom-in to the affected residue.
+9. Explore the 3D protein model. You can  Click the "Focus" button underneath the variant information to zoom-in to the affected residue.
 
 ![](figures/vep_5.png)
 
@@ -340,7 +340,8 @@ To do this:
 
 ### _EXERCISE 3 : Variant Effect Prediction exercise_ <a name="vep_exercise"></a>
 
-Download the VEP results from the example above as a “VEP file”. Use this file and the original VCF file to answer the following questions:
+Download the VEP results from the example above as a “VEP file”. Use this file and the original VCF file to answer the following questions. 
+You can either filter the table using a spreadsheet manager like the LibreOfficecalc or else you can try to use some of the command line skills you already learned. 
 
 1. How many variants were there in the original dataset?
 
