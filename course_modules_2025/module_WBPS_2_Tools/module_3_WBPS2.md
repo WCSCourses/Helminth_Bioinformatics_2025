@@ -292,23 +292,10 @@ For example, you might sequence two populations of worm: one that is susceptible
 
 VEP is a tool that allows you to predict what the consequences of these variants are: whether they fall within or near genes, and whether they result in a change to the amino acid sequence of a protein.
 
-The standard file format for storing variation data is the [Variant Call Format (VCF)](https://samtools.github.io/hts-specs/VCFv4.2.pdf); this is another tab-delimited text format. Later in the course, you’ll see how to make one of these files. In the meantime, for some helminth genomes, these files have already been shared by other researchers. Today you’ll be using an available VCF file for _Strongyloides ratti_. 
+The standard file format for storing variation data is the [Variant Call Format (VCF)](https://samtools.github.io/hts-specs/VCFv4.2.pdf); this is another tab-delimited text format. Later in the course, you’ll see how to make one of these files. In the meantime, for some helminth genomes, these files have already been shared by other researchers. Today you’ll be using an available VCF file for _Strongyloides ratti_ corresponding to the first 250kb of _S. ratti_ chromosome 2. The file is in the data folder of this module. 
 
-First, we'll download a VCF file from the European Variation Archive (EVA).   Then will upload it to WormBase ParaSite
 
-1. Go to the [European Variation Archive (EVA)](https://www.ebi.ac.uk/eva/).
-2. Select the "Variant Browser" tab.
-
-You can download complete studies from the "Study Browser" tab but today we are using the "Variant Browser" to download a much smaller file corresponding to a 250 kb region of the genome.
-
-![](figures/eva_1.png)
-
-3. Download the first 250kb of S. ratti chromosome 2 and place it inside the "Module_3_WormBaseParaSite_2" directory:
-  - Select "Rat threadworm / S_ratti_ED321" from the Organism/Assembly drop-down menu.
-  - Filter by: Chromosomal Location - Region: SRAE_chr2:1-250000 and then click "Search".
-  - Click "Export as VCF" and place the downloaded file inside the "Module_3_WormBaseParaSite_2" directory.
-
-4. Move to the "Module_3_WormBaseParaSite_2" directory and have a look at the file to see how it is structured:
+4. Copy the file to the "Module_3_WormBaseParaSite_2" directory and have a look at it to see how a VCF file is structured:
 
 ```bash
 # look at the contents
