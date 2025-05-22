@@ -1,7 +1,6 @@
 # Single-cell transcriptomics
 
 ### Instructor: Santiago Fontenla, addapted from the tutorial by Teresa Attenborough 
-## Affiliation: University of Glasgow
 
 
 ## Table of Contents
@@ -685,14 +684,17 @@ day2somules <- RenameIdents(object = day2somules,
                                "13" = "my.cluster13",
                                "14" = "my.cluster14",
                                "15" = "my.cluster15",
-                            "16" = "my.cluster16")
+                               "16" = "my.cluster16",
+                               "17" = "my.cluster17",
+                               "18" = "my.cluster18"
+)
 
 day2somules[["my.cluster.names"]] <- Idents(object = day2somules)
 ```
 
 Now we can make a plot of the clusters with the IDs that we've chosen, and make it a bit fancier with a custom colour palette.
 ```R
-new_pal <- c("#c4b7cb","#007aaa","#ffb703","#c40c18","#fb8500","#7851a9","#00325b","#8ACB88","#107E7D", "#FB6376", "#57467B", "#FFFD82", "#2191FB", "#690500", "#B3E9C7", "#B57F50","#2C514C","grey")
+new_pal <- c("#c4b7cb","#007aaa","#ffb703","#c40c18","#fb8500","#7851a9","#00325b","#8ACB88","#107E7D", "#FB6376", "#57467B", "#FFFD82", "#2191FB", "#690500", "#B3E9C7", "#B57F50","#2C514C","grey","blue","orange")
 scales::show_col(new_pal)
 plot1 <- DimPlot(day2somules, reduction = "umap", label = FALSE, repel = TRUE, label.box = FALSE) + NoLegend() +scale_color_manual(values = new_pal)
 LabelClusters(plot1, id = "ident", color = 'black', size =4, repel = T,  box.padding = 1.75, max.overlaps=Inf)
@@ -701,4 +703,5 @@ LabelClusters(plot1, id = "ident", color = 'black', size =4, repel = T,  box.pad
 ```
 
 ![](figures/SC_Figure_17.png)
+
 **Figure 17.** Once you have identified the cell types you can rename the clusters
