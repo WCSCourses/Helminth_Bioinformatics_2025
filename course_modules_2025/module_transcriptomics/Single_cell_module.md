@@ -704,4 +704,5 @@ LabelClusters(plot1, id = "ident", color = 'black', size =4, repel = T,  box.pad
 ```
 
 ![](figures/SC_Figure_17.png)
+
 **Figure 17.** Once you have identified the cell types you can rename the clusters
