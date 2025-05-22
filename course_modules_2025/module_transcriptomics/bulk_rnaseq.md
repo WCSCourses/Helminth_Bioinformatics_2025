@@ -254,20 +254,13 @@ read mapping.
 
 #### Spliced mapping
 
-Eukaryotic mRNAs are processed after transcription; introns are spliced
-out. Therefore some reads (those crossing exon boundaries) should be
-split when mapped to the reference genome sequence in which intron
-sequences are still present. TopHat and HISAT2 are one of few mappers
-which can split reads while mapping them, making it very suitable for
-mapping RNA-seq of a eukaryote. Splice-aware mapper first identify reads
-that map within a single exon and then identify splice junction on
-unmapped reads and map them across exon boundaries.
+In eukaryotes, mRNAs are processed after transcription — introns are removed through splicing. This means that some RNA-seq reads, especially those spanning exon-exon boundaries, won’t match the reference genome exactly, since the genome still contains introns. That’s where splice-aware aligners like TopHat, HISAT2, and STAR come in. These tools are designed to handle this by splitting reads during alignment. They typically first map reads that align entirely within exons, then use the remaining (unmapped) reads to detect splice junctions, allowing them to map reads that cross exon boundaries accurately.
 
 ![](figures/splicedMapping.png)\
 **Figure 2.** How spliced mapping works (From
 <https://galaxyproject.github.io/training-material/topics/transcriptomics/tutorials/ref-based/tutorial.html#mapping>)
 
-*Thinking byond this notes*
+**Thinking beyond this notes**
 Previoulsy, we said that RNA-seq could be used for gene finding. Taking into consideration the image above, how do you think these data can be used to find genes/transcripts in a genome? 
 
 
@@ -279,7 +272,7 @@ abundance, we would very much prefer the algorithm to decide for one
 location or another. Different mapping algorithms have different
 strategies to resolve this problem, so be sure to check the options
 ingiven by the algorithm you are using. Some genomes are more difficult
-than others, for example *Plasmodium falciparum* has a low GC content
+than others, for example _Plasmodium falciparum_ has a low GC content
 (19% GC), which means that reads are more likely to map to multiple
 locations in the genome by chance due to the low complexity. Reads from
 genes with tandem repeat domains may also encounter this situation.
