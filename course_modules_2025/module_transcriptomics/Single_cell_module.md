@@ -26,7 +26,7 @@
 
 ## 1. Overview and Aims <a name="intro"></a>
 
-In this module, you will learn basic concepts about the technology and data structure related to single-cell data. The data used in the module was generated from 3 replicates of the 2 days somules of _Schistosoma mansoni_. You will start examining the raw data and the structure of the count matrices, you will learn how to get data from the Seurat objects and how to do the standar normalization and scaling. You will learn how to  generate cell clusters and plot different variables.
+In this module, you will learn basic concepts about the technology and data structure related to single-cell data. The data used in the module was generated from 3 replicates of the 2 days somules of _Schistosoma mansoni_. You will start examining the raw data and the count matrices, you will learn how to retrive data from the Seurat objects and how to do the standar normalization and scaling. You will learn how to generate cell clusters, plot different variables and identify cluster marker genes.
 
 
 ---
