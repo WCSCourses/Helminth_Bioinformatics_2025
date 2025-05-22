@@ -1,7 +1,6 @@
 # Single-cell transcriptomics
 
 ### Instructor: Santiago Fontenla, addapted from the tutorial by Teresa Attenborough 
-## Affiliation: University of Glasgow
 
 
 ## Table of Contents
