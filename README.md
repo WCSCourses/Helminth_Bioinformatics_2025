@@ -109,11 +109,11 @@ The programme will cover several aspects of analysis of next generation sequenci
 - [Online Manual](course_modules_2025/Mitogenomic_assembly/Mitogenome_assembly_guide.pdf)<br>
 
 **WormBase ParaSite Basics**
-- Presentation<br>
+- [Presentation](seminar_slides_2025/Module_WBPS1&2_25.pptx)<br>
 - [Online Manual](course_modules_2025/module_WBPS_1_Basics/module_WBPS1_Basics.md)<br>
 
 **WormBase Parasite 2: Tools and Biomart**
-- Presentation<br>
+- [Presentation](seminar_slides_2025/Module_WBPS1&2_25.pptx)<br>
 - [Online Manual](course_modules_2025/module_WBPS_2_Tools/module_3_WBPS2.md)<br>
 
 **Comparative genomics using Apollo**
