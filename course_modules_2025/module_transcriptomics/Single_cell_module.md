@@ -50,7 +50,7 @@ After sequencing, reads are mapped to the reference genome with Cell Ranger, a s
 ![](figures/SC_Figure_1.png)
 **Figure 1.** A set of barcodes are used to identify different transcripts and cells.
 
-Navigate to the output folder of Cell Ranger, within each sample folder you will find a web_summary of the run and a feature-barcode folder containing the feature-barcode_matrix. Inspect each web_summary. 
+Navigate to the output folder of Cell Ranger, within each sample folder (eg. "/home/manager/Singlecell_module/sample1") you will find a web_summary of the run and a feature-barcode folder containing the feature-barcode_matrix. Inspect each web_summary. 
 
 Three key metrics are presented at the top left of the Summary tab:
 
@@ -68,7 +68,7 @@ We are not planning to go through the rest of the sections and metrics, for more
 # We will do the analysis in RStudio
 # Set the route to the working directory that contains the folders with the Cell Ranger outputs for each sample
 
-setwd("/set/your/path/here/")
+setwd("/home/manager/Singlecell_module/")
 
 ```
 
@@ -434,6 +434,7 @@ plot
 ![](figures/SC_Figure_7.png)
 **Figure 7.** Labeled are the top 10 most variable fetures in the data. Red dots represent the 2000 most variable features.
 
+Next, we apply a linear transformation (‘scaling’) that is a standard pre-processing step prior to dimensional reduction techniques like PCA
 ```R
 all.genes <- rownames(day2somules)
 day2somules <- ScaleData(day2somules, features = all.genes, assay="RNA")
