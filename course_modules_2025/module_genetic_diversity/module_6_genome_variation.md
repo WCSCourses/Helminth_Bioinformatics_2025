@@ -8,14 +8,12 @@ Steve Doyle, 2025
 3. [Preparing your reference sequence prior to mapping](#ref)
 4. [Short read mapping](#mapping)
 5. [Calling SNPs in our mapped sample](#snps)
-6. [Visualising mapped reads and variants using Artemis](#artemis)
-7. [Mapping reads from multiple samples](#mapping_multi)
-8. [Calling SNPs in multiple samples at the same time](#snps_multi)
-9. [Visualing SNP data using WormBase ParaSite and Artemis](#snps_vis)
-10. [Analysis of genetic variation using R](#r)
-11. [Principal component analysis of genetic diversity](#pca)
-12. [Exploring genetic data using phylogenetic trees](#trees)
-13. [Integrating genetic and geographic data: maps](#maps)
+6. [Mapping reads from multiple samples](#mapping_multi)
+7. [Calling SNPs in multiple samples at the same time](#snps_multi)
+8. [Analysis of genetic variation using R](#r)
+9. [Principal component analysis of genetic diversity](#pca)
+10. [Exploring genetic data using phylogenetic trees](#trees)
+11. [Integrating genetic and geographic data: maps](#maps)
 
 <br>
 <br>
@@ -423,20 +421,6 @@ ls -lrt
 ![](figures/figure6.4.PNG)  
 **Figure**
 
-To begin to explore what this data looks like, we will load Artemis and import the relevant data. In this case there 
-relevant data we will load are:
-- the reference sequence: hcontortus_mtDNA.fasta
-- the mapping data: single_sample.tmp.sorted.bam
-- the variant data: single_sample.tmp.vcf.gz
-
-
-```bash
-# open artemis:
-art &
-
-```
-
----
 
 
 
@@ -449,7 +433,7 @@ art &
 
 
 
-## 7. Mapping reads from multiple samples <a name="mapping_multi"></a>
+## 6. Mapping reads from multiple samples <a name="mapping_multi"></a>
 Now that we have shown you the steps involved in mapping a single sample, we will now show you how 
 to map multiple samples. 
 
@@ -520,7 +504,7 @@ NOTE: you don’t need to write any of the commands on this page. This is just t
 
 
 
-## 8. Calling SNPs in multiple samples at the same time <a name="snps_multi"></a>
+## 7. Calling SNPs in multiple samples at the same time <a name="snps_multi"></a>
 Here, we are going to perform multi-sample SNP calling. While we could technically perform a loop like in our 
 mapping example, the mpileup command can take a “file of file names” as input, which we will make in the first 
 step. In this case, we will list (ls) all of the sorted.bam files, and write them to a new file called bam.fofn. 
@@ -580,7 +564,7 @@ vcftools --gzvcf all_samples.vcf.gz --maf 0.05 --min-alleles 2 --max-alleles 2 -
 
 ```
 
-#### 8.1. Questions:
+#### 7.1. Questions:
 - how many variants were kept after filtering?
 - it is possible that not all samples will contain all of the SNPs, ie. there is some degree of "missingness". Can you find a flag in the vcftools manual to test this? Are there samples with a lot of missing data?
 
@@ -594,7 +578,7 @@ vcftools --gzvcf all_samples.vcf.gz --maf 0.05 --min-alleles 2 --max-alleles 2 -
 
 
 
-## 10. Analysis of genetic variation using R <a name="r"></a>
+## 8. Analysis of genetic variation using R <a name="r"></a>
 Well done getting this far! By now, you should have been able to map reads from the 176 samples, and call SNP variants in all of them. 
 
 Now we want to explore these data. The broad aim is to identify any patterns in the genetic variation that might tell us something about the biology of 
@@ -603,7 +587,7 @@ as tools to visualise your data in different ways, written specifically in R tha
 the similar ideas apply. We will point out some of these differences as we go to try not to confuse you too much. R can be run directly on the command line, or alternatively, using Rstudio, which 
 provides a convenient user interface that combines a scripting window, a command line window, a plotting window, and a directory window. 
 
-### 10.1. Setting up R and loading R libraries
+### 8.1. Setting up R and loading R libraries
 ```bash
 # In the unix shell, lets prepare your data
 cd ~/Genetic_Variation/R_analysis
@@ -628,7 +612,7 @@ R
 ```
 
 
-### 10.2. Import and prepare your data for analysis
+### 8.2. Import and prepare your data for analysis
 ```R
 # R relies on packages or libraries that we need to load. They have previously been installed 
 # for you, but you will need to call on them each time to start R. Try load the following:
@@ -681,7 +665,7 @@ vcf.gl@pop
 <br>
 <br>
 
-## 11. Principal component analysis of genetic diversity <a name="pca"></a>
+## 9. Principal component analysis of genetic diversity <a name="pca"></a>
 
 Principal components analysis, PCA, is a statistical method used to reduce the complexity of multi-dimensional datasets to aid with visualisation and interpretation. It works by transforming the data into a new, simpler coordinate system which explains variance in the dataset. These transformations results in an ordering in your data, called a principle component (PC), and these PC are subsequently ranked by the amount of variance that can be explained, ie. the first PC will explain the most variance in your data. We can compare PCs in a scatter plot, ie, PC1 vs PC2, to help explore, analyse, and identify patterns in these otherwise complex data. 
 
@@ -791,7 +775,7 @@ plot12 + plot34
 ```
 
 
-#### 11.1. Questions: 
+#### 9.1. Questions: 
 - How do these plots compare? 
 - What is the relative contribution of variance in the PC3/PC4 plot compared to the PC1/PC2 plot?
 
@@ -829,7 +813,7 @@ we will see a large ellipse.
 
 Compare the two plots, and try to identify similarities and differences
 
-#### 11.2. Questions:
+#### 9.2. Questions:
 - Looking at the ellipses specifically, can you see any countries that have a different distribution than the others, and describe this difference?
 
 
@@ -848,7 +832,7 @@ Compare the two plots, and try to identify similarities and differences
 
 
 
-## 12. Exploring genetic data using phylogenetic trees <a name="trees"></a>
+## 10. Exploring genetic data using phylogenetic trees <a name="trees"></a>
 PCA is a great way to explore complex datasets, including genomics data, and can help to identify drivers 
 (sometimes even technical biases) that are shaping genetic differences between samples. However, it is a 
 data reduction approach, and sometimes interpreting PCAs can be cryptic. Moreover, it is not a direct 
@@ -858,7 +842,7 @@ A more common approach to directly compare samples is to perform a pairwise anal
 differences, and to visualise them using a phylogenetic tree. This is the next step in our analysis, and 
 we will compare these results to the PCAs. 
 
-### 12.1 Making trees using ggtree
+### 10.1 Making trees using ggtree
 ```R
 # load required libraries for this section:
 library(tidyverse)
@@ -883,7 +867,7 @@ tree_plot
 **Figure.** Analysis of pairwise distance using a tree
 
 
-#### 12.1. Questions:
+#### 10.1. Questions:
 - How do the samples cluster on the tree?
 - Are the PCAs easier or harder to interpret than the tree? Why?
 
@@ -895,9 +879,9 @@ tree_plot
 
 
 
-## 13. Integrating genetic and geographic data: maps <a name="maps"></a>
+## 11. Integrating genetic and geographic data: maps <a name="maps"></a>
 Here, we will make a map of the sampling locations, and plot the allele frequency data on it. This or similar may be used to explore how populations
-may be connected to each other. We will explore this by plotting SNPs that seem to have the most effect 
+may be connected to each other. We will explore t10th s by plotting SNPs that seem to have the most effect 
 in driving the variance in the PCA plot.
 
 Note that we will only be looking at one variant at a time, and the genetic signal that differentiates 
@@ -905,7 +889,7 @@ these populations is made up of many variants. However, it should give you an id
 
 First, lets calculate allele frequencies per country, and integrate these with the latitude and longitude coordinates to prepare to plot.
 
-### 13.1 Calculating allele frequencies per country
+### 11.1 Calculating allele frequencies per country
 ```R
 # load required libraries for this section
 library(tidyverse)
@@ -938,7 +922,7 @@ head(AF_data_coords)
 **Figure.** Integrating allele frequencing and geographic data
 
 
-### 13.2 Making maps using data
+### 11.2 Making maps using data
 ```R
 # Lets make a map, and plot the sampling locations on it. 
 par(fg = "black")
@@ -1040,10 +1024,9 @@ Have a look at the following animation, showing shipping routes in the 1700s. Co
 <br>
 
 
-## 14. Summary
+## 12. Summary
 In this module, we have shown you how to:
 - map and call variants from Illumina sequencing data in a single sample and a cohort of samples
-- visualize these data in the genome browser Artemis
 - Perform some basic data exploration and population genetics using R to understand the genetic relatedness within and between samples
 
 
@@ -1056,19 +1039,3 @@ In this module, we have shown you how to:
 ******
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-
-
-
-
-
-
-
-
-
-
-BiocManager::install("biomaRt")
-library(biomaRt)
-
-mart <- useMart("parasite_mart", dataset = "wbps_gene", host = "https://parasite.wormbase.org")
-
-coords <- getBM(mart=mart, filters = list("species_id_1010", "chromosome_name"), values = list("hacontpr506", "mitochondrion"), attributes = c("wbps_gene_id", "start_position", "end_position"))
