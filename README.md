@@ -125,7 +125,7 @@ The programme will cover several aspects of analysis of next generation sequenci
 
 
 **R Refresher**
-- Presentation<br>
+- [Presentation](seminar_slides_2025/WCS_Helminth-Bioinformatics_2025_R-and-Rstudio.pptx)<br>
 - [Online Manual](course_modules_2025/module_R_refresher/module_5_R_and_Rstudio.v2.html)<br>
 
 **Transcriptomics**
