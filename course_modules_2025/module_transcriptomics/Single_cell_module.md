@@ -685,7 +685,10 @@ day2somules <- RenameIdents(object = day2somules,
                                "13" = "my.cluster13",
                                "14" = "my.cluster14",
                                "15" = "my.cluster15",
-                            "16" = "my.cluster16")
+                               "16" = "my.cluster16",
+                               "17" = "my.cluster17",
+                               "18" = "my.cluster18"
+)
 
 day2somules[["my.cluster.names"]] <- Idents(object = day2somules)
 ```
