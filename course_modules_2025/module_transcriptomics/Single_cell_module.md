@@ -575,6 +575,7 @@ FeaturePlot(day2somules, features="percent.mt", label=TRUE)
 **Figure 13.** UMAP plot, cells are colored by percentage of mtRNA
 
 What do you think about this figure? Is there any cluster with a higher proportion of MT RNA?
+Can you plot the nFeature_RNA and nCount_RNA per cluster? what do you see?
 
 [↥  **Back to top**](#top)
 
