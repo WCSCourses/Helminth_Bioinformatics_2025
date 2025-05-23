@@ -158,6 +158,7 @@ awk '{print $1}' Codes-Names.tab > codes.list
 4. Run Concatenator.scp:
 
 ```
+chmod +x Concatenator.scp
 ./Concatenator.scp alignment_to_concatenate.list codes.list
 ```
 >*Remember to provide the first and second arguments to the script: a file containing the list of alignment files, and a file containing the list of codes (one per species), respectively.*
@@ -184,9 +185,10 @@ less concatenated.infoalign
 
 This script requires three input files: (i) the FASTA file whose headers will be modified, (ii) a table with at least two columns—the first containing the codes and the second the full species names, and (iii) the name you choose for the output file (in this case, “concatenated.rn.fas”).
 
-1. Run Concatenator.scp:
+1. Run Replacetator.scp:
 
 ```
+chmod +x Replacetator.scp
 ./Replacetator.scp concatenated.fas Codes-Names.tab concatenated.rn.fas
 ```
 2. Use *less* command to visualize the generated file and press letter “q” to exit:
