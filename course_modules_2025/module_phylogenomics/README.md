@@ -28,7 +28,7 @@ To carry out an alignment, the sequences need to be available in a file that can
 The dataset (unaligned set of sequences: **.faa files** and table) is in:
 
 ```
-/home/manager/course_data/Mitogenomics-Phylogenomics/LAC/Data/
+/home/manager/course_github/course_modules_2025/module_phylogenomics/Data/
 ```
 
 ### A.	Alignment with MAFFT
@@ -43,7 +43,7 @@ To use it on the VM, type mafft on the command-line, mafft --help will give you 
 1. Open a Terminal and go into the directory	that contains the dataset to align.
 
 ```
-/home/manager/course_data/Mitogenomics-Phylogenomics/LAC/Data/
+/home/manager/course_github/course_modules_2025/module_phylogenomics/Data/
 ```
 
 2. Type: 
@@ -82,7 +82,7 @@ To use it on the VM, type trimal on the command-line, trimal -h will give you in
 1. Open a Terminal and go into the directory	that contains the alignments.
 
 ```
-/home/manager/course_data/Mitogenomics-Phylogenomics/LAC/Data/
+/home/manager/course_github/course_modules_2025/module_phylogenomics/Data/
 ```
 
 2. Type: 
@@ -113,7 +113,7 @@ man seqret
 1. Open a Terminal and go into the directory	that contains the trimmed files.
 
 ```
-/home/manager/course_data/Mitogenomics-Phylogenomics/LAC/Data/
+/home/manager/course_github/course_modules_2025/module_phylogenomics/Data/
 ```
 
 2. Type: 
@@ -141,7 +141,7 @@ Concatenator.scp  is a locally developed script written in bash that we use in o
 1. Open a Terminal and go into the directory	that contains the trimmed files.
 
 ```
-/home/manager/course_data/Mitogenomics-Phylogenomics/LAC/Data/
+/home/manager/course_github/course_modules_2025/module_phylogenomics/Data/
 ```
 
 2. To generate a file with the list of alignment files to concatenate type: 
@@ -158,6 +158,7 @@ awk '{print $1}' Codes-Names.tab > codes.list
 4. Run Concatenator.scp:
 
 ```
+chmod +x Concatenator.scp
 ./Concatenator.scp alignment_to_concatenate.list codes.list
 ```
 >*Remember to provide the first and second arguments to the script: a file containing the list of alignment files, and a file containing the list of codes (one per species), respectively.*
@@ -184,9 +185,10 @@ less concatenated.infoalign
 
 This script requires three input files: (i) the FASTA file whose headers will be modified, (ii) a table with at least two columns—the first containing the codes and the second the full species names, and (iii) the name you choose for the output file (in this case, “concatenated.rn.fas”).
 
-1. Run Concatenator.scp:
+1. Run Replacetator.scp:
 
 ```
+chmod +x Replacetator.scp
 ./Replacetator.scp concatenated.fas Codes-Names.tab concatenated.rn.fas
 ```
 2. Use *less* command to visualize the generated file and press letter “q” to exit:
@@ -217,7 +219,7 @@ You can find many basic and advanced tutorials at http://www.iqtree.org/doc/
 1.	Open a Terminal and go into the folder that contains the concatenated alignment file previously generated:
 
 ```
-/home/manager/course_data/Mitogenomics-Phylogenomics/LAC/Data/
+/home/manager/course_github/course_modules_2025/module_phylogenomics/Data/
 ```
 
 2.	Type: 
