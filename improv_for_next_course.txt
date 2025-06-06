@@ -1,6 +1,10 @@
 Transcriptome module
 
 - update to include STAR mapping and and some more modern counting algorithm (avp)
+- use newer data? Sarah's male/female development data
 
+New modules:
 
+- Data management (~ 30 minutes)
+- LLM use for coding 
 
